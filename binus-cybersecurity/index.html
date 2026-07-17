@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open House GRATIS — Membangun Karier Cybersecurity di Era AI | RevoU × BINUS</title>
+  <meta name="description" content="Open House online GRATIS: bangun karier cybersecurity di era AI bersama Head of Cyber Security Program BINUS University. Sesi LIVE 2 jam, Kamis 23 Juli 2026 via YouTube. Daftar sekarang." />
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ============================================================
+     Open House — Applied Cybersecurity with AI
+     Scoped to .coh-page so styles never leak in Webflow.
+     Visual system extracted from Figma (dark SOC theme).
+     ============================================================ */
+
+  .coh-page *,
+  .coh-page *::before,
+  .coh-page *::after { box-sizing: border-box; min-width: 0; }
+
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
+
+  .coh-page {
+    /* ── Colors ─────────────────────────────────── */
+    --c-bg:            #090d1e;   /* page / hero */
+    --c-bg-band:       #10163a;   /* deep-blue feature band (softened from #1c2765) */
+    --c-bg-band-2:     #1c2765;   /* stronger blue band */
+    --c-card:          #0d1330;   /* dark card */
+    --c-card-2:        #090f28;   /* deepest card (console-echo) */
+    --c-accent:        #f08700;   /* amber */
+    --c-accent-soft:   rgba(240,135,0,0.18);
+    --c-accent-glow:   rgba(240,135,0,0.35);
+    --c-text:          #ffffff;
+    --c-muted:         #9aa3b8;   /* readable muted on dark */
+    --c-muted-2:       #6b7392;
+    --c-live:          #21d07a;   /* live/green dot */
+    --c-hair:          rgba(255,255,255,0.09);
+    --c-hair-strong:   rgba(255,255,255,0.16);
+
+    /* ── Fluid type scale ───────────────────────── */
+    --fs-eyebrow: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+    --fs-h1:      clamp(2rem, 1.4rem + 2.9vw, 3rem);
+    --fs-h2:      clamp(1.6rem, 1.1rem + 1.9vw, 2.25rem);
+    --fs-h3:      clamp(1.2rem, 1rem + 0.7vw, 1.5rem);
+    --fs-body:    clamp(1rem, 0.94rem + 0.3vw, 1.25rem);
+    --fs-sm:      clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
+
+    /* ── Fluid spacing ──────────────────────────── */
+    --sp-section: clamp(3.5rem, 2rem + 6vw, 6rem);
+    --sp-gap:     clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+    --sp-stack:   clamp(2rem, 1.3rem + 2.4vw, 3rem);
+    --pad-x:      clamp(1.25rem, -0.5rem + 7vw, 8.75rem); /* up to 140px */
+    --maxw:       1104px;
+
+    /* ── Misc ───────────────────────────────────── */
+    --radius: 2px;              /* near-square, per Figma */
+    --shadow: 0 24px 60px -20px rgba(0,0,0,0.55);
+    --shadow-sm: 0 12px 30px -14px rgba(0,0,0,0.5);
+
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--c-text);
+    background: var(--c-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  .coh-page img { max-width: 100%; display: block; }
+  .coh-page a { color: inherit; text-decoration: none; }
+
+  /* ── Layout helpers ─────────────────────────── */
+  .coh-container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: var(--pad-x);
+  }
+  .coh-section { padding-block: var(--sp-section); position: relative; }
+  .coh-band    { background: var(--c-bg-band); overflow: clip; }
+  .coh-band > .coh-container { position: relative; z-index: 1; }
+  .coh-band-2  { background: linear-gradient(180deg, #1c2765 0%, #141d54 100%); }
+
+  /* ── Typography ─────────────────────────────── */
+  .coh-eyebrow {
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    margin: 0 0 clamp(0.6rem, 1.5vw, 0.9rem);
+    display: inline-flex; align-items: center; gap: 0.6em;
+  }
+  .coh-h1 {
+    font-size: var(--fs-h1);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.85rem;
+    overflow-wrap: break-word;
+    background: linear-gradient(120deg, #ffffff 40%, #c9d4ff 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .coh-h2 {
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.75rem;
+  }
+  .coh-h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.25; margin: 0 0 0.5rem; }
+  .coh-lead { font-size: var(--fs-body); color: var(--c-muted); margin: 0; max-width: 60ch; }
+  .coh-accent { color: var(--c-accent); }
+  .coh-strong { color: #fff; font-weight: 700; }
+
+  .coh-section-head { max-width: 760px; margin-bottom: var(--sp-stack); }
+  .coh-section-head.center { margin-inline: auto; text-align: center; }
+  .coh-section-head.center .coh-eyebrow { justify-content: center; }
+
+  /* ── Buttons ────────────────────────────────── */
+  .coh-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    font-family: inherit;
+    font-size: var(--fs-body);
+    font-weight: 700;
+    padding: 0.85em 1.6em;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .coh-btn--primary { background: var(--c-accent); color: #000; box-shadow: 0 8px 30px -8px var(--c-accent-glow); }
+  .coh-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px var(--c-accent-glow); }
+  .coh-btn--ghost { background: var(--c-accent-soft); color: var(--c-accent); border-color: var(--c-accent); }
+  .coh-btn--ghost:hover { transform: translateY(-2px); background: rgba(240,135,0,0.28); }
+
+  .coh-btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+  /* ── Hero ───────────────────────────────────── */
+  .coh-hero { position: relative; overflow: clip; background: var(--c-bg); }
+  .coh-hero__bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('images/hero-ambient-bg.webp');
+    background-size: cover; background-position: center;
+    opacity: 0.55;
+  }
+  .coh-hero__bg::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 90% at 20% 30%, rgba(9,13,30,0.92) 0%, rgba(9,13,30,0.55) 45%, rgba(9,13,30,0.2) 100%),
+      linear-gradient(180deg, rgba(9,13,30,0.4) 0%, var(--c-bg) 100%);
+  }
+  /* orbital glow arc (pure CSS) — kept inside the hero, never causes overflow */
+  .coh-hero__orbit {
+    position: absolute; z-index: 0; pointer-events: none;
+    right: -18%; top: 50%; transform: translateY(-50%);
+    width: min(1000px, 78%); aspect-ratio: 1; max-width: 90vw;
+    background: radial-gradient(circle at 32% 50%, rgba(60,110,255,0.30) 0%, rgba(40,70,190,0.12) 38%, transparent 62%);
+    border-radius: 50%;
+    filter: blur(6px);
+  }
+  /* faint technical grid / mesh overlay (cyber cue) */
+  .coh-grid-overlay {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(140,170,255,0.11) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(140,170,255,0.11) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(150% 130% at 70% 20%, #000 0%, #000 45%, transparent 100%);
+            mask-image: radial-gradient(150% 130% at 70% 20%, #000 0%, #000 45%, transparent 100%);
+  }
+  /* stronger on the flat dark bands (no ambient image competing) */
+  .coh-band .coh-grid-overlay {
+    background-image:
+      linear-gradient(to right, rgba(140,170,255,0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(140,170,255,0.09) 1px, transparent 1px);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+  }
+
+  /* animated scan line (cyber cue — active monitoring) */
+  .coh-scanline {
+    position: absolute; left: 0; right: 0; top: 0; height: 2px; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(240,135,0,0.55) 20%, rgba(240,135,0,0.9) 50%, rgba(240,135,0,0.55) 80%, transparent);
+    filter: blur(0.4px); opacity: 0.55;
+    animation: coh-scan 7s linear infinite;
+  }
+  @keyframes coh-scan { 0% { transform: translateY(0); } 100% { transform: translateY(704px); } }
+
+  /* monospace security micro-label (cyber cue) */
+  .coh-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-weight: 500; letter-spacing: 0.02em; text-transform: none;
+    color: var(--c-accent); font-size: 0.85em; opacity: 0.9;
+  }
+
+  /* ── (1) blinking terminal cursor after H1 ──── */
+  .coh-caret {
+    display: inline-block; width: 0.06em; height: 0.9em;
+    margin-left: 0.12em; vertical-align: -0.06em;
+    background: var(--c-accent); border-radius: 1px;
+    animation: coh-blink 1.1s step-end infinite;
+    -webkit-text-fill-color: var(--c-accent); /* stay amber under H1 gradient clip */
+  }
+  @keyframes coh-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ── (2) radar sweep behind the event card ──── */
+  .coh-eventcard-wrap { position: relative; }
+  .coh-radar {
+    position: absolute; z-index: 0; pointer-events: none;
+    width: 150%; aspect-ratio: 1; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(from 0deg,
+      rgba(240,135,0,0.14) 0deg,
+      rgba(240,135,0,0.05) 24deg,
+      transparent 60deg,
+      transparent 360deg);
+    border-radius: 50%;
+    -webkit-mask-image: radial-gradient(circle, #000 30%, transparent 72%);
+            mask-image: radial-gradient(circle, #000 30%, transparent 72%);
+    animation: coh-radar 8s linear infinite;
+    opacity: 0.9;
+  }
+  @keyframes coh-radar { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  /* ── (4) glowing perimeter trace on the card ── */
+  .coh-eventcard { isolation: isolate; }
+  .coh-trace {
+    position: absolute; inset: 0; z-index: 3; pointer-events: none;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from var(--coh-angle, 0deg),
+      transparent 0deg,
+      transparent 300deg,
+      rgba(240,135,0,0.9) 340deg,
+      rgba(255,190,90,1) 355deg,
+      transparent 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+    animation: coh-trace 5s linear infinite;
+  }
+  @property --coh-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+  @keyframes coh-trace { to { --coh-angle: 360deg; } }
+
+  /* ── (3) flickering grid nodes ──────────────── */
+  .coh-nodes { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .coh-node {
+    position: absolute; width: 5px; height: 5px; border-radius: 50%;
+    background: var(--c-accent); box-shadow: 0 0 8px 1px rgba(240,135,0,0.7);
+    opacity: 0; animation: coh-node 4s ease-in-out infinite;
+  }
+  @keyframes coh-node { 0%,100% { opacity: 0; } 45%,55% { opacity: 0.85; } }
+
+  .coh-hero .coh-container { position: relative; z-index: 2; }
+  .coh-hero__grid > * { position: relative; z-index: 2; min-width: 0; }
+  .coh-hero__grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(1.5rem, 3vw, 2.75rem); align-items: center;
+    padding-block: clamp(1.75rem, 3.5vw, 3rem);
+  }
+  .coh-hero__meta {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center;
+    color: var(--c-muted); font-size: var(--fs-sm); font-weight: 500;
+    margin-top: 1rem;
+  }
+  .coh-hero__meta b { color: #fff; font-weight: 700; }
+  .coh-dot { width: 0.5em; height: 0.5em; border-radius: 50%; background: var(--c-muted-2); display: inline-block; }
+
+  /* ── Live Event card ────────────────────────── */
+  .coh-eventcard {
+    background: linear-gradient(180deg, #0e1436 0%, #090f28 100%);
+    border: 1px solid var(--c-hair-strong);
+    border-radius: var(--radius);
+    padding: clamp(1rem, 2vw, 1.35rem);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    max-width: 400px; margin-left: auto;
+  }
+  .coh-eventcard::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--c-accent), transparent 70%);
+  }
+  .coh-eventcard__top { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; }
+  .coh-badge {
+    display: inline-flex; align-items: center; gap: 0.4em;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.3em 0.6em; border-radius: var(--radius);
+  }
+  .coh-badge--live { background: rgba(33,208,122,0.14); color: var(--c-live); border: 1px solid rgba(33,208,122,0.4); }
+  .coh-badge--gratis { background: var(--c-accent); color: #000; }
+  .coh-live-dot { width: 0.55em; height: 0.55em; border-radius: 50%; background: var(--c-live); box-shadow: 0 0 0 0 rgba(33,208,122,0.6); animation: coh-pulse 1.8s infinite; }
+  @keyframes coh-pulse { 0%{box-shadow:0 0 0 0 rgba(33,208,122,0.55);} 70%{box-shadow:0 0 0 8px rgba(33,208,122,0);} 100%{box-shadow:0 0 0 0 rgba(33,208,122,0);} }
+
+  .coh-eventcard__date { font-size: clamp(1.05rem, 0.9rem + 0.7vw, 1.35rem); font-weight: 800; line-height: 1.2; margin: 0 0 0.15rem; }
+  .coh-eventcard__time { color: var(--c-muted); font-weight: 500; font-size: 0.85rem; }
+
+  .coh-countdown { display: flex; gap: 0.4rem; margin: 0.85rem 0; }
+  .coh-cd-unit {
+    flex: 1; text-align: center;
+    background: var(--c-card-2); border: 1px solid var(--c-hair);
+    border-radius: var(--radius); padding: 0.4rem 0.15rem;
+  }
+  .coh-cd-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem); font-weight: 700; color: #fff; line-height: 1; }
+  .coh-cd-lbl { display: block; margin-top: 0.3rem; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-muted-2); }
+
+  .coh-collab {
+    display: flex; align-items: center; justify-content: center; gap: 0.85rem;
+    margin-top: 0.9rem;
+    background: #fff; border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+  }
+  .coh-collab__label { color: #4a4a4a; font-size: 0.78rem; font-weight: 500; }
+  .coh-collab__logo { padding: 0; background: transparent; }
+  .coh-collab__logo img { height: 28px; width: auto; display: block; }
+
+  .coh-eventcard__speakers { display: flex; align-items: center; gap: 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--c-hair); }
+  .coh-avatars { display: flex; }
+  .coh-avatars span {
+    width: 34px; height: 34px; border-radius: 50%; margin-left: -8px;
+    border: 2px solid #0d1330; display: grid; place-items: center;
+    font-size: 0.8rem; font-weight: 700; color: #fff;
+  }
+  .coh-avatars span:first-child { margin-left: 0; }
+  .coh-avatars .a1 { background: linear-gradient(135deg,#3a6bff,#1c2765); }
+  .coh-avatars .a2 { background: linear-gradient(135deg,#f08700,#a85c00); color:#000; }
+  .coh-avatars .a3 { background: linear-gradient(135deg,#21d07a,#0f6b40); }
+  .coh-eventcard__speakers small { color: var(--c-muted); font-size: var(--fs-sm); }
+
+  /* ── Logo plate (white bg so dark BINUS text stays legible) ── */
+  .coh-logoplate {
+    background: #fff; border-radius: var(--radius);
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+  .coh-logoplate img { display: block; }
+
+  /* ── Top nav (white) ────────────────────────── */
+  .coh-nav {
+    position: relative; z-index: 5;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #ffffff;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  }
+  .coh-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.65rem; }
+  .coh-nav .coh-logoplate { padding: 0; background: transparent; }
+  .coh-nav .coh-logoplate img { height: clamp(26px, 4vw, 34px); width: auto; }
+  .coh-nav__cta { font-size: var(--fs-sm); padding: 0.6em 1.1em; }
+
+  /* ── Logo strip ─────────────────────────────── */
+  .coh-logos { text-align: center; padding-block: clamp(1.75rem, 3.5vw, 2.5rem); }
+  .coh-logos p { color: var(--c-muted-2); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 1.1rem; }
+  .coh-logos .coh-logoplate img { height: clamp(34px, 6vw, 48px); width: auto; }
+
+  /* ── Card grids ─────────────────────────────── */
+  .coh-grid { display: grid; gap: var(--sp-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
+
+  .coh-grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+  .coh-get { text-align: left; }
+  .coh-get .coh-h3 { margin-bottom: 0; font-size: var(--fs-body); }
+  .coh-get .coh-ico { margin-bottom: 0.85rem; }
+
+  /* single-column stacked rows (agenda) */
+  .coh-rows { display: grid; gap: var(--sp-gap); max-width: 820px; margin-inline: auto; }
+  .coh-row { display: flex; align-items: flex-start; gap: clamp(1rem, 3vw, 1.5rem); }
+  .coh-row .coh-num { margin-bottom: 0; flex: none; }
+  .coh-row h3 { margin-bottom: 0.35rem; }
+
+  .coh-card {
+    background: var(--c-card); border: 1px solid var(--c-hair);
+    border-radius: var(--radius); padding: clamp(1.35rem, 3vw, 1.85rem);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .coh-card:hover { transform: translateY(-4px); border-color: var(--c-hair-strong); }
+  .coh-card p { color: var(--c-muted); margin: 0; font-size: var(--fs-sm); }
+
+  .coh-num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 1rem; font-weight: 700; color: var(--c-accent);
+    width: 2.4em; height: 2.4em; display: grid; place-items: center;
+    border: 1px solid var(--c-accent-soft); border-radius: var(--radius);
+    background: var(--c-accent-soft); margin-bottom: 1rem;
+  }
+  .coh-ico {
+    width: 3rem; height: 3rem; display: grid; place-items: center;
+    border-radius: var(--radius); background: var(--c-accent-soft);
+    margin-bottom: 1.1rem; color: var(--c-accent);
+  }
+  .coh-ico svg { width: 1.6rem; height: 1.6rem; }
+  .coh-card .coh-tag { color: var(--c-muted-2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; }
+
+  /* value list check items */
+  .coh-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .coh-checks li { display: flex; gap: 0.85rem; align-items: flex-start; }
+  .coh-check-ico { flex: none; width: 1.75rem; height: 1.75rem; border-radius: var(--radius); background: var(--c-accent-soft); color: var(--c-accent); display: grid; place-items: center; margin-top: 0.15rem; }
+  .coh-check-ico svg { width: 1rem; height: 1rem; }
+  .coh-checks h4 { margin: 0 0 0.2rem; font-size: var(--fs-body); font-weight: 700; }
+  .coh-checks p { margin: 0; color: var(--c-muted); font-size: var(--fs-sm); }
+
+  /* speakers */
+  .coh-speakers { position: relative; overflow: clip; }
+  .coh-speakers__bg {
+    position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+    width: min(1300px, 120%); aspect-ratio: 1389 / 926;
+    background: url('images/BINUS Campus.png') no-repeat bottom center;
+    background-size: contain;
+    opacity: 0.14; z-index: 0; pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
+            mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
+  }
+  .coh-speakers .coh-container { position: relative; z-index: 1; }
+  .coh-speaker { text-align: left; }
+  .coh-speaker__avatar {
+    width: 100%; aspect-ratio: 1; border-radius: var(--radius); margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1c2765, #090f28);
+    display: grid; place-items: center; font-size: 2.5rem; font-weight: 800; color: rgba(255,255,255,0.85);
+    border: 1px solid var(--c-hair);
+    overflow: hidden;
+  }
+  /* photo variant — source is a full-body studio shot on light grey, so scale up
+     and anchor to the head to read as a head-and-shoulders portrait */
+  .coh-speaker__avatar--photo { background: linear-gradient(180deg, #e9ebee 0%, #cfd4dc 100%); }
+  .coh-speaker__avatar--photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 12%;
+    transform: scale(1.85); transform-origin: 50% 14%;
+  }
+  /* blend the light studio backdrop into the dark card */
+  .coh-speaker__avatar--photo::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(13,19,48,0) 55%, rgba(13,19,48,0.55) 100%);
+    mix-blend-mode: multiply;
+  }
+  .coh-speaker__avatar--photo { position: relative; }
+
+  /* single-speaker layout: card sits centered, photo beside the copy */
+  .coh-speakers__solo { max-width: 620px; margin-inline: auto; }
+  .coh-speakers__solo .coh-speaker {
+    display: grid; grid-template-columns: 190px 1fr;
+    gap: clamp(1.25rem, 3vw, 1.75rem); align-items: center;
+  }
+  .coh-speakers__solo .coh-speaker__avatar { margin-bottom: 0; }
+  @media (max-width: 560px) {
+    .coh-speakers__solo .coh-speaker { grid-template-columns: 1fr; }
+    .coh-speakers__solo .coh-speaker__avatar { max-width: 200px; }
+  }
+  .coh-speaker h4 { margin: 0 0 0.25rem; font-size: var(--fs-body); font-weight: 700; }
+  .coh-speaker .role { color: var(--c-accent); font-size: var(--fs-sm); font-weight: 600; margin: 0 0 0.35rem; }
+  .coh-speaker .org { color: var(--c-muted); font-size: 0.85rem; margin: 0; }
+
+  /* ── Urgency band ───────────────────────────── */
+  .coh-urgency { text-align: center; }
+  .coh-urgency .coh-h2 { max-width: 24ch; margin-inline: auto; }
+  .coh-urgency__pill {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    background: var(--c-accent-soft); color: var(--c-accent);
+    border: 1px solid var(--c-accent); border-radius: var(--radius);
+    padding: 0.5em 1em; font-weight: 700; font-size: var(--fs-sm); margin-bottom: 1.25rem;
+  }
+
+  /* ── USP pills (closing) ────────────────────── */
+  .coh-usps { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 1.5rem 0 0.5rem; }
+  .coh-usp {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    padding: 0.5em 1em; border-radius: var(--radius);
+    background: rgba(255,255,255,0.04); border: 1px solid var(--c-hair-strong);
+    font-weight: 700; font-size: var(--fs-sm); color: #fff;
+  }
+  .coh-usp .coh-live-dot { position: static; }
+
+  /* ── Closing event details ──────────────────── */
+  .coh-closing-date {
+    display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem 1.25rem;
+    margin: 1.25rem auto 0; padding: 0.9rem 1.5rem;
+    background: var(--c-card-2); border: 1px solid var(--c-hair); border-radius: var(--radius);
+    color: #fff; font-weight: 600; font-size: var(--fs-body);
+  }
+
+  /* ── Final CTA ──────────────────────────────── */
+  .coh-final { text-align: center; position: relative; overflow: clip; }
+  .coh-final__bg {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none;
+    height: 100%;
+    background: url('images/closing-horizon.webp') no-repeat bottom center;
+    background-size: cover;
+    opacity: 0.22;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, #000 90%);
+            mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, #000 90%);
+  }
+  .coh-final__glow { position: absolute; inset: 0; z-index: 0; background: radial-gradient(60% 80% at 50% 0%, rgba(240,135,0,0.14) 0%, transparent 70%); }
+  .coh-final .coh-container { position: relative; z-index: 1; }
+  .coh-final .coh-btn-row { justify-content: center; }
+  .coh-final .coh-hero__meta { justify-content: center; }
+
+  /* ── Footer ─────────────────────────────────── */
+  .coh-footer { border-top: 1px solid var(--c-hair); padding-block: clamp(2rem, 4vw, 3rem); }
+  .coh-footer__inner { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; }
+  .coh-footer img { max-width: 220px; }
+  .coh-footer p { color: var(--c-muted-2); font-size: var(--fs-sm); margin: 0; }
+  .coh-footer a { color: var(--c-muted); }
+  .coh-footer a:hover { color: var(--c-accent); }
+
+  /* ── Binary texture overlay ─────────────────── */
+  .coh-binary {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.9;
+    color: rgba(120,150,255,0.05); word-break: break-all; user-select: none;
+    padding: 1rem;
+  }
+
+  /* ── Motion on scroll ───────────────────────── */
+  .coh-reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .coh-reveal.is-in { opacity: 1; transform: none; }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 860px) {
+    .coh-hero__grid { grid-template-columns: 1fr; gap: 2rem; }
+    .coh-eventcard { max-width: 480px; }
+  }
+  @media (max-width: 600px) {
+    .coh-btn { width: 100%; }
+    .coh-btn-row { flex-direction: column; }
+    .coh-hero__meta { gap: 0.4rem 1rem; }
+    .coh-footer__inner { flex-direction: column; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .coh-page * { animation: none !important; transition: none !important; }
+    .coh-reveal { opacity: 1; transform: none; }
+    .coh-scanline { display: none; }
+  }
+  </style>
+</head>
+
+<body>
+<div class="coh-page">
+
+  <!-- ═══ 0. NAV ═══ -->
+  <nav class="coh-nav">
+    <div class="coh-container coh-nav__inner">
+      <span class="coh-logoplate">
+        <img src="images/trilogo-revou-binus-greatnusa.png" alt="RevoU · BINUS University · GreatNusa" />
+      </span>
+      <a class="coh-btn coh-btn--primary coh-nav__cta" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Gratis</a>
+    </div>
+  </nav>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <header class="coh-hero">
+    <div class="coh-hero__bg"></div>
+    <div class="coh-hero__orbit"></div>
+    <div class="coh-grid-overlay" aria-hidden="true"></div>
+    <div class="coh-nodes" aria-hidden="true">
+      <span class="coh-node" style="left:12%;top:24%;animation-delay:0s"></span>
+      <span class="coh-node" style="left:32%;top:70%;animation-delay:1.3s"></span>
+      <span class="coh-node" style="left:58%;top:18%;animation-delay:2.1s"></span>
+      <span class="coh-node" style="left:78%;top:62%;animation-delay:0.7s"></span>
+      <span class="coh-node" style="left:88%;top:30%;animation-delay:3s"></span>
+      <span class="coh-node" style="left:46%;top:44%;animation-delay:2.6s"></span>
+    </div>
+    <div class="coh-scanline" aria-hidden="true"></div>
+    <div class="coh-container">
+      <div class="coh-hero__grid">
+        <!-- left: copy -->
+        <div class="coh-reveal">
+          <span class="coh-eyebrow">
+            <span class="coh-live-dot"></span>
+            Open House Online · Gratis · Live
+          </span>
+          <h1 class="coh-h1">Membangun Karier <span class="coh-accent" data-scramble data-scramble-now>Cybersecurity</span> di Era AI<span class="coh-caret" aria-hidden="true"></span></h1>
+          <p class="coh-lead">
+            Sesi <b class="coh-strong">LIVE 2 jam</b> untuk memahami bagaimana AI mengubah dunia keamanan siber —
+            langsung dari perspektif akademisi <b class="coh-strong">BINUS University</b>.
+            Kenali program <b class="coh-strong">Applied Cybersecurity with AI</b> sebelum kamu mendaftar.
+          </p>
+          <div class="coh-btn-row">
+            <a class="coh-btn coh-btn--primary" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+          </div>
+          <div class="coh-hero__meta">
+            <span>📅 <b>Kamis, 23 Juli 2026</b></span>
+            <span class="coh-dot"></span>
+            <span>🕖 <b>19.00–21.00 WIB</b></span>
+            <span class="coh-dot"></span>
+            <span>▶️ <b>Live via YouTube</b></span>
+          </div>
+        </div>
+
+        <!-- right: Live Event card -->
+        <div class="coh-reveal coh-eventcard-wrap">
+          <div class="coh-radar" aria-hidden="true"></div>
+          <div class="coh-eventcard">
+            <span class="coh-trace" aria-hidden="true"></span>
+            <div class="coh-eventcard__top">
+              <span class="coh-badge coh-badge--live"><span class="coh-live-dot"></span> LIVE</span>
+              <span class="coh-badge coh-badge--gratis">Gratis</span>
+            </div>
+            <p class="coh-eventcard__date">Kamis, 23 Juli 2026</p>
+            <p class="coh-eventcard__time">19.00–21.00 WIB · Live via YouTube</p>
+
+            <div class="coh-countdown" id="coh-countdown" aria-label="Hitung mundur menuju acara">
+              <div class="coh-cd-unit"><span class="coh-cd-num" data-cd="days">00</span><span class="coh-cd-lbl">Hari</span></div>
+              <div class="coh-cd-unit"><span class="coh-cd-num" data-cd="hours">00</span><span class="coh-cd-lbl">Jam</span></div>
+              <div class="coh-cd-unit"><span class="coh-cd-num" data-cd="mins">00</span><span class="coh-cd-lbl">Menit</span></div>
+              <div class="coh-cd-unit"><span class="coh-cd-num" data-cd="secs">00</span><span class="coh-cd-lbl">Detik</span></div>
+            </div>
+
+            <div class="coh-collab">
+              <span class="coh-collab__label">Built in collaboration with</span>
+              <span class="coh-logoplate coh-collab__logo"><img src="images/aws-logo-dark.png" alt="AWS" /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 3. AGENDA — Topik yang Akan Dibahas ═══ -->
+  <section class="coh-section coh-band" id="agenda">
+    <div class="coh-grid-overlay" aria-hidden="true"></div>
+    <div class="coh-container">
+      <div class="coh-section-head center coh-reveal">
+        <span class="coh-eyebrow"><span class="coh-mono">01 //</span> Topik yang Akan Dibahas</span>
+        <h2 class="coh-h2" data-scramble>Dari konsep sampai penerapan di dunia kerja</h2>
+        <p class="coh-lead" style="margin-inline:auto;">Lima topik utama yang akan dikupas tuntas selama sesi LIVE bersama ahlinya.</p>
+      </div>
+      <div class="coh-rows">
+        <article class="coh-card coh-row coh-reveal">
+          <span class="coh-num">1</span>
+          <div><h3 class="coh-h3">Mengapa Cybersecurity Menjadi Skill yang Semakin Penting di Era AI</h3>
+          <p>Bagaimana AI memperluas permukaan serangan sekaligus mempercepat serangan — dan kenapa kebutuhan talenta keamanan justru ikut naik.</p></div>
+        </article>
+        <article class="coh-card coh-row coh-reveal">
+          <span class="coh-num">2</span>
+          <div><h3 class="coh-h3">Mengapa Continuous Learning Menjadi Kunci di Era AI</h3>
+          <p>Lanskap ancaman dan tooling berubah tiap tahun. Cara membangun kebiasaan belajar supaya skill kamu tidak cepat usang.</p></div>
+        </article>
+        <article class="coh-card coh-row coh-reveal">
+          <span class="coh-num">3</span>
+          <div><h3 class="coh-h3">Apa yang Sebenarnya Dikerjakan oleh Seorang Cybersecurity Professional?</h3>
+          <p>Gambaran jujur soal pekerjaan sehari-hari: deteksi ancaman, triase alert, dan respons insiden — di luar mitos “hacker”.</p></div>
+        </article>
+        <article class="coh-card coh-row coh-reveal">
+          <span class="coh-num">4</span>
+          <div><h3 class="coh-h3">Skill Cybersecurity yang Dicari Industri Saat Ini</h3>
+          <p>Kombinasi skill teknis dan non-teknis yang benar-benar dicari perusahaan di Indonesia saat merekrut.</p></div>
+        </article>
+        <article class="coh-card coh-row coh-reveal">
+          <span class="coh-num">5</span>
+          <div><h3 class="coh-h3">Roadmap Menjadi Cybersecurity Professional yang Job-Ready</h3>
+          <p>Urutan belajar yang terstruktur — dari fondasi, lab praktik, sampai portofolio dan sertifikasi yang relevan.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. WHO IT'S FOR — Cocok Untuk Kamu Jika ═══ -->
+  <section class="coh-section">
+    <div class="coh-container">
+      <div class="coh-section-head center coh-reveal">
+        <span class="coh-eyebrow"><span class="coh-mono">02 //</span> Open House Ini Cocok Untuk Kamu Jika…</span>
+        <h2 class="coh-h2" data-scramble>Kamu ingin masuk ke dunia cybersecurity</h2>
+      </div>
+      <div class="coh-grid">
+        <article class="coh-card coh-reveal">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- grad cap -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg>
+          </div>
+          <span class="coh-tag">Fresh Graduate</span>
+          <h3 class="coh-h3">Lulusan IT / Ilmu Komputer</h3>
+          <p>Sudah paham networking &amp; dasar programming, tapi belum punya security mindset dan bukti kemampuan yang bisa ditunjukkan.</p>
+        </article>
+        <article class="coh-card coh-reveal">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- server / terminal -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1"/><rect x="3" y="13" width="18" height="7" rx="1"/><path d="M7 7.5h.01M7 16.5h.01"/><path d="m11 15 2 2-2 2"/></svg>
+          </div>
+          <span class="coh-tag">1–3 Tahun Pengalaman</span>
+          <h3 class="coh-h3">IT Professional Awal</h3>
+          <p>Sysadmin, network engineer, developer, atau helpdesk yang ingin beralih ke keamanan siber lebih cepat daripada kuliah lagi.</p>
+        </article>
+        <article class="coh-card coh-reveal">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- switch arrows -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
+          </div>
+          <span class="coh-tag">Career Switcher</span>
+          <h3 class="coh-h3">Penasaran dengan Cybersecurity</h3>
+          <p>Kamu merasa cybersecurity itu penting &amp; menjanjikan, tapi belum tahu harus mulai belajar dari mana secara terstruktur.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. WHAT YOU GET — Yang Akan Kamu Dapatkan ═══ -->
+  <section class="coh-section coh-band">
+    <div class="coh-grid-overlay" aria-hidden="true"></div>
+    <div class="coh-container">
+      <div class="coh-section-head coh-reveal">
+        <h2 class="coh-h2" data-scramble>Apa yang Kamu Dapatkan</h2>
+      </div>
+      <div class="coh-grid coh-grid--4 coh-reveal">
+        <article class="coh-card coh-get">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- shield-check (security insight) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.5 8 9 4.8-1.5 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="coh-h3">Insight langsung dari ahli keamanan siber</h3>
+        </article>
+        <article class="coh-card coh-get">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- radar / scan (career map) -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.07 4.93A10 10 0 1 0 22 12"/><path d="M12 12 20 4"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3 class="coh-h3">Peta jalur karier yang realistis</h3>
+        </article>
+        <article class="coh-card coh-get">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- program / ticket-tag -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.5 12 21l-8-8V5a1 1 0 0 1 1-1h8Z"/><path d="M7.5 7.5h.01"/></svg>
+          </div>
+          <h3 class="coh-h3">Info program &amp; early bird</h3>
+        </article>
+        <article class="coh-card coh-get">
+          <div class="coh-ico" aria-hidden="true">
+            <!-- Q&A / chat -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"/><path d="M9.5 9a2 2 0 1 1 3 1.7c-.5.3-1 .8-1 1.3M11.5 15h.01"/></svg>
+          </div>
+          <h3 class="coh-h3">Sesi tanya jawab langsung</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. SPEAKERS ═══ -->
+  <section class="coh-section coh-speakers">
+    <div class="coh-speakers__bg" aria-hidden="true"></div>
+    <div class="coh-container">
+      <div class="coh-section-head center coh-reveal">
+        <span class="coh-eyebrow"><span class="coh-mono">03 //</span> Pembicara</span>
+        <h2 class="coh-h2" data-scramble>Belajar langsung dari ahlinya</h2>
+      </div>
+      <div class="coh-speakers__solo">
+        <article class="coh-card coh-speaker coh-reveal">
+          <div class="coh-speaker__avatar coh-speaker__avatar--photo">
+            <img src="images/yohan-muliono.webp" alt="Yohan Muliono" width="380" height="380" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h4>Yohan Muliono, S.Kom., M.TI.</h4>
+            <p class="role">Head of Cyber Security Program — BINUS University</p>
+            <p class="org">Memimpin program Cyber Security di School of Computer Science · bersertifikasi CND, CEH Master &amp; eMAPT.</p>
+          </div>
+        </article>
+      </div>
+      <p style="text-align:center; color:var(--c-muted-2); font-size:var(--fs-sm); margin-top:1.5rem;">*Pembicara tambahan akan diumumkan menyusul.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 7. URGENCY BAND ═══ -->
+  <section class="coh-section coh-final">
+    <div class="coh-final__bg" aria-hidden="true"></div>
+    <div class="coh-final__glow"></div>
+    <div class="coh-container coh-reveal">
+      <span class="coh-urgency__pill" style="margin-bottom:1.25rem;">⚡ Slot Terbatas</span>
+      <h2 class="coh-h2" data-scramble style="max-width:20ch; margin-inline:auto;">Daftar Sekarang — <span class="coh-accent">GRATIS</span></h2>
+
+      <div class="coh-closing-date">
+        <span>📅 Kamis, 23 Juli 2026</span>
+        <span class="coh-dot"></span>
+        <span>🕖 19.00–21.00 WIB</span>
+      </div>
+
+      <div class="coh-usps">
+        <span class="coh-usp"><span class="coh-live-dot"></span> Live &amp; Interaktif</span>
+        <span class="coh-usp">▶️ Live via YouTube</span>
+        <span class="coh-usp coh-accent" style="border-color:var(--c-accent);">✦ 100% Gratis</span>
+      </div>
+
+      <div class="coh-btn-row">
+        <a class="coh-btn coh-btn--primary" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<script>
+(function () {
+  /* ── Countdown ──────────────────────────────────
+     Event start, WIB (UTC+7). Format: 'YYYY-MM-DDTHH:mm:ss+07:00' */
+  var EVENT_DATE = '2026-07-23T19:00:00+07:00';
+
+  var target = new Date(EVENT_DATE).getTime();
+
+  var els = {
+    days:  document.querySelector('[data-cd="days"]'),
+    hours: document.querySelector('[data-cd="hours"]'),
+    mins:  document.querySelector('[data-cd="mins"]'),
+    secs:  document.querySelector('[data-cd="secs"]')
+  };
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var diff = Math.max(0, target - Date.now());
+    var s = Math.floor(diff / 1000);
+    if (els.days)  els.days.textContent  = pad(Math.floor(s / 86400));
+    if (els.hours) els.hours.textContent = pad(Math.floor((s % 86400) / 3600));
+    if (els.mins)  els.mins.textContent  = pad(Math.floor((s % 3600) / 60));
+    if (els.secs)  els.secs.textContent  = pad(s % 60);
+  }
+  tick();
+  if (els.days) setInterval(tick, 1000);
+
+  /* ── Binary texture (decorative, injected) ────── */
+  document.querySelectorAll('[data-binary]').forEach(function (el) {
+    var s = '';
+    for (var i = 0; i < 600; i++) s += (Math.round(i * 1.7) % 3 ? '1' : '0') + ' ';
+    el.textContent = s;
+  });
+
+  /* ── Reveal on scroll ─────────────────────────── */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            || location.search.indexOf('reveal') > -1;
+  var items = document.querySelectorAll('.coh-reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, idx) {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (Math.min(idx, 4) * 0.06) + 's';
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ── Decode / scramble headlines ──────────────── */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GLYPHS = '!<>-_\\/[]{}=+*^?#01ABCDEF';
+
+  function scrambleEl(el) {
+    if (el.dataset.scrambled) return;
+    el.dataset.scrambled = '1';
+
+    // collect editable text nodes (preserves child <span> styling/markup)
+    var nodes = [];
+    (function walk(n) {
+      for (var i = 0; i < n.childNodes.length; i++) {
+        var c = n.childNodes[i];
+        if (c.nodeType === 3) { if (c.nodeValue.trim()) nodes.push(c); }
+        else if (c.nodeType === 1 && !c.classList.contains('coh-caret')) walk(c);
+      }
+    })(el);
+    if (!nodes.length) return;
+
+    var targets = nodes.map(function (n) { return n.nodeValue; });
+    // start blank
+    nodes.forEach(function (n) { n.nodeValue = n.nodeValue.replace(/[^\s]/g, ' '); });
+
+    var frame = 0;
+    var total = 0;
+    targets.forEach(function (t) { total += t.length; });
+    var speed = Math.max(1.1, Math.min(2.4, total / 12)); // resolve pace (faster for long headings)
+
+    function render() {
+      var revealCount = Math.floor(frame); // chars settled so far
+      var seen = 0;
+      nodes.forEach(function (n, ni) {
+        var t = targets[ni], out = '';
+        for (var i = 0; i < t.length; i++) {
+          var globalIdx = seen + i;
+          if (t[i] === ' ') { out += ' '; continue; }
+          if (globalIdx < revealCount) out += t[i];
+          else if (globalIdx < revealCount + 8) out += GLYPHS[Math.floor((frame * 7 + globalIdx * 13) % GLYPHS.length)];
+          else out += ' ';
+        }
+        n.nodeValue = out;
+        seen += t.length;
+      });
+      frame += speed;
+      if (revealCount <= total + 8) requestAnimationFrame(render);
+      else nodes.forEach(function (n, ni) { n.nodeValue = targets[ni]; });
+    }
+    requestAnimationFrame(render);
+  }
+
+  var scrambleEls = document.querySelectorAll('[data-scramble]');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    // leave text as-is (already correct in the DOM)
+  } else {
+    // hero word marked data-scramble-now fires on load
+    document.querySelectorAll('[data-scramble-now]').forEach(function (el) {
+      setTimeout(function () { scrambleEl(el); }, 250);
+    });
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { scrambleEl(e.target); sio.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    scrambleEls.forEach(function (el) {
+      if (!el.hasAttribute('data-scramble-now')) sio.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
