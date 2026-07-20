@@ -98,9 +98,10 @@
   .coh-h1 {
     font-size: var(--fs-h1);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.12;
     letter-spacing: -0.02em;
     margin: 0 0 0.85rem;
+    padding-bottom: 0.08em; /* headroom so background-clip:text doesn't clip descenders (e.g. "y") */
     overflow-wrap: break-word;
     background: linear-gradient(120deg, #ffffff 40%, #c9d4ff 100%);
     -webkit-background-clip: text; background-clip: text;
@@ -624,12 +625,36 @@
     </div>
   </header>
 
+  <!-- ═══ 2. SPEAKERS ═══ -->
+  <section class="coh-section coh-speakers">
+    <div class="coh-speakers__bg" aria-hidden="true"></div>
+    <div class="coh-container">
+      <div class="coh-section-head center coh-reveal">
+        <span class="coh-eyebrow"><span class="coh-mono">01 //</span> Pembicara</span>
+        <h2 class="coh-h2" data-scramble>Belajar langsung dari ahlinya</h2>
+      </div>
+      <div class="coh-speakers__solo">
+        <article class="coh-card coh-speaker coh-reveal">
+          <div class="coh-speaker__avatar coh-speaker__avatar--photo">
+            <img src="images/yohan-muliono.webp" alt="Yohan Muliono" width="380" height="380" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h4>Yohan Muliono, S.Kom., M.TI.</h4>
+            <p class="role">Head of Cyber Security Program — BINUS University</p>
+            <p class="org">Memimpin program Cyber Security di School of Computer Science · bersertifikasi CND, CEH Master &amp; eMAPT.</p>
+          </div>
+        </article>
+      </div>
+      <p style="text-align:center; color:var(--c-muted-2); font-size:var(--fs-sm); margin-top:1.5rem;">*Pembicara tambahan akan diumumkan menyusul.</p>
+    </div>
+  </section>
+
   <!-- ═══ 3. AGENDA — Topik yang Akan Dibahas ═══ -->
   <section class="coh-section coh-band" id="agenda">
     <div class="coh-grid-overlay" aria-hidden="true"></div>
     <div class="coh-container">
       <div class="coh-section-head center coh-reveal">
-        <span class="coh-eyebrow"><span class="coh-mono">01 //</span> Topik yang Akan Dibahas</span>
+        <span class="coh-eyebrow"><span class="coh-mono">02 //</span> Topik yang Akan Dibahas</span>
         <h2 class="coh-h2" data-scramble>Dari konsep sampai penerapan di dunia kerja</h2>
         <p class="coh-lead" style="margin-inline:auto;">Lima topik utama yang akan dikupas tuntas selama sesi LIVE bersama ahlinya.</p>
       </div>
@@ -667,7 +692,7 @@
   <section class="coh-section">
     <div class="coh-container">
       <div class="coh-section-head center coh-reveal">
-        <span class="coh-eyebrow"><span class="coh-mono">02 //</span> Open House Ini Cocok Untuk Kamu Jika…</span>
+        <span class="coh-eyebrow"><span class="coh-mono">03 //</span> Open House Ini Cocok Untuk Kamu Jika…</span>
         <h2 class="coh-h2" data-scramble>Kamu ingin masuk ke dunia cybersecurity</h2>
       </div>
       <div class="coh-grid">
@@ -739,30 +764,6 @@
           <h3 class="coh-h3">Sesi tanya jawab langsung</h3>
         </article>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ 6. SPEAKERS ═══ -->
-  <section class="coh-section coh-speakers">
-    <div class="coh-speakers__bg" aria-hidden="true"></div>
-    <div class="coh-container">
-      <div class="coh-section-head center coh-reveal">
-        <span class="coh-eyebrow"><span class="coh-mono">03 //</span> Pembicara</span>
-        <h2 class="coh-h2" data-scramble>Belajar langsung dari ahlinya</h2>
-      </div>
-      <div class="coh-speakers__solo">
-        <article class="coh-card coh-speaker coh-reveal">
-          <div class="coh-speaker__avatar coh-speaker__avatar--photo">
-            <img src="images/yohan-muliono.webp" alt="Yohan Muliono" width="380" height="380" loading="lazy" decoding="async" />
-          </div>
-          <div>
-            <h4>Yohan Muliono, S.Kom., M.TI.</h4>
-            <p class="role">Head of Cyber Security Program — BINUS University</p>
-            <p class="org">Memimpin program Cyber Security di School of Computer Science · bersertifikasi CND, CEH Master &amp; eMAPT.</p>
-          </div>
-        </article>
-      </div>
-      <p style="text-align:center; color:var(--c-muted-2); font-size:var(--fs-sm); margin-top:1.5rem;">*Pembicara tambahan akan diumumkan menyusul.</p>
     </div>
   </section>
 
