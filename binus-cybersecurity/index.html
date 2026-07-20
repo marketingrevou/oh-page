@@ -552,7 +552,7 @@
       <span class="coh-logoplate">
         <img src="images/trilogo-revou-binus-greatnusa.png" alt="RevoU · BINUS University · GreatNusa" />
       </span>
-      <a class="coh-btn coh-btn--primary coh-nav__cta" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Gratis</a>
+      <a class="coh-btn coh-btn--primary coh-nav__cta" data-cta href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Gratis</a>
     </div>
   </nav>
 
@@ -585,7 +585,7 @@
             Kenali program <b class="coh-strong">Applied Cybersecurity with AI</b> sebelum kamu mendaftar.
           </p>
           <div class="coh-btn-row">
-            <a class="coh-btn coh-btn--primary" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+            <a class="coh-btn coh-btn--primary" data-cta href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
           </div>
           <div class="coh-hero__meta">
             <span>📅 <b>Kamis, 23 Juli 2026</b></span>
@@ -787,7 +787,7 @@
       </div>
 
       <div class="coh-btn-row">
-        <a class="coh-btn coh-btn--primary" href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <a class="coh-btn coh-btn--primary" data-cta href="https://revou-cyber-oh.paperform.co/?prog=Cyber&date=2026-07-23" target="_blank" rel="noopener">Daftar Open House Gratis</a>
       </div>
     </div>
   </section>
@@ -820,6 +820,24 @@
   }
   tick();
   if (els.days) setInterval(tick, 1000);
+
+  /* ── UTM / attribution pass-through ─────────────
+     Carry tracking params from THIS page's URL onto every CTA
+     so Paperform receives the original ad attribution.
+     Existing params on the CTA (prog, date) are preserved. */
+  (function () {
+    var PASS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+    var incoming = new URLSearchParams(window.location.search);
+    document.querySelectorAll('a[data-cta]').forEach(function (a) {
+      var url;
+      try { url = new URL(a.href); } catch (e) { return; }
+      PASS.forEach(function (key) {
+        var val = incoming.get(key);
+        if (val !== null && val !== '') url.searchParams.set(key, val);
+      });
+      a.href = url.toString();
+    });
+  })();
 
   /* ── Binary texture (decorative, injected) ────── */
   document.querySelectorAll('[data-binary]').forEach(function (el) {
