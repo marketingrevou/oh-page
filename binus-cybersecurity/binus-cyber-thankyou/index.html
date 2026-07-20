@@ -86,7 +86,15 @@
     text-align: center;
   }
 
-  .coh-ty__logo { margin-bottom: clamp(2rem, 5vw, 3rem); }
+  .coh-ty__logo {
+    margin: 0 auto clamp(2rem, 5vw, 3rem);
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 3vw, 1.75rem);
+    border-radius: 999px;
+    box-shadow: 0 12px 30px -14px rgba(0,0,0,0.5);
+  }
   .coh-ty__logo img { height: clamp(30px, 5.5vw, 40px); width: auto; margin: 0 auto; }
 
   .coh-ty__badge {
