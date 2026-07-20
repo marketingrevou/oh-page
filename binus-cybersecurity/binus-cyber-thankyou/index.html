@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terima Kasih — Open House Cybersecurity | RevoU × BINUS</title>
+  <meta name="description" content="Terima kasih sudah mendaftar Open House Cybersecurity RevoU × BINUS. Join WhatsApp Group untuk informasi lebih lanjut." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ============================================================
+     Thank-you page — Open House Cybersecurity
+     Reuses the dark SOC visual system from the main LP.
+     ============================================================ */
+
+  .coh-page *,
+  .coh-page *::before,
+  .coh-page *::after { box-sizing: border-box; min-width: 0; }
+
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; min-height: 100%; }
+
+  .coh-page {
+    --c-bg:            #090d1e;
+    --c-card:          #0d1330;
+    --c-accent:        #f08700;   /* amber */
+    --c-accent-soft:   rgba(240,135,0,0.18);
+    --c-accent-glow:   rgba(240,135,0,0.35);
+    --c-text:          #ffffff;
+    --c-muted:         #9aa3b8;
+    --c-muted-2:       #6b7392;
+    --c-live:          #21d07a;   /* green */
+    --c-wa:            #25d366;   /* WhatsApp green */
+    --c-hair:          rgba(255,255,255,0.09);
+
+    --fs-eyebrow: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+    --fs-h1:      clamp(2rem, 1.4rem + 2.9vw, 3rem);
+    --fs-body:    clamp(1rem, 0.94rem + 0.3vw, 1.25rem);
+    --fs-sm:      clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
+
+    --radius: 2px;
+
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--c-text);
+    background: var(--c-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .coh-page img { max-width: 100%; display: block; }
+  .coh-page a { color: inherit; text-decoration: none; }
+
+  /* Ambient glow, echoing the hero of the main LP */
+  .coh-ty {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 6vw, 3rem);
+    overflow: clip;
+  }
+  .coh-ty::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 55% at 50% 12%, rgba(240,135,0,0.16), transparent 70%),
+      radial-gradient(50% 45% at 80% 90%, rgba(28,39,101,0.55), transparent 70%);
+    pointer-events: none;
+  }
+
+  .coh-ty__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+  }
+
+  .coh-ty__logo { margin-bottom: clamp(2rem, 5vw, 3rem); }
+  .coh-ty__logo img { height: clamp(30px, 5.5vw, 40px); width: auto; margin: 0 auto; }
+
+  .coh-ty__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-live);
+    background: rgba(33,208,122,0.1);
+    border: 1px solid rgba(33,208,122,0.28);
+    padding: 0.5em 1em;
+    border-radius: 999px;
+    margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  }
+  .coh-ty__badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--c-live);
+    box-shadow: 0 0 0 4px rgba(33,208,122,0.18);
+  }
+
+  .coh-ty__title {
+    font-size: var(--fs-h1);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 clamp(0.85rem, 2vw, 1.15rem);
+    padding-bottom: 0.08em;
+    background: linear-gradient(120deg, #ffffff 40%, #c9d4ff 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .coh-ty__title .accent {
+    -webkit-text-fill-color: var(--c-accent);
+    color: var(--c-accent);
+  }
+
+  .coh-ty__lead {
+    font-size: var(--fs-body);
+    color: var(--c-muted);
+    margin: 0 auto clamp(2rem, 4.5vw, 2.75rem);
+    max-width: 46ch;
+  }
+
+  .coh-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+    font-family: inherit;
+    font-size: var(--fs-body);
+    font-weight: 700;
+    padding: 0.95em 1.8em;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .coh-btn--wa { background: var(--c-wa); color: #05300f; box-shadow: 0 8px 30px -8px rgba(37,211,102,0.45); }
+  .coh-btn--wa:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px rgba(37,211,102,0.55); }
+  .coh-btn svg { width: 1.3em; height: 1.3em; }
+
+  .coh-ty__note {
+    margin: clamp(1.5rem, 3.5vw, 2.25rem) 0 0;
+    font-size: var(--fs-sm);
+    color: var(--c-muted-2);
+  }
+
+  .coh-ty__foot {
+    text-align: center;
+    padding: 1.5rem 1.25rem 2rem;
+    color: var(--c-muted-2);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--c-hair);
+  }
+
+  @media (max-width: 560px) {
+    .coh-btn { width: 100%; }
+  }
+  </style>
+</head>
+<body>
+  <main class="coh-page">
+    <section class="coh-ty">
+      <div class="coh-ty__inner">
+        <div class="coh-ty__logo">
+          <img src="../images/trilogo-revou-binus-greatnusa.png" alt="RevoU · BINUS University · GreatNusa" />
+        </div>
+
+        <span class="coh-ty__badge"><span class="dot"></span>Pendaftaran Berhasil</span>
+
+        <h1 class="coh-ty__title">Terima Kasih Sudah Mendaftar! <span class="accent">🎉</span></h1>
+
+        <p class="coh-ty__lead">
+          Pendaftaran kamu untuk Open House Cybersecurity sudah kami terima.
+          Satu langkah lagi — join WhatsApp Group untuk mendapatkan reminder,
+          link acara, dan informasi lebih lanjut.
+        </p>
+
+        <a class="coh-btn coh-btn--wa" href="https://rebrand.ly/wag-aics" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Join WhatsApp Group
+        </a>
+
+        <p class="coh-ty__note">Gratis · Informasi acara & reminder dikirim di grup</p>
+      </div>
+    </section>
+
+    <footer class="coh-ty__foot">
+      © 2026 RevoU × BINUS University · Open House Cybersecurity
+    </footer>
+  </main>
+</body>
+</html>
