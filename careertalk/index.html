@@ -357,16 +357,29 @@
   @media (max-width: 880px) {
     .ct-hero__grid { grid-template-columns: 1fr; gap: 2.25rem; }
     .ct-eventcard { max-width: 480px; margin-inline: 0; }
-    /* keep icons from crowding the stacked mobile layout / CTA fold:
-       hide the two that sit over content, shrink the corner accents */
-    .ct-page .ct-s-petals, .ct-page .ct-s-pie { display: none; }
-    .ct-s-star { width: 58px; top: 0.5%; right: 1%; opacity: 0.85; }
-    .ct-s-gear { width: 58px; bottom: 1.5%; right: 2%; opacity: 0.85; }
+    /* tablet: keep bold icons but rein in the two that sit over content */
+    .ct-s-petals { top: 30%; right: -8%; }
+    .ct-s-pie { bottom: 4%; left: -6%; }
   }
   @media (max-width: 600px) {
     .ct-btn { width: 100%; }
     .ct-btn-row { flex-direction: column; }
     .ct-footer__inner { flex-direction: column; text-align: center; }
+
+    /* Phone: give icons real presence by making them larger and letting
+       them bleed off the edges into the hero's empty margins, instead of
+       shrinking them to tiny corner dots. */
+    .ct-hero { overflow: clip; }
+    .ct-hero__grid { padding-block: clamp(1.75rem, 6vw, 2.5rem) clamp(3rem, 12vw, 4.5rem); }
+
+    /* star — large, top-right, bleeding past the edge above the headline */
+    .ct-page .ct-s-star   { display: block; width: clamp(78px, 24vw, 112px); top: -1%; right: -9%; opacity: 0.9; }
+    /* petals — brought back: large, bleeding off the LEFT edge beside the card */
+    .ct-page .ct-s-petals { display: block; width: clamp(92px, 28vw, 132px); top: auto; bottom: 5%; left: -15%; right: auto; opacity: 0.92; }
+    /* gear — large, bottom-right beside the event card, bleeding off-edge */
+    .ct-page .ct-s-gear   { display: block; width: clamp(84px, 26vw, 122px); bottom: 2%; right: -10%; opacity: 0.9; }
+    /* pie stays hidden on phones — it would collide with the event card */
+    .ct-page .ct-s-pie    { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .ct-page * { animation: none !important; transition: none !important; }
@@ -483,7 +496,7 @@
           <article class="ct-row ct-reveal">
             <span class="ct-num">3</span>
             <div><h3 class="ct-h3">Choosing Your Career Growth Strategy</h3>
-            <p>Eksplor berbagai jalur pertumbuhan karier — naik di peran saat ini, pindah perusahaan, atau switch karier — dan cara memilih yang paling cocok dengan tujuanmu.</p></div>
+            <p>Eksplor berbagai jalur pertumbuhan karier — naik di posisi saat ini, pindah perusahaan, atau switch karier — dan cara memilih yang paling cocok dengan tujuanmu.</p></div>
           </article>
           <article class="ct-row ct-reveal">
             <span class="ct-num">4</span>
@@ -521,7 +534,7 @@
         <article class="ct-card ct-reveal">
           <span class="ct-tag">Career Switcher</span>
           <h3 class="ct-h3">Berpikir untuk pindah jalur</h3>
-          <p>Kamu mempertimbangkan pindah peran, perusahaan, atau switch karier dan butuh peta yang jelas.</p>
+          <p>Kamu mempertimbangkan pindah posisi, perusahaan, atau switch karier dan butuh peta yang jelas.</p>
         </article>
       </div>
     </div>
