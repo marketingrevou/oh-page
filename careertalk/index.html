@@ -187,13 +187,18 @@
     gap: clamp(1.75rem, 4vw, 3rem); align-items: center;
     padding-block: clamp(2.5rem, 5vw, 4.5rem);
   }
-  /* floating decorative shapes in hero */
-  .ct-hero__shape { position: absolute; z-index: 0; pointer-events: none; opacity: 0.95; aspect-ratio: 1; height: auto; }
-  .ct-s-star   { width: clamp(70px,9vw,120px); top: 8%;  right: 6%;  animation: ct-spin 26s linear infinite; }
-  .ct-s-gear   { width: clamp(60px,8vw,100px); bottom: 10%; right: 30%; animation: ct-spin 34s linear infinite reverse; }
-  .ct-s-blob   { width: clamp(80px,10vw,140px); top: 45%; right: -3%; animation: ct-float 7s ease-in-out infinite; }
+  /* floating decorative icons in hero (rich Figma icons) */
+  .ct-hero__shape { position: absolute; z-index: 0; pointer-events: none; aspect-ratio: 1; height: auto; will-change: transform; }
+  /* star — top-right corner, gently spinning */
+  .ct-s-star  { width: clamp(96px,11vw,190px);  top: 3%;   right: 3%;  animation: ct-spin 30s linear infinite; }
+  /* gear — bottom-right, counter-spin */
+  .ct-s-gear  { width: clamp(94px,11vw,180px);  bottom: 4%; right: 6%;  animation: ct-spin 38s linear infinite reverse; }
+  /* petals — mid-right edge, bobbing */
+  .ct-s-petals{ width: clamp(104px,12vw,210px); top: 36%;  right: -6%; animation: ct-float 8s ease-in-out infinite; }
+  /* pie — lower-left of copy column, subtle bob (desktop only) */
+  .ct-s-pie   { width: clamp(86px,9vw,156px);   bottom: 6%; left: -4%; animation: ct-float 9s ease-in-out infinite 1.2s; }
   @keyframes ct-spin { to { transform: rotate(360deg); } }
-  @keyframes ct-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @keyframes ct-float { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
 
   .ct-hero__meta {
     display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center;
@@ -352,6 +357,11 @@
   @media (max-width: 880px) {
     .ct-hero__grid { grid-template-columns: 1fr; gap: 2.25rem; }
     .ct-eventcard { max-width: 480px; margin-inline: 0; }
+    /* keep icons from crowding the stacked mobile layout / CTA fold:
+       hide the two that sit over content, shrink the corner accents */
+    .ct-page .ct-s-petals, .ct-page .ct-s-pie { display: none; }
+    .ct-s-star { width: 58px; top: 0.5%; right: 1%; opacity: 0.85; }
+    .ct-s-gear { width: 58px; bottom: 1.5%; right: 2%; opacity: 0.85; }
   }
   @media (max-width: 600px) {
     .ct-btn { width: 100%; }
@@ -382,10 +392,11 @@
 
   <!-- ═══ 1. HERO ═══ -->
   <header class="ct-hero">
-    <!-- floating shapes (from Figma) -->
-    <img class="ct-hero__shape ct-s-star" src="images/shape-star.svg" alt="" aria-hidden="true" />
-    <img class="ct-hero__shape ct-s-gear" src="images/shape-gear.svg" alt="" aria-hidden="true" />
-    <img class="ct-hero__shape ct-s-blob" src="images/shape-pacman.svg" alt="" aria-hidden="true" />
+    <!-- floating rich icons (from Figma) -->
+    <img class="ct-hero__shape ct-s-star"   src="images/icon-star.svg"   alt="" aria-hidden="true" />
+    <img class="ct-hero__shape ct-s-petals" src="images/icon-petals.svg" alt="" aria-hidden="true" />
+    <img class="ct-hero__shape ct-s-gear"   src="images/icon-gear.svg"   alt="" aria-hidden="true" />
+    <img class="ct-hero__shape ct-s-pie"    src="images/icon-pie.svg"    alt="" aria-hidden="true" />
 
     <div class="ct-container">
       <div class="ct-hero__grid">

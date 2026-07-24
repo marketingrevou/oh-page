@@ -1,0 +1,30 @@
+<svg width="481" height="481" viewBox="0 0 481 481" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon6">
+<path id="icon5" d="M399.383 67.0796L144.163 24.8492C126.727 21.9641 110.254 33.7599 107.369 51.1959L65.1384 306.416C62.2533 323.852 74.0492 340.325 91.4852 343.21L346.705 385.441C364.141 388.326 380.614 376.53 383.5 359.094L425.73 103.874C428.615 86.4382 416.819 69.9647 399.383 67.0796Z" fill="url(#paint0_linear_1480_695)"/>
+<g id="icon3">
+<g id="Union" filter="url(#filter0_d_1480_695)">
+<path d="M240.05 210.07C326.83 187.91 415.15 240.29 437.311 327.07L280.18 367.2L123.05 407.33C100.89 320.55 153.27 232.23 240.05 210.07ZM357.06 12.8C379.22 99.58 326.84 187.9 240.06 210.06C153.28 232.22 64.9598 179.84 42.7998 93.0598L357.06 12.8Z" fill="url(#paint1_radial_1480_695)"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_1480_695" x="-0.00019455" y="4.95911e-05" width="480.111" height="480.13" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="30"/>
+<feGaussianBlur stdDeviation="21.4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.616815 0 0 0 0 0 0 0 0 0 0.254996 0 0 0 0.36 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1480_695"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1480_695" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_1480_695" x1="271.773" y1="45.9644" x2="219.095" y2="364.326" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFB5E5"/>
+<stop offset="1" stop-color="#FF7DD1"/>
+</linearGradient>
+<radialGradient id="paint1_radial_1480_695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174.96 75.3) rotate(71.4802) scale(533.635 533.609)">
+<stop stop-color="#EA3781"/>
+<stop offset="1" stop-color="#C90A59"/>
+</radialGradient>
+</defs>
+</svg>
