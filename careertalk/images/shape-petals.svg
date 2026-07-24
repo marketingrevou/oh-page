@@ -1,0 +1,4 @@
+<svg viewBox="87.21 -50.32 520.78 520.78" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="ctPet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(282.5 75.3) rotate(71.4802) scale(533.635 533.609)"><stop stop-color="#EA3781"/><stop offset="1" stop-color="#C90A59"/></radialGradient></defs>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M347.59 210.07C434.37 187.91 522.69 240.29 544.851 327.07L387.72 367.2L230.59 407.33C208.43 320.55 260.81 232.23 347.59 210.07ZM464.6 12.8C486.76 99.58 434.38 187.9 347.6 210.06C260.82 232.22 172.5 179.84 150.34 93.0598L464.6 12.8Z" fill="url(#ctPet)"/>
+</svg>

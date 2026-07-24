@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1951421131676868');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1951421131676868&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>CareerTalk GRATIS — Design Your Career: Build the Skills & Strategy for Long-Term Growth | RevoU</title>
+  <meta name="description" content="CareerTalk online GRATIS: rancang kariermu & bangun skill serta strategi untuk pertumbuhan jangka panjang. Sesi LIVE bersama Gianina Godine (Manager, JAC Recruitment). 29 Juli 2026, 19.00–21.00 WIB via Zoom. Daftar sekarang." />
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ============================================================
+     CareerTalk — Design Your Career
+     Scoped to .ct-page so styles never leak in Webflow.
+     Visual system extracted from Figma (bright RevoU CareerTalk).
+     Palette (from Figma shapes): yellow #FFDE3D, magenta #EA3781,
+     hot-pink #FF7DD1, orange #F65616, amber #FBB040,
+     purple #9F65EA, lavender #E3D2FF.
+     ============================================================ */
+
+  .ct-page *,
+  .ct-page *::before,
+  .ct-page *::after { box-sizing: border-box; min-width: 0; }
+
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
+
+  .ct-page {
+    /* ── Colors ─────────────────────────────────── */
+    --c-bg:        #ffffff;
+    --c-bg-2:      #fffef9;   /* gradient foot, from Figma */
+    --c-cream:     #fff8e6;
+    --c-ink:       #111111;   /* headline black */
+    --c-ink-soft:  #333333;   /* instructor text */
+    --c-muted:     #55597a;   /* readable muted */
+    --c-muted-2:   #8a8fae;
+
+    --c-yellow:    #FFDE3D;
+    --c-magenta:   #EA3781;
+    --c-pink:      #FF7DD1;
+    --c-orange:    #F65616;
+    --c-amber:     #FBB040;
+    --c-purple:    #9F65EA;
+    --c-lav:       #E3D2FF;
+
+    --c-hair:      rgba(17,17,17,0.10);
+    --c-hair-2:    rgba(17,17,17,0.06);
+
+    /* ── Fluid type scale ───────────────────────── */
+    --fs-eyebrow: clamp(0.72rem, 0.55rem + 0.5vw, 0.9rem);
+    --fs-h1:      clamp(2.1rem, 1.2rem + 4vw, 3.9rem);
+    --fs-h2:      clamp(1.65rem, 1.05rem + 2.2vw, 2.5rem);
+    --fs-h3:      clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+    --fs-body:    clamp(1rem, 0.94rem + 0.3vw, 1.2rem);
+    --fs-sm:      clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
+
+    /* ── Fluid spacing ──────────────────────────── */
+    --sp-section: clamp(3.5rem, 2rem + 6vw, 6rem);
+    --sp-gap:     clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+    --sp-stack:   clamp(2rem, 1.3rem + 2.4vw, 3rem);
+    --pad-x:      clamp(1.25rem, -0.5rem + 7vw, 8.75rem);
+    --maxw:       1120px;
+
+    --radius:     22px;         /* rounded, playful */
+    --radius-sm:  14px;
+    --radius-pill: 999px;
+    --shadow:      0 24px 60px -24px rgba(60,40,120,0.28);
+    --shadow-sm:   0 14px 34px -18px rgba(60,40,120,0.22);
+    --shadow-soft: 0 18px 40px -20px rgba(80,50,140,0.28);
+    --shadow-btn:  0 12px 26px -10px rgba(120,90,20,0.45);
+    --shadow-dark: 0 14px 30px -12px rgba(20,20,30,0.45);
+
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--c-ink);
+    background: linear-gradient(180deg, #ffffff 0%, #fffef9 60%, #fff6ef 100%);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  .ct-page img, .ct-page svg { max-width: 100%; display: block; }
+  .ct-page a { color: inherit; text-decoration: none; }
+
+  /* ── Layout helpers ─────────────────────────── */
+  .ct-container {
+    width: 100%; max-width: var(--maxw);
+    margin-inline: auto; padding-inline: var(--pad-x);
+  }
+  .ct-section { padding-block: var(--sp-section); position: relative; }
+
+  /* ── Typography ─────────────────────────────── */
+  .ct-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.55em;
+    font-size: var(--fs-eyebrow); font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--c-ink);
+    background: var(--c-yellow);
+    padding: 0.5em 0.95em; border-radius: var(--radius-pill);
+    margin: 0 0 clamp(1rem, 2.2vw, 1.4rem);
+  }
+  .ct-h1 {
+    font-size: var(--fs-h1);
+    font-weight: 800; line-height: 1.08;
+    letter-spacing: -0.025em; margin: 0 0 1rem;
+    color: var(--c-ink); overflow-wrap: break-word;
+  }
+  .ct-h1 .light { font-weight: 500; }
+  .ct-h2 {
+    font-size: var(--fs-h2); font-weight: 800;
+    line-height: 1.14; letter-spacing: -0.02em; margin: 0 0 0.75rem;
+    color: var(--c-ink);
+  }
+  .ct-h3 { font-size: var(--fs-h3); font-weight: 800; line-height: 1.25; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+  .ct-lead { font-size: var(--fs-body); color: var(--c-muted); margin: 0; max-width: 58ch; font-weight: 500; }
+  .ct-strong { color: var(--c-ink); font-weight: 800; }
+
+  .ct-mark { position: relative; white-space: nowrap; }
+  .ct-mark::after {
+    content: ""; position: absolute; left: -0.06em; right: -0.06em; bottom: 0.06em; height: 0.42em;
+    background: var(--c-yellow); z-index: -1; border-radius: 3px;
+  }
+
+  .ct-section-head { max-width: 720px; margin-bottom: var(--sp-stack); }
+  .ct-section-head.center { margin-inline: auto; text-align: center; }
+  .ct-section-head.center .ct-eyebrow { justify-content: center; }
+
+  /* ── Buttons ────────────────────────────────── */
+  .ct-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    font-family: inherit; font-size: var(--fs-body); font-weight: 800;
+    padding: 0.9em 1.7em; border-radius: var(--radius-pill);
+    border: 0; cursor: pointer;
+    transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+    text-align: center; line-height: 1.1;
+  }
+  .ct-page a.ct-btn--primary,
+  .ct-btn--primary { background: var(--c-yellow); color: var(--c-ink); box-shadow: var(--shadow-btn); }
+  .ct-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(120,90,20,0.55); }
+  .ct-btn--primary:active { transform: translateY(0); }
+  .ct-page a.ct-btn--dark,
+  .ct-btn--dark { background: var(--c-ink); color: #ffffff; box-shadow: var(--shadow-dark); }
+  .ct-btn--dark:hover { transform: translateY(-2px); box-shadow: 0 20px 38px -12px rgba(20,20,30,0.5); }
+
+  .ct-btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: clamp(1.4rem, 2.5vw, 1.9rem); }
+
+  /* ── Top nav ────────────────────────────────── */
+  .ct-nav {
+    position: relative; z-index: 5;
+    border-bottom: 1px solid var(--c-hair-2);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(1.4) blur(8px);
+  }
+  .ct-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.7rem; }
+  .ct-nav__brand { display: inline-flex; align-items: center; gap: 0.75rem; }
+  .ct-nav__brand .ct-revou { width: clamp(34px, 5vw, 42px); height: auto; }
+  .ct-nav__brand .ct-ctlogo { height: clamp(24px, 3.6vw, 30px); width: auto; }
+  .ct-nav__divider { width: 1px; height: 26px; background: var(--c-hair); }
+  .ct-nav__cta { font-size: var(--fs-sm); padding: 0.6em 1.2em; }
+
+  /* ── Hero ───────────────────────────────────── */
+  .ct-hero { position: relative; overflow: clip; }
+  .ct-hero .ct-container { position: relative; z-index: 2; }
+  .ct-hero__grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(1.75rem, 4vw, 3rem); align-items: center;
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  /* floating decorative shapes in hero */
+  .ct-hero__shape { position: absolute; z-index: 0; pointer-events: none; opacity: 0.95; aspect-ratio: 1; height: auto; }
+  .ct-s-star   { width: clamp(70px,9vw,120px); top: 8%;  right: 6%;  animation: ct-spin 26s linear infinite; }
+  .ct-s-gear   { width: clamp(60px,8vw,100px); bottom: 10%; right: 30%; animation: ct-spin 34s linear infinite reverse; }
+  .ct-s-blob   { width: clamp(80px,10vw,140px); top: 45%; right: -3%; animation: ct-float 7s ease-in-out infinite; }
+  @keyframes ct-spin { to { transform: rotate(360deg); } }
+  @keyframes ct-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+  .ct-hero__meta {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center;
+    color: var(--c-ink); font-size: var(--fs-sm); font-weight: 700;
+    margin-top: 1.35rem;
+  }
+  .ct-metachip {
+    display: inline-flex; align-items: center; gap: 0.45em;
+    background: #fff; box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-pill); padding: 0.45em 0.95em;
+  }
+  .ct-metachip .ct-dot { width: 0.55em; height: 0.55em; border-radius: 50%; }
+
+  /* ── Event card (hero right) ────────────────── */
+  .ct-eventcard {
+    background: #fff;
+    border-radius: var(--radius); padding: clamp(1.35rem, 2.4vw, 1.85rem);
+    box-shadow: var(--shadow);
+    position: relative; max-width: 420px; margin-left: auto;
+  }
+  .ct-eventcard__top { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .ct-badge {
+    display: inline-flex; align-items: center; gap: 0.4em;
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 0.45em 0.8em; border-radius: var(--radius-pill);
+  }
+  .ct-badge--live { background: var(--c-magenta); color: #fff; }
+  .ct-badge--free { background: var(--c-yellow); color: var(--c-ink); }
+  .ct-live-dot { width: 0.55em; height: 0.55em; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0 rgba(255,255,255,0.7); animation: ct-pulse 1.8s infinite; }
+  @keyframes ct-pulse { 0%{box-shadow:0 0 0 0 rgba(255,255,255,0.7);} 70%{box-shadow:0 0 0 7px rgba(255,255,255,0);} 100%{box-shadow:0 0 0 0 rgba(255,255,255,0);} }
+
+  .ct-eventcard__date { font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); font-weight: 800; line-height: 1.15; margin: 0 0 0.2rem; letter-spacing: -0.01em; }
+  .ct-eventcard__time { color: var(--c-muted); font-weight: 700; font-size: 0.95rem; margin: 0; }
+
+  .ct-countdown { display: flex; gap: 0.5rem; margin: 1.2rem 0; }
+  .ct-cd-unit { flex: 1; text-align: center; background: #fff7dd; border-radius: var(--radius-sm); padding: 0.6rem 0.15rem; }
+  .ct-cd-num { font-size: clamp(1.25rem, 1rem + 1.1vw, 1.7rem); font-weight: 800; color: var(--c-ink); line-height: 1; font-variant-numeric: tabular-nums; }
+  .ct-cd-lbl { display: block; margin-top: 0.35rem; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-muted); font-weight: 700; }
+
+  .ct-eventcard .ct-btn { width: 100%; }
+
+  /* ── Speaker ────────────────────────────────── */
+  .ct-speaker-wrap { max-width: 760px; margin-inline: auto; }
+  .ct-speaker {
+    display: grid; grid-template-columns: 220px 1fr;
+    gap: clamp(1.5rem, 3.5vw, 2.5rem); align-items: center;
+    background: #fff;
+    border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2rem);
+    box-shadow: var(--shadow-soft);
+  }
+  .ct-speaker__photo {
+    width: 100%; aspect-ratio: 1; border-radius: var(--radius-sm);
+    overflow: hidden; position: relative;
+    background: linear-gradient(160deg, #FFF3B8 0%, #FFDE7A 100%);
+    display: grid; place-items: center;
+  }
+  .ct-speaker__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+  .ct-speaker__initials { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; color: var(--c-ink); letter-spacing: -0.02em; }
+  .ct-speaker h3 { margin: 0 0 0.3rem; font-size: clamp(1.3rem, 1rem + 1.2vw, 1.75rem); font-weight: 800; letter-spacing: -0.01em; }
+  .ct-speaker .role { color: var(--c-magenta); font-size: var(--fs-body); font-weight: 800; margin: 0 0 0.75rem; }
+  .ct-speaker__creds { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .ct-speaker__creds li { display: flex; align-items: flex-start; gap: 0.6rem; color: var(--c-muted); font-weight: 600; font-size: var(--fs-sm); }
+  .ct-speaker__creds .tick { flex: none; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--c-yellow); display: grid; place-items: center; margin-top: 0.02rem; }
+  .ct-speaker__creds .tick svg { width: 0.8rem; height: 0.8rem; }
+  @media (max-width: 560px) {
+    .ct-speaker { grid-template-columns: 1fr; text-align: center; }
+    .ct-speaker__photo { max-width: 200px; margin-inline: auto; }
+    .ct-speaker__creds li { text-align: left; }
+  }
+
+  /* ── Topics (numbered rows) ─────────────────── */
+  .ct-topics { background: var(--c-yellow); border-radius: clamp(24px, 4vw, 40px); }
+  .ct-rows { display: grid; gap: var(--sp-gap); max-width: 900px; margin-inline: auto; }
+  .ct-row {
+    display: flex; align-items: flex-start; gap: clamp(1rem, 3vw, 1.6rem);
+    background: #fff;
+    border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 1.75rem);
+    box-shadow: var(--shadow-sm);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .ct-row:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+  .ct-num {
+    flex: none; font-size: 1.2rem; font-weight: 800; color: var(--c-ink);
+    width: 2.8rem; height: 2.8rem; display: grid; place-items: center;
+    border-radius: 50%;
+  }
+  .ct-row:nth-child(1) .ct-num { background: linear-gradient(160deg,#FFE97B,#FFC53D); }
+  .ct-row:nth-child(2) .ct-num { background: linear-gradient(160deg,#FFB5E5,#FF7DD1); }
+  .ct-row:nth-child(3) .ct-num { background: linear-gradient(160deg,#FBB040,#FF6E3D); }
+  .ct-row:nth-child(4) .ct-num { background: var(--c-lav); }
+  .ct-row:nth-child(5) .ct-num { background: linear-gradient(160deg,#9F65EA,#5C27A1); color: #fff; }
+  .ct-row p { color: var(--c-muted); margin: 0; font-size: var(--fs-sm); font-weight: 500; }
+  .ct-row h3 { margin-bottom: 0.35rem; }
+
+  /* ── Card grids ─────────────────────────────── */
+  .ct-grid { display: grid; gap: var(--sp-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .ct-grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+
+  .ct-card {
+    background: #fff;
+    border-radius: var(--radius); padding: clamp(1.35rem, 3vw, 1.85rem);
+    box-shadow: var(--shadow-sm);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .ct-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+  .ct-card p { color: var(--c-muted); margin: 0; font-size: var(--fs-sm); font-weight: 500; }
+  .ct-tag { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6a2fb0; background: var(--c-lav); border-radius: var(--radius-pill); padding: 0.35em 0.85em; margin-bottom: 0.9rem; }
+  .ct-ico { width: 3.4rem; height: 3.4rem; display: grid; place-items: center; border-radius: 16px; margin-bottom: 1.1rem; box-shadow: var(--shadow-sm); }
+  .ct-ico svg { width: 1.6rem; height: 1.6rem; }
+  .ct-ico.i1 { background: linear-gradient(160deg,#FFE97B,#FFC53D); } .ct-ico.i2 { background: linear-gradient(160deg,#FFB5E5,#FF7DD1); }
+  .ct-ico.i3 { background: linear-gradient(160deg,#FBB040,#FF6E3D); } .ct-ico.i4 { background: linear-gradient(160deg,#9F65EA,#5C27A1); color:#fff; }
+  .ct-get .ct-h3 { font-size: var(--fs-body); margin-bottom: 0; }
+
+  /* ── Final CTA ──────────────────────────────── */
+  .ct-final { position: relative; overflow: clip; }
+  .ct-final__panel {
+    position: relative; overflow: hidden;
+    background: linear-gradient(155deg, #9F65EA 0%, #7A3FD6 55%, #5C27A1 100%);
+    border-radius: clamp(24px, 4vw, 40px);
+    box-shadow: 0 30px 70px -28px rgba(92,39,161,0.6);
+    padding: clamp(2.25rem, 5vw, 3.75rem) clamp(1.5rem, 5vw, 3.5rem);
+    text-align: center; color: #fff;
+  }
+  .ct-final .ct-h2 { color: #fff; max-width: 22ch; margin-inline: auto; }
+  .ct-final__lead { color: rgba(255,255,255,0.92); font-weight: 600; max-width: 52ch; margin: 0 auto; font-size: var(--fs-body); }
+  .ct-final .ct-eyebrow { background: var(--c-yellow); color: var(--c-ink); }
+  .ct-final .ct-btn-row { justify-content: center; }
+  .ct-final__date {
+    display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem 1rem;
+    margin: 1.4rem auto 0; padding: 0.7rem 1.3rem;
+    background: rgba(255,255,255,0.16); border-radius: var(--radius-pill);
+    color: #fff; font-weight: 700; font-size: var(--fs-sm);
+  }
+  .ct-final__blob.ct-final__blob { position: absolute; z-index: 0; opacity: 0.95; pointer-events: none; aspect-ratio: 1; height: auto; }
+  .ct-final__blob.b1 { width: 120px; top: -30px; left: -30px; animation: ct-spin 30s linear infinite; }
+  .ct-final__blob.b2 { width: 100px; bottom: -30px; right: -24px; animation: ct-spin 40s linear infinite reverse; }
+  .ct-final__panel > *:not(.ct-final__blob) { position: relative; z-index: 1; }
+
+  /* ── Bottom decorative shapes band ──────────── */
+  .ct-shapesband { line-height: 0; margin-top: calc(-1 * var(--sp-section)); pointer-events: none; }
+  .ct-shapesband img { width: 100%; height: auto; }
+
+  /* ── Footer ─────────────────────────────────── */
+  .ct-footer { border-top: 1px solid var(--c-hair); padding-block: clamp(2rem, 4vw, 3rem); }
+  .ct-footer__inner { display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: space-between; align-items: center; }
+  .ct-footer .ct-revou { width: 40px; height: auto; }
+  .ct-footer p { color: var(--c-muted-2); font-size: var(--fs-sm); margin: 0; font-weight: 500; }
+  .ct-footer a { color: var(--c-muted); font-weight: 600; }
+  .ct-footer a:hover { color: var(--c-magenta); }
+
+  /* ── Motion on scroll ───────────────────────── */
+  .ct-reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+  .ct-reveal.is-in { opacity: 1; transform: none; }
+
+  /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 880px) {
+    .ct-hero__grid { grid-template-columns: 1fr; gap: 2.25rem; }
+    .ct-eventcard { max-width: 480px; margin-inline: 0; }
+  }
+  @media (max-width: 600px) {
+    .ct-btn { width: 100%; }
+    .ct-btn-row { flex-direction: column; }
+    .ct-footer__inner { flex-direction: column; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ct-page * { animation: none !important; transition: none !important; }
+    .ct-reveal { opacity: 1; transform: none; }
+  }
+  </style>
+</head>
+
+<body>
+<div class="ct-page">
+
+  <!-- ═══ 0. NAV ═══ -->
+  <nav class="ct-nav">
+    <div class="ct-container ct-nav__inner">
+      <span class="ct-nav__brand">
+        <img class="ct-revou" src="images/revou-logo.svg" alt="RevoU" />
+        <span class="ct-nav__divider"></span>
+        <img class="ct-ctlogo" src="images/careertalk-logo.svg" alt="CareerTalk" />
+      </span>
+      <a class="ct-btn ct-btn--primary ct-nav__cta" data-cta href="https://revou-oh.paperform.co/?date=07%2F29%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+    </div>
+  </nav>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <header class="ct-hero">
+    <!-- floating shapes (from Figma) -->
+    <img class="ct-hero__shape ct-s-star" src="images/shape-star.svg" alt="" aria-hidden="true" />
+    <img class="ct-hero__shape ct-s-gear" src="images/shape-gear.svg" alt="" aria-hidden="true" />
+    <img class="ct-hero__shape ct-s-blob" src="images/shape-pacman.svg" alt="" aria-hidden="true" />
+
+    <div class="ct-container">
+      <div class="ct-hero__grid">
+        <!-- left: copy -->
+        <div class="ct-reveal">
+          <span class="ct-eyebrow">CareerTalk · Online · Gratis</span>
+          <h1 class="ct-h1"><span class="ct-mark">Design your career</span><br><span class="light">Build the skills and strategy for long-term growth</span></h1>
+          <p class="ct-lead">
+            Sesi <b class="ct-strong">LIVE</b> untuk membantumu <b class="ct-strong">merancang arah karier</b>,
+            membangun skill yang benar-benar dibutuhkan, dan menyusun strategi pertumbuhan
+            jangka panjang.
+          </p>
+          <div class="ct-btn-row">
+            <a class="ct-btn ct-btn--primary" data-cta href="https://revou-oh.paperform.co/?date=07%2F29%2F2026" target="_blank" rel="noopener">Daftar CareerTalk Gratis</a>
+          </div>
+        </div>
+
+        <!-- right: Event card -->
+        <div class="ct-reveal">
+          <div class="ct-eventcard">
+            <div class="ct-eventcard__top">
+              <span class="ct-badge ct-badge--live"><span class="ct-live-dot"></span> LIVE</span>
+              <span class="ct-badge ct-badge--free">100% Gratis</span>
+            </div>
+            <p class="ct-eventcard__date">Selasa, 29 Juli 2026</p>
+            <p class="ct-eventcard__time">19.00–21.00 WIB · Live via Zoom</p>
+
+            <div class="ct-countdown" id="ct-countdown" aria-label="Hitung mundur menuju acara">
+              <div class="ct-cd-unit"><span class="ct-cd-num" data-cd="days">00</span><span class="ct-cd-lbl">Hari</span></div>
+              <div class="ct-cd-unit"><span class="ct-cd-num" data-cd="hours">00</span><span class="ct-cd-lbl">Jam</span></div>
+              <div class="ct-cd-unit"><span class="ct-cd-num" data-cd="mins">00</span><span class="ct-cd-lbl">Menit</span></div>
+              <div class="ct-cd-unit"><span class="ct-cd-num" data-cd="secs">00</span><span class="ct-cd-lbl">Detik</span></div>
+            </div>
+
+            <a class="ct-btn ct-btn--dark" data-cta href="https://revou-oh.paperform.co/?date=07%2F29%2F2026" target="_blank" rel="noopener">Amankan Slot Gratismu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 2. SPEAKER ═══ -->
+  <section class="ct-section">
+    <div class="ct-container">
+      <div class="ct-section-head center ct-reveal">
+        <span class="ct-eyebrow">Pembicara</span>
+        <h2 class="ct-h2">Belajar langsung dari praktisi karier</h2>
+      </div>
+      <div class="ct-speaker-wrap ct-reveal">
+        <article class="ct-speaker">
+          <div class="ct-speaker__photo">
+            <img src="images/gianina-godine.png" alt="Gianina Godine" width="400" height="400" loading="lazy" decoding="async"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+            <span class="ct-speaker__initials" style="display:none">GG</span>
+          </div>
+          <div>
+            <h3>Gianina Godine</h3>
+            <p class="role">Manager at JAC Recruitment</p>
+            <ul class="ct-speaker__creds">
+              <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span> Manager at JAC Recruitment</li>
+              <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span> Career Coach</li>
+              <li><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></span> 7+ tahun sebagai Human Resources Specialist</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. TOPICS ═══ -->
+  <section class="ct-section">
+    <div class="ct-container">
+      <div class="ct-topics ct-section" style="padding-inline: clamp(1.25rem, 4vw, 3rem);">
+        <div class="ct-section-head center ct-reveal" style="max-width:760px;">
+          <span class="ct-eyebrow" style="background:#fff; box-shadow:var(--shadow-sm);">Yang Akan Dibahas</span>
+          <h2 class="ct-h2">Dari arah karier sampai strategi pertumbuhan</h2>
+          <p class="ct-lead" style="margin-inline:auto; color:var(--c-ink-soft);">Lima topik utama yang akan dikupas tuntas selama sesi LIVE.</p>
+        </div>
+        <div class="ct-rows">
+          <article class="ct-row ct-reveal">
+            <span class="ct-num">1</span>
+            <div><h3 class="ct-h3">Designing Your Career Starts with Direction</h3>
+            <p>Pahami mengapa perencanaan karier yang intensional itu penting, dan cara menentukan arah karier yang selaras dengan tujuan, kekuatan, dan aspirasimu.</p></div>
+          </article>
+          <article class="ct-row ct-reveal">
+            <span class="ct-num">2</span>
+            <div><h3 class="ct-h3">What Actually Drives Long-Term Career Growth</h3>
+            <p>Kenali skill, mindset, dan kualitas profesional yang secara konsisten mendorong pertumbuhan karier jangka panjang — bukan sekadar lama pengalaman.</p></div>
+          </article>
+          <article class="ct-row ct-reveal">
+            <span class="ct-num">3</span>
+            <div><h3 class="ct-h3">Choosing Your Career Growth Strategy</h3>
+            <p>Eksplor berbagai jalur pertumbuhan karier — naik di peran saat ini, pindah perusahaan, atau switch karier — dan cara memilih yang paling cocok dengan tujuanmu.</p></div>
+          </article>
+          <article class="ct-row ct-reveal">
+            <span class="ct-num">4</span>
+            <div><h3 class="ct-h3">Upskilling with Purpose: Learning What Matters</h3>
+            <p>Cara mengidentifikasi skill berdampak tinggi, menutup skill gap, dan membangun pengalaman praktis yang memperkuat daya saing kariermu.</p></div>
+          </article>
+          <article class="ct-row ct-reveal">
+            <span class="ct-num">5</span>
+            <div><h3 class="ct-h3">Future-Proofing Your Career</h3>
+            <p>Susun roadmap karier praktis yang membantumu terus beradaptasi, upskill, dan tetap kompetitif saat industri &amp; pasar kerja berubah.</p></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. WHO IT'S FOR ═══ -->
+  <section class="ct-section">
+    <div class="ct-container">
+      <div class="ct-section-head center ct-reveal">
+        <span class="ct-eyebrow">Cocok Untuk Kamu Jika…</span>
+        <h2 class="ct-h2">Kamu ingin kariermu bertumbuh dengan arah yang jelas</h2>
+      </div>
+      <div class="ct-grid">
+        <article class="ct-card ct-reveal">
+          <span class="ct-tag">Fresh Graduate</span>
+          <h3 class="ct-h3">Baru memulai karier</h3>
+          <p>Kamu ingin memulai dengan arah yang tepat — bukan sekadar “apa saja yang penting kerja”.</p>
+        </article>
+        <article class="ct-card ct-reveal">
+          <span class="ct-tag">Early Professional</span>
+          <h3 class="ct-h3">Sudah 1–3 tahun bekerja</h3>
+          <p>Kamu ingin tahu skill &amp; strategi apa yang benar-benar mempercepat pertumbuhan kariermu.</p>
+        </article>
+        <article class="ct-card ct-reveal">
+          <span class="ct-tag">Career Switcher</span>
+          <h3 class="ct-h3">Berpikir untuk pindah jalur</h3>
+          <p>Kamu mempertimbangkan pindah peran, perusahaan, atau switch karier dan butuh peta yang jelas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. WHAT YOU GET ═══ -->
+  <section class="ct-section">
+    <div class="ct-container">
+      <div class="ct-section-head ct-reveal">
+        <span class="ct-eyebrow">Yang Kamu Dapatkan</span>
+        <h2 class="ct-h2">Bekal praktis untuk merancang kariermu</h2>
+      </div>
+      <div class="ct-grid ct-grid--4">
+        <article class="ct-card ct-get ct-reveal">
+          <div class="ct-ico i1" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <h3 class="ct-h3">Cara menentukan arah karier yang jelas</h3>
+        </article>
+        <article class="ct-card ct-get ct-reveal">
+          <div class="ct-ico i2" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
+          </div>
+          <h3 class="ct-h3">Skill &amp; mindset pendorong pertumbuhan</h3>
+        </article>
+        <article class="ct-card ct-get ct-reveal">
+          <div class="ct-ico i3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+          </div>
+          <h3 class="ct-h3">Strategi upskilling yang tepat sasaran</h3>
+        </article>
+        <article class="ct-card ct-get ct-reveal">
+          <div class="ct-ico i4" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/></svg>
+          </div>
+          <h3 class="ct-h3">Sesi tanya jawab langsung</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. FINAL CTA ═══ -->
+  <section class="ct-section ct-final">
+    <div class="ct-container ct-reveal">
+      <div class="ct-final__panel">
+        <img class="ct-final__blob b1" src="images/shape-star.svg" alt="" aria-hidden="true" />
+        <img class="ct-final__blob b2" src="images/shape-gear.svg" alt="" aria-hidden="true" />
+
+        <span class="ct-eyebrow">⚡ Slot Terbatas</span>
+        <h2 class="ct-h2">Daftar Sekarang — <span style="color:var(--c-yellow)">GRATIS</span></h2>
+        <p class="ct-final__lead">Rancang kariermu, bangun skill yang tepat, dan susun strategi pertumbuhan jangka panjang bersama praktisi HR &amp; recruitment.</p>
+
+        <div class="ct-final__date">
+          <span>📅 Selasa, 29 Juli 2026</span>
+          <span>·</span>
+          <span>🕖 19.00–21.00 WIB</span>
+          <span>·</span>
+          <span>💻 Live via Zoom</span>
+        </div>
+
+        <div class="ct-btn-row">
+          <a class="ct-btn ct-btn--primary" data-cta href="https://revou-oh.paperform.co/?date=07%2F29%2F2026" target="_blank" rel="noopener">Daftar CareerTalk Gratis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- decorative shapes band from Figma -->
+  <div class="ct-shapesband" aria-hidden="true">
+    <img src="images/shapes-band.svg" alt="" />
+  </div>
+
+  <!-- ═══ 7. FOOTER ═══ -->
+  <footer class="ct-footer">
+    <div class="ct-container ct-footer__inner">
+      <span class="ct-nav__brand">
+        <img class="ct-revou" src="images/revou-logo.svg" alt="RevoU" />
+        <span class="ct-nav__divider"></span>
+        <img class="ct-ctlogo" src="images/careertalk-logo.svg" alt="CareerTalk" style="height:26px" />
+      </span>
+      <p>© 2026 RevoU · CareerTalk. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ── Countdown ────────────────────────────────── */
+  var EVENT_DATE = '2026-07-29T19:00:00+07:00';
+  var target = new Date(EVENT_DATE).getTime();
+  var els = {
+    days:  document.querySelector('[data-cd="days"]'),
+    hours: document.querySelector('[data-cd="hours"]'),
+    mins:  document.querySelector('[data-cd="mins"]'),
+    secs:  document.querySelector('[data-cd="secs"]')
+  };
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var diff = Math.max(0, target - Date.now());
+    var s = Math.floor(diff / 1000);
+    if (els.days)  els.days.textContent  = pad(Math.floor(s / 86400));
+    if (els.hours) els.hours.textContent = pad(Math.floor((s % 86400) / 3600));
+    if (els.mins)  els.mins.textContent  = pad(Math.floor((s % 3600) / 60));
+    if (els.secs)  els.secs.textContent  = pad(s % 60);
+  }
+  tick();
+  if (els.days) setInterval(tick, 1000);
+
+  /* ── UTM / attribution pass-through ─────────────
+     Carry tracking params from this page's URL onto every CTA. */
+  (function () {
+    var PASS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+    var incoming = new URLSearchParams(window.location.search);
+    document.querySelectorAll('a[data-cta]').forEach(function (a) {
+      var url;
+      try { url = new URL(a.href); } catch (e) { return; }
+      PASS.forEach(function (key) {
+        var val = incoming.get(key);
+        if (val !== null && val !== '') url.searchParams.set(key, val);
+      });
+      a.href = url.toString();
+    });
+  })();
+
+  /* ── Reveal on scroll ─────────────────────────── */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.ct-reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, idx) {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (Math.min(idx, 4) * 0.06) + 's';
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
