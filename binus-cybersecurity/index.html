@@ -23,7 +23,7 @@
   <!-- End Meta Pixel Code -->
 
   <title>Open House GRATIS — Membangun Karier Cybersecurity di Era AI | RevoU × BINUS</title>
-  <meta name="description" content="Open House online GRATIS: bangun karier cybersecurity di era AI bersama Head of Cyber Security Program BINUS University. Sesi LIVE 2 jam, Kamis 23 Juli 2026 via YouTube. Daftar sekarang." />
+  <meta name="description" content="Open House online GRATIS: bangun karier cybersecurity di era AI bersama Head of Cyber Security Program BINUS University. Sesi LIVE 2 jam, Kamis 6 Agustus 2026 via YouTube. Daftar sekarang." />
   <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -454,8 +454,13 @@
   .coh-speaker__avatar--photo { background: linear-gradient(180deg, #e9ebee 0%, #cfd4dc 100%); }
   .coh-speaker__avatar--photo img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 12%;
-    transform: scale(1.85); transform-origin: 50% 14%;
+    object-fit: cover; object-position: 50% 27%;
+    transform: scale(1.5); transform-origin: 50% 27%;
+  }
+  /* fit variant — source is already a head-and-shoulders portrait, so barely scale */
+  .coh-speaker__avatar--photo-fit img {
+    object-position: 50% 22%;
+    transform: scale(1.06); transform-origin: 50% 20%;
   }
   /* blend the light studio backdrop into the dark card */
   .coh-speaker__avatar--photo::after {
@@ -465,20 +470,24 @@
   }
   .coh-speaker__avatar--photo { position: relative; }
 
-  /* single-speaker layout: card sits centered, photo beside the copy */
-  .coh-speakers__solo { max-width: 620px; margin-inline: auto; }
-  .coh-speakers__solo .coh-speaker {
-    display: grid; grid-template-columns: 190px 1fr;
-    gap: clamp(1.25rem, 3vw, 1.75rem); align-items: center;
+  /* two-speaker layout: cards side by side, photo above the copy */
+  .coh-speakers__grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 3vw, 1.75rem); max-width: 860px; margin-inline: auto;
   }
-  .coh-speakers__solo .coh-speaker__avatar { margin-bottom: 0; }
-  @media (max-width: 560px) {
-    .coh-speakers__solo .coh-speaker { grid-template-columns: 1fr; }
-    .coh-speakers__solo .coh-speaker__avatar { max-width: 200px; }
+  .coh-speakers__grid .coh-speaker__avatar { max-width: 260px; margin-inline: auto; }
+  @media (max-width: 640px) {
+    .coh-speakers__grid { grid-template-columns: 1fr; max-width: 420px; }
   }
   .coh-speaker h4 { margin: 0 0 0.25rem; font-size: var(--fs-body); font-weight: 700; }
   .coh-speaker .role { color: var(--c-accent); font-size: var(--fs-sm); font-weight: 600; margin: 0 0 0.35rem; }
   .coh-speaker .org { color: var(--c-muted); font-size: 0.85rem; margin: 0; }
+  .coh-speaker__logo {
+    display: inline-flex; margin-top: 0.6rem;
+    background: #fff; border-radius: 8px; padding: 0.4rem 0.6rem;
+    border: 1px solid var(--c-hair);
+  }
+  .coh-speaker__logo img { display: block; height: 24px; width: auto; }
 
   /* ── Urgency band ───────────────────────────── */
   .coh-urgency { text-align: center; }
@@ -573,7 +582,7 @@
       <span class="coh-logoplate">
         <img src="images/trilogo-revou-binus-greatnusa.png" alt="RevoU · BINUS University · GreatNusa" />
       </span>
-      <a class="coh-btn coh-btn--primary coh-nav__cta" data-cta href="https://cybersecurity-oh.paperform.co/?date=07%2F23%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+      <a class="coh-btn coh-btn--primary coh-nav__cta" data-cta href="https://cybersecurity-oh.paperform.co/?date=08%2F06%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
     </div>
   </nav>
 
@@ -606,7 +615,7 @@
             Kenali program <b class="coh-strong">Applied Cybersecurity with AI</b> sebelum kamu mendaftar.
           </p>
           <div class="coh-btn-row">
-            <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=07%2F23%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+            <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=08%2F06%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
           </div>
           <div class="coh-hero__meta">
             <span class="coh-live-inline"><span class="coh-live-dot"></span> <b>Online Live Session</b></span>
@@ -622,7 +631,7 @@
               <span class="coh-badge coh-badge--live"><span class="coh-live-dot"></span> LIVE</span>
               <span class="coh-badge coh-badge--gratis">Gratis</span>
             </div>
-            <p class="coh-eventcard__date">Kamis, 23 Juli 2026</p>
+            <p class="coh-eventcard__date">Kamis, 6 Agustus 2026</p>
             <p class="coh-eventcard__time">19.00–21.00 WIB · Live via YouTube</p>
 
             <div class="coh-countdown" id="coh-countdown" aria-label="Hitung mundur menuju acara">
@@ -650,7 +659,7 @@
         <span class="coh-eyebrow"><span class="coh-mono">01 //</span> Pembicara</span>
         <h2 class="coh-h2" data-scramble>Belajar langsung dari ahlinya</h2>
       </div>
-      <div class="coh-speakers__solo">
+      <div class="coh-speakers__grid">
         <article class="coh-card coh-speaker coh-reveal">
           <div class="coh-speaker__avatar coh-speaker__avatar--photo">
             <img src="images/yohan-muliono.webp" alt="Yohan Muliono" width="380" height="380" loading="lazy" decoding="async" />
@@ -659,6 +668,16 @@
             <h4>Yohan Muliono, S.Kom., M.TI.</h4>
             <p class="role">Head of Cyber Security Program — BINUS University</p>
             <p class="org">Memimpin program Cyber Security di School of Computer Science · bersertifikasi CND, CEH Master &amp; eMAPT.</p>
+          </div>
+        </article>
+        <article class="coh-card coh-speaker coh-reveal">
+          <div class="coh-speaker__avatar coh-speaker__avatar--photo coh-speaker__avatar--photo-fit">
+            <img src="images/rasyid-sahputra.webp" alt="Muhammad Rasyid Sahputra" width="380" height="380" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h4>Muhammad Rasyid Sahputra</h4>
+            <p class="role">Head of Research &amp; Development — ITSEC Asia</p>
+            <span class="coh-speaker__logo"><img src="images/Logo-CYBR.png" alt="ITSEC — Security Delivered" width="1250" height="625" loading="lazy" decoding="async" /></span>
           </div>
         </article>
       </div>
@@ -792,7 +811,7 @@
       <h2 class="coh-h2" data-scramble style="max-width:20ch; margin-inline:auto;">Daftar Sekarang — <span class="coh-accent">GRATIS</span></h2>
 
       <div class="coh-closing-date">
-        <span>📅 Kamis, 23 Juli 2026</span>
+        <span>📅 Kamis, 6 Agustus 2026</span>
         <span class="coh-dot"></span>
         <span>🕖 19.00–21.00 WIB</span>
       </div>
@@ -804,7 +823,7 @@
       </div>
 
       <div class="coh-btn-row">
-        <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=07%2F23%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=08%2F06%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
       </div>
     </div>
   </section>
@@ -816,7 +835,7 @@
 (function () {
   /* ── Countdown ──────────────────────────────────
      Event start, WIB (UTC+7). Format: 'YYYY-MM-DDTHH:mm:ss+07:00' */
-  var EVENT_DATE = '2026-07-23T19:00:00+07:00';
+  var EVENT_DATE = '2026-08-06T19:00:00+07:00';
 
   var target = new Date(EVENT_DATE).getTime();
 
