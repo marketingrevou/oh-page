@@ -400,18 +400,18 @@
     gap: var(--sp-gap); max-width: 720px; margin-inline: auto;
   }
   .hc-speaker { text-align: center; }
-  /* split layout — photo beside the credentials once there is room for it */
+  /* split layout — photo column beside the copy once there is room for it.
+     The photo + company logo stack in the left rail so the card stays balanced. */
+  .hc-speaker--split { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-items: start; }
   @media (min-width: 640px) {
-    .hc-speaker--split {
-      display: grid; grid-template-columns: 220px 1fr;
-      gap: clamp(1.25rem, 3vw, 1.85rem);
-      align-items: start; text-align: left;
-    }
-    .hc-speaker--split .hc-speaker__avatar { margin: 0; max-width: 220px; }
+    .hc-speaker--split { grid-template-columns: 200px minmax(0, 1fr); }
   }
+  .hc-speaker__media { display: grid; gap: 0.9rem; justify-items: center; }
+  .hc-speaker__body { text-align: left; max-width: 48ch; }
+
   .hc-speaker__avatar {
-    width: 100%; max-width: 240px; aspect-ratio: 1;
-    margin: 0 auto 1.15rem;
+    width: 100%; max-width: 200px; aspect-ratio: 1;
+    margin: 0 auto;
     border-radius: var(--radius-lg);
     background: linear-gradient(160deg, rgba(255,255,255,0.20), rgba(5,38,153,0.45));
     border: 1px dashed var(--c-hair-strong);
@@ -419,59 +419,78 @@
     color: rgba(255,255,255,0.72);
   }
   .hc-speaker__avatar svg { width: 42%; height: 42%; }
-  /* photo variant — source is a head-and-shoulders studio shot on white, so it
-     gets a light plate and is anchored to the head, then blended into the card */
+  /* photo variant — source is a studio shot on white with a lot of headroom,
+     so it is zoomed and anchored to the face, then feathered into the card */
   .hc-speaker__avatar--photo {
     position: relative;
-    background: linear-gradient(180deg, #ffffff 0%, #e7eaf1 100%);
-    border: 1px solid var(--c-hair-strong);
-    border-style: solid;
+    background: linear-gradient(180deg, #ffffff 0%, #eef1f7 100%);
+    border: 1px solid rgba(255,255,255,0.45);
     overflow: hidden;
   }
   .hc-speaker__avatar--photo img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 22%;
-    transform: scale(1.18); transform-origin: 50% 18%;
+    object-fit: cover; object-position: 50% 28%;
+    transform: scale(1.5); transform-origin: 50% 28%;
   }
+  /* soften the hard white studio backdrop where it meets the blue card */
   .hc-speaker__avatar--photo::after {
     content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(180deg, rgba(5,38,153,0) 58%, rgba(5,38,153,0.45) 100%);
-    mix-blend-mode: multiply;
+    background:
+      linear-gradient(180deg, rgba(41,63,245,0.18) 0%, rgba(41,63,245,0) 26%),
+      radial-gradient(120% 90% at 50% 42%, rgba(41,63,245,0) 52%, rgba(41,63,245,0.14) 100%);
   }
-  .hc-speaker h4 { margin: 0 0 0.3rem; font-size: var(--fs-body); font-weight: 800; }
-  .hc-speaker .role { color: var(--c-yellow); font-size: var(--fs-sm); font-weight: 700; margin: 0 0 0.4rem; }
+  .hc-speaker h4 {
+    margin: 0 0 0.25rem; font-weight: 800; line-height: 1.25;
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  }
+  .hc-speaker .role { color: var(--c-yellow); font-size: var(--fs-sm); font-weight: 700; margin: 0; }
   .hc-speaker .org { color: var(--c-muted); font-size: 0.85rem; margin: 0; }
   .hc-speaker__logo {
-    display: inline-flex; margin-top: 0.85rem;
+    display: inline-flex; justify-content: center;
     background: #fff; border: 1px solid var(--c-hair);
-    border-radius: 10px; padding: 0.5rem 0.85rem;
+    border-radius: 10px; padding: 0.55rem 0.9rem;
   }
+  /* in the photo rail the plate matches the photo width, so the column reads
+     as one block instead of two mismatched shapes */
+  .hc-speaker__media .hc-speaker__logo { width: 100%; max-width: 200px; }
   /* two-line lockup (PRUDENTIAL / SYARIAH), so it needs more height than a
      single-line wordmark to keep the second line legible */
-  .hc-speaker__logo img { display: block; height: 40px; width: auto; }
+  .hc-speaker__logo img { display: block; height: 38px; width: auto; }
 
   /* ── Speaker credentials ────────────────────── */
-  .hc-cred { text-align: left; }
-  .hc-cred__hl {
-    display: flex; align-items: flex-start; gap: 0.55em;
-    margin: 1rem 0 0;
-    font-size: var(--fs-sm); font-weight: 700; color: #fff;
+  /* highlight rows: icon in its own column so wrapped lines stay aligned */
+  .hc-cred__hls {
+    list-style: none; margin: clamp(1rem, 2.4vw, 1.25rem) 0 0; padding: 0;
+    display: grid; gap: 0.7rem;
   }
-  .hc-cred__hl svg { width: 1.1em; height: 1.1em; flex: none; margin-top: 0.15em; color: var(--c-yellow); }
-  .hc-cred__hl--award { color: var(--c-yellow); }
+  .hc-cred__hls li {
+    display: grid; grid-template-columns: 1.65rem minmax(0, 1fr); gap: 0.7rem;
+    align-items: start;
+    font-size: var(--fs-sm); font-weight: 700; color: #fff; line-height: 1.4;
+  }
+  .hc-cred__ico {
+    width: 1.65rem; height: 1.65rem; border-radius: 8px;
+    display: grid; place-items: center; flex: none;
+    background: rgba(255,222,61,0.16);
+    border: 1px solid rgba(255,222,61,0.45);
+    color: var(--c-yellow);
+  }
+  .hc-cred__ico svg { width: 0.95rem; height: 0.95rem; }
   .hc-cred__lbl {
-    margin: 1.1rem 0 0.5rem;
+    margin: clamp(1.1rem, 2.6vw, 1.4rem) 0 0.65rem;
+    padding-top: clamp(1.1rem, 2.6vw, 1.4rem);
+    border-top: 1px solid var(--c-hair);
     font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--c-muted-2);
   }
-  .hc-cred__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+  .hc-cred__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
   .hc-cred__list li {
-    position: relative; padding-left: 1.05em;
-    font-size: 0.85rem; color: var(--c-muted); line-height: 1.45;
+    position: relative; padding-left: 1.15em;
+    font-size: 0.875rem; color: var(--c-muted); line-height: 1.5;
   }
   .hc-cred__list li::before {
-    content: ""; position: absolute; left: 0; top: 0.55em;
-    width: 0.4em; height: 0.4em; border-radius: 1px;
+    content: ""; position: absolute; left: 0.1em; top: 0.6em;
+    width: 0.38em; height: 0.38em; border-radius: 1px;
     background: var(--c-yellow); opacity: 0.85;
   }
   .hc-cred__list b { color: #fff; font-weight: 700; }
@@ -601,32 +620,39 @@
       </div>
       <div class="hc-speakers__grid">
         <article class="hc-card hc-speaker hc-speaker--split hc-reveal">
-          <div class="hc-speaker__avatar hc-speaker__avatar--photo">
-            <img src="images/indah-s-rachmadani.png" alt="Indah S. Rachmadani" width="800" height="800" loading="lazy" decoding="async" />
+          <div class="hc-speaker__media">
+            <div class="hc-speaker__avatar hc-speaker__avatar--photo">
+              <img src="images/indah-s-rachmadani.png" alt="Indah S. Rachmadani" width="800" height="800" loading="lazy" decoding="async" />
+            </div>
+            <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
           </div>
-          <div>
+
+          <div class="hc-speaker__body">
             <h4>Indah S. Rachmadani</h4>
             <p class="role">VP, Head of HRBP — Prudential Syariah</p>
-            <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
 
-            <div class="hc-cred">
-              <p class="hc-cred__hl">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5"/><path d="M5 8v8l7 5 7-5V8"/></svg>
+            <ul class="hc-cred__hls">
+              <li>
+                <span class="hc-cred__ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+                </span>
                 <span>15+ tahun pengalaman di Strategic HR &amp; People Transformation</span>
-              </p>
-              <p class="hc-cred__hl hc-cred__hl--award">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5.5a2.5 2.5 0 0 0 2.5 4M16 5h2.5a2.5 2.5 0 0 1-2.5 4"/><path d="M12 13v3M9 20h6M10 20l.5-4h3l.5 4"/></svg>
+              </li>
+              <li>
+                <span class="hc-cred__ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5.5a2.5 2.5 0 0 0 2.5 4M16 5h2.5a2.5 2.5 0 0 1-2.5 4"/><path d="M12 13v3M9 20h6"/></svg>
+                </span>
                 <span>Winner of Prudential CEO &amp; Leadership Award dan Shell Global Commercial EVP Award</span>
-              </p>
+              </li>
+            </ul>
 
-              <p class="hc-cred__lbl">Pengalaman Sebelumnya</p>
-              <ul class="hc-cred__list">
-                <li>Sr. Manager HRBP — <b>Lazada</b></li>
-                <li>Sr. Manager HC Talent — <b>PT Semen Indonesia</b></li>
-                <li>Project Leader, Sales Ops &amp; HR — <b>Shell</b></li>
-                <li>OD &amp; Performance Specialist — <b>Holcim</b> &amp; <b>AXIS</b></li>
-              </ul>
-            </div>
+            <p class="hc-cred__lbl">Pengalaman Sebelumnya</p>
+            <ul class="hc-cred__list">
+              <li>Sr. Manager HRBP — <b>Lazada</b></li>
+              <li>Sr. Manager HC Talent — <b>PT Semen Indonesia</b></li>
+              <li>Project Leader, Sales Ops &amp; HR — <b>Shell</b></li>
+              <li>OD &amp; Performance Specialist — <b>Holcim</b> &amp; <b>AXIS</b></li>
+            </ul>
           </div>
         </article>
       </div>
