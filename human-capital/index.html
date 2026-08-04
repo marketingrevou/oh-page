@@ -22,8 +22,8 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <title>Open House GRATIS — Bedah Roadmap Karier Menuju HR Business Partner | RevoU</title>
-  <meta name="description" content="Open House online GRATIS: bedah roadmap karier menuju HR Business Partner, dari HR operasional ke strategic HR. Sesi LIVE 2 jam, Jumat 7 Agustus 2026, 19.00–21.00 WIB via Zoom. Untuk HR yang sudah berpengalaman. Daftar sekarang." />
+  <title>Open House GRATIS — Dari HR Operasional ke Strategic HR: Bedah Skill Gap &amp; Roadmap Karier | RevoU</title>
+  <meta name="description" content="Open House online GRATIS: dari HR operasional ke Strategic HR — bedah skill gap &amp; roadmap karier yang dicari perusahaan. Sesi LIVE 2 jam bersama Indah S. Rachmadani (VP, Head of HRBP Prudential Syariah), Jumat 7 Agustus 2026, 19.00–21.00 WIB via Zoom. Daftar sekarang." />
   <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +32,7 @@
 
   <style>
   /* ============================================================
-     Open House — Bedah Roadmap Karier Menuju HR Business Partner
+     Open House — Dari HR Operasional ke Strategic HR
      Scoped to .hc-page so styles never leak in Webflow.
 
      Visual system extracted from Figma (Meta Ads Brief, node 1651:483):
@@ -410,17 +410,36 @@
     color: rgba(255,255,255,0.72);
   }
   .hc-speaker__avatar svg { width: 42%; height: 42%; }
+  /* photo variant — source is a head-and-shoulders studio shot on white, so it
+     gets a light plate and is anchored to the head, then blended into the card */
+  .hc-speaker__avatar--photo {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #e7eaf1 100%);
+    border: 1px solid var(--c-hair-strong);
+    border-style: solid;
+    overflow: hidden;
+  }
+  .hc-speaker__avatar--photo img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 22%;
+    transform: scale(1.18); transform-origin: 50% 18%;
+  }
+  .hc-speaker__avatar--photo::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, rgba(5,38,153,0) 58%, rgba(5,38,153,0.45) 100%);
+    mix-blend-mode: multiply;
+  }
   .hc-speaker h4 { margin: 0 0 0.3rem; font-size: var(--fs-body); font-weight: 800; }
   .hc-speaker .role { color: var(--c-yellow); font-size: var(--fs-sm); font-weight: 700; margin: 0 0 0.4rem; }
   .hc-speaker .org { color: var(--c-muted); font-size: 0.85rem; margin: 0; }
-  .hc-speaker__soon {
-    display: inline-flex; align-items: center; gap: 0.45em;
-    margin-bottom: 0.7rem;
-    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-    color: #fff; background: rgba(255,255,255,0.14);
-    border: 1px solid var(--c-hair-strong);
-    border-radius: var(--radius-pill); padding: 0.4em 0.85em;
+  .hc-speaker__logo {
+    display: inline-flex; margin-top: 0.85rem;
+    background: #fff; border: 1px solid var(--c-hair);
+    border-radius: 10px; padding: 0.5rem 0.85rem;
   }
+  /* two-line lockup (PRUDENTIAL / SYARIAH), so it needs more height than a
+     single-line wordmark to keep the second line legible */
+  .hc-speaker__logo img { display: block; height: 40px; width: auto; }
 
   /* ── Final CTA ──────────────────────────────── */
   .hc-final { text-align: center; }
@@ -498,12 +517,12 @@
       <div class="hc-hero__inner hc-reveal">
         <span class="hc-pill">Open House</span>
 
-        <h1 class="hc-h1">Bedah Roadmap Karier Menuju HR Business Partner: Dari HR Operasional ke Strategic HR</h1>
+        <h1 class="hc-h1">Dari HR Operasional ke Strategic HR: Bedah Skill Gap &amp; Roadmap Karier yang Dicari Perusahaan</h1>
 
         <p class="hc-hero__lead">
           Sesi <b class="hc-strong">LIVE 2 jam</b> untuk kamu yang sudah berpengalaman di HR dan ingin naik
-          dari peran operasional menjadi <b class="hc-strong">mitra strategis bisnis</b>. Pahami kompetensi
-          yang dibutuhkan, cara membangun pengalaman, dan roadmap menuju HR Business Partner.
+          dari peran operasional menjadi <b class="hc-strong">mitra strategis bisnis</b>. Bedah skill gap-nya,
+          kenali kompetensi yang dicari perusahaan, dan susun roadmap karier sebagai Strategic HR.
         </p>
 
         <div class="hc-meta">
@@ -546,16 +565,14 @@
         <h2 class="hc-h2">Belajar langsung dari praktisinya</h2>
       </div>
       <div class="hc-speakers__grid">
-        <!-- TODO: replace this placeholder with the confirmed speaker (photo, name, role, company). -->
         <article class="hc-card hc-speaker hc-reveal">
-          <div class="hc-speaker__avatar" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="hc-speaker__avatar hc-speaker__avatar--photo">
+            <img src="images/indah-s-rachmadani.png" alt="Indah S. Rachmadani" width="800" height="800" loading="lazy" decoding="async" />
           </div>
           <div>
-            <span class="hc-speaker__soon">Segera diumumkan</span>
-            <h4>Pembicara Open House</h4>
-            <p class="role">HR Business Partner Practitioner</p>
-            <p class="org">Nama dan profil lengkap pembicara akan diumumkan sebelum acara berlangsung.</p>
+            <h4>Indah S. Rachmadani</h4>
+            <p class="role">VP, Head of HRBP — Prudential Syariah</p>
+            <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
           </div>
         </article>
       </div>
@@ -574,36 +591,36 @@
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">1</span>
           <div>
-            <h3 class="hc-h3">Mengapa HR Business Partner Menjadi Peran HR yang Semakin Dibutuhkan</h3>
-            <p>Pelajari bagaimana peran HR berkembang menjadi mitra strategis bisnis dan mengapa perusahaan kini mengharapkan HR untuk berkontribusi langsung terhadap pencapaian tujuan bisnis.</p>
+            <h3 class="hc-h3">Evolusi Peran HR di Dunia Kerja Modern</h3>
+            <p>Pahami bagaimana peran HR terus berkembang dan mengapa perusahaan kini membutuhkan HR yang mampu berkontribusi pada strategi bisnis, bukan hanya operasional.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">2</span>
           <div>
-            <h3 class="hc-h3">Dari HR Operasional ke HR Business Partner: Apa yang Sebenarnya Berubah?</h3>
-            <p>Pahami perbedaan pola pikir, tanggung jawab, dan cara HRBP menciptakan dampak bisnis dibandingkan peran HR operasional.</p>
+            <h3 class="hc-h3">Jenjang Karier HR: Dari Operasional ke Strategic HR</h3>
+            <p>Kenali berbagai jalur karier di bidang HR beserta kompetensi yang dibutuhkan untuk berkembang ke level yang lebih strategis.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">3</span>
           <div>
-            <h3 class="hc-h3">Lima Kompetensi Utama yang Harus Dimiliki Seorang HR Business Partner</h3>
-            <p>Kenali lima kompetensi utama yang dibutuhkan HRBP modern, mulai dari business acumen hingga kemampuan mengambil keputusan berbasis data dan berkolaborasi dengan stakeholder.</p>
+            <h3 class="hc-h3">Skill yang Dicari Perusahaan dari HR Masa Kini</h3>
+            <p>Pelajari kompetensi utama yang dibutuhkan HR modern, mulai dari business acumen, HR analytics, hingga stakeholder management.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">4</span>
           <div>
-            <h3 class="hc-h3">Cara Mulai Membangun Pengalaman sebagai HRBP</h3>
-            <p>Temukan langkah-langkah praktis untuk mulai mengembangkan pengalaman dan pola pikir HRBP, bahkan sebelum memiliki jabatan tersebut.</p>
+            <h3 class="hc-h3">Kompetensi yang Dibutuhkan untuk Menjadi HR yang Lebih Strategis</h3>
+            <p>Mengenal kompetensi utama yang dibutuhkan perusahaan dari HR modern, mulai dari business acumen, pemahaman end-to-end HR, hingga kemampuan mengambil keputusan berbasis data.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">5</span>
           <div>
-            <h3 class="hc-h3">Roadmap Karier Menuju HR Business Partner</h3>
-            <p>Dapatkan gambaran roadmap pembelajaran, skill yang perlu diprioritaskan, serta kesalahan umum yang dapat menghambat transisi menuju HRBP.</p>
+            <h3 class="hc-h3">Roadmap Membangun Karier sebagai Strategic HR Professional</h3>
+            <p>Dapatkan gambaran langkah-langkah praktis dan skill yang perlu diprioritaskan untuk mengembangkan karier sebagai HR yang lebih strategis dan siap menghadapi kebutuhan industri.</p>
           </div>
         </article>
       </div>
@@ -636,7 +653,7 @@
           </div>
           <span class="hc-tag">HR Specialist</span>
           <h3 class="hc-h3">Spesialis yang Ingin Memperluas Peran</h3>
-          <p>Kamu kuat di satu fungsi — rekrutmen, C&amp;B, atau L&amp;D — dan ingin memahami gambaran bisnis secara menyeluruh sebagai HRBP.</p>
+          <p>Kamu kuat di satu fungsi — rekrutmen, C&amp;B, atau L&amp;D — dan ingin memahami HR secara end-to-end beserta gambaran bisnisnya.</p>
         </article>
         <article class="hc-card hc-reveal">
           <div class="hc-ico" aria-hidden="true">
@@ -671,14 +688,14 @@
             <!-- roadmap / route -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M15.5 5H10a3.5 3.5 0 0 0 0 7h4a3.5 3.5 0 0 1 0 7H8.5"/></svg>
           </div>
-          <h3 class="hc-h3">Roadmap karier menuju HRBP</h3>
+          <h3 class="hc-h3">Roadmap karier ke Strategic HR</h3>
         </article>
         <article class="hc-card hc-get">
           <div class="hc-ico" aria-hidden="true">
             <!-- checklist / competencies -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 2 2 3-3"/><path d="m3 17 2 2 3-3"/><path d="M12 8h9M12 18h9"/></svg>
           </div>
-          <h3 class="hc-h3">Checklist lima kompetensi utama</h3>
+          <h3 class="hc-h3">Checklist skill yang dicari perusahaan</h3>
         </article>
         <article class="hc-card hc-get">
           <div class="hc-ico" aria-hidden="true">
@@ -720,7 +737,7 @@
   <footer class="hc-footer">
     <div class="hc-container hc-footer__inner">
       <img src="images/revou-logo.svg" alt="RevoU" width="111" height="111" />
-      <p>© 2026 RevoU · Open House HR Business Partner</p>
+      <p>© 2026 RevoU · Open House Strategic HR</p>
     </div>
   </footer>
 
