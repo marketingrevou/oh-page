@@ -1,3 +1,10 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/human-capital/:path*",
+      "destination": "/strategic-hr/:path*",
+      "permanent": true
+    }
+  ]
 }
