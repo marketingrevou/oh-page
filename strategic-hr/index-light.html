@@ -415,25 +415,23 @@
     color: rgba(255,255,255,0.72);
   }
   .hc-speaker__avatar svg { width: 42%; height: 42%; }
-  /* photo variant - source is a studio shot on white with a lot of headroom,
-     so it is zoomed and anchored to the face, then feathered into the card */
+  /* photo variant - source is already a tight head-and-shoulders crop on a
+     pale yellow backdrop, so it needs no zoom; the square box just centres it
+     (235x218 in a 1:1 box crops ~4% off each side, full head height retained) */
   .hc-speaker__avatar--photo {
     position: relative;
-    background: linear-gradient(180deg, #ffffff 0%, #eef1f7 100%);
+    background: linear-gradient(180deg, #fef9d2 0%, #fdf3b1 100%);
     border: 1px solid rgba(255,255,255,0.45);
     overflow: hidden;
   }
   .hc-speaker__avatar--photo img {
     width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 28%;
-    transform: scale(1.5); transform-origin: 50% 28%;
+    object-fit: cover; object-position: 50% 50%;
   }
-  /* soften the hard white studio backdrop where it meets the blue card */
+  /* seat the warm backdrop against the blue card without tinting it green */
   .hc-speaker__avatar--photo::after {
     content: ""; position: absolute; inset: 0; pointer-events: none;
-    background:
-      linear-gradient(180deg, rgba(41,63,245,0.18) 0%, rgba(41,63,245,0) 26%),
-      radial-gradient(120% 90% at 50% 42%, rgba(41,63,245,0) 52%, rgba(41,63,245,0.14) 100%);
+    background: radial-gradient(125% 95% at 50% 40%, rgba(41,63,245,0) 62%, rgba(41,63,245,0.12) 100%);
   }
   .hc-speaker h4 {
     margin: 0 0 0.25rem; font-weight: 800; line-height: 1.25;
@@ -620,13 +618,12 @@
     color: rgba(13,19,48,0.45);
   }
   .hc-light .hc-speaker__avatar--photo {
-    background: linear-gradient(180deg, #f7f9ff 0%, #e9eef9 100%);
+    background: linear-gradient(180deg, #fef9d2 0%, #fdf3b1 100%);
     border-color: var(--c-hair);
   }
-  /* the studio backdrop is already white, so it now blends into the
-     card on its own - only a whisper of shading is needed up top */
+  /* warm backdrop on a light card needs almost nothing - a whisper up top */
   .hc-light .hc-speaker__avatar--photo::after {
-    background: linear-gradient(180deg, rgba(13,30,110,0.07) 0%, rgba(13,30,110,0) 24%);
+    background: linear-gradient(180deg, rgba(13,30,110,0.05) 0%, rgba(13,30,110,0) 22%);
   }
   .hc-light .hc-speaker__logo { background: #fff; border-color: var(--c-hair); }
 
@@ -719,7 +716,7 @@
         <article class="hc-card hc-speaker hc-speaker--split hc-reveal">
           <div class="hc-speaker__media">
             <div class="hc-speaker__avatar hc-speaker__avatar--photo">
-              <img src="images/indah-s-rachmadani.png" alt="Indah S. Rachmadani" width="800" height="800" loading="lazy" decoding="async" />
+              <img src="images/Indah.png" alt="Indah S. Rachmadani" width="235" height="218" loading="lazy" decoding="async" />
             </div>
             <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
           </div>
