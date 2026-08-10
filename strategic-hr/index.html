@@ -28,26 +28,31 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/particles-wave.webp" />
 
   <style>
   /* ============================================================
      Open House - Dari HR Operasional ke Strategic HR
      Scoped to .hc-page so styles never leak in Webflow.
 
-     Visual system extracted from Figma (Meta Ads Brief, node 1651:483):
-       base blue      #293FF5
-       deep navy      #052699   (the "OPEN HOUSE" pill)
-       glow gradient  #116AF8 -> #00DAC9  (two heavily blurred ellipses)
-       CTA gradient   #FF7D9E -> #FF0F4C  (radial, light at top-centre)
-       logo badge     #FFDE3D
-       concentric ring motif -> images/bg-arcs.svg (exported from Figma)
+     Visual system mirrored from the Strategic HR program page
+     (staging.revou.co/strategic-hr):
 
-     The two blurred background ellipses in Figma are 2400px SVGs carrying
-     feGaussianBlur stdDeviation="200". Rasterising those is slow on mobile
-     and they cannot reflow, so they are reproduced here as multi-stop CSS
-     radial-gradients (same colours, same soft falloff, fully responsive).
-     The ring motif is a real vector and is used as the exported asset.
+       hero gradient   linear-gradient(115deg,#FEF6DC 53.2%,#ECB900 116.7%)
+       particle wave   images/particles-wave.webp, mix-blend-mode: overlay
+       display type    Oswald 700, uppercase        (headlines)
+       body type       Mulish 400/600/700           (everything else)
+       heading brown   #594500     gold accent  #CC9F00
+       CTA yellow      #F5C518  on brown text  #594500
+       dark band       #1C1901     accent on dark  #F5C518
+       surfaces        #FFFFFF / #FFFBF0 / #FEF6DC / #FFFAEB
+
+     The particle wave is the program page's own asset, positioned
+     bottom-right of the hero at its native 1095x666 and composited
+     with mix-blend-mode: overlay, exactly as the reference does. A
+     second, smaller instance (707x430) sits inside the closing CTA
+     card, which also reuses the same gradient at 120deg.
      ============================================================ */
 
   .hc-page *,
@@ -57,51 +62,50 @@
   html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
 
   .hc-page {
-    /* ── Colors (from Figma) ────────────────────── */
-    --c-blue:        #293ff5;   /* page base */
-    --c-blue-deep:   #052699;   /* navy pill / deep band */
-    --c-blue-mid:    #116af8;
-    --c-cyan:        #00dac9;
-    --c-cyan-2:      #06bbd7;
-    --c-pink:        #ff0f4c;
-    --c-pink-soft:   #ff7d9e;
-    --c-yellow:      #ffde3d;
+    /* ── Colors ─────────────────────────────────── */
+    --c-cream:     #fef6dc;   /* hero gradient start / cream surface */
+    --c-cream-lt:  #fffbf0;   /* tinted section */
+    --c-cream-xlt: #fffaeb;   /* footer */
+    --c-pill:      #fcf0c3;   /* soft chip */
+    --c-gold-edge: #ecb900;   /* hero gradient end */
+    --c-yellow:    #f5c518;   /* CTA + accent on dark */
+    --c-gold:      #cc9f00;   /* accent on light */
+    --c-brown:     #594500;   /* display + brand text */
+    --c-dark:      #1c1901;   /* dark band */
 
-    --c-text:        #ffffff;
-    --c-muted:       rgba(255,255,255,0.78);
-    --c-muted-2:     rgba(255,255,255,0.56);
-    --c-hair:        rgba(255,255,255,0.16);
-    --c-hair-strong: rgba(255,255,255,0.30);
-    --c-card:        rgba(255,255,255,0.09);
-    --c-card-2:      rgba(255,255,255,0.06);
+    --c-ink:       #101828;   /* headings on light */
+    --c-body:      #4b5563;   /* paragraphs on light */
+    --c-muted:     #6b7280;
+    --c-hair:      rgba(89,69,0,0.14);
+    --c-hair-soft: rgba(89,69,0,0.08);
+    --c-card:      #ffffff;
 
     /* ── Fluid type scale ───────────────────────── */
-    --fs-pill:    clamp(0.7rem, 0.58rem + 0.35vw, 0.95rem);
-    --fs-h1:      clamp(1.9rem, 1.2rem + 3.2vw, 3.25rem);
-    --fs-h2:      clamp(1.55rem, 1.1rem + 1.9vw, 2.25rem);
-    --fs-h3:      clamp(1.1rem, 0.98rem + 0.6vw, 1.4rem);
-    --fs-body:    clamp(1rem, 0.94rem + 0.3vw, 1.2rem);
-    --fs-meta:    clamp(0.95rem, 0.8rem + 0.85vw, 1.4rem);
-    --fs-sm:      clamp(0.875rem, 0.83rem + 0.2vw, 1rem);
-    --fs-eyebrow: clamp(0.72rem, 0.62rem + 0.3vw, 0.85rem);
+    --fs-h1:      clamp(2rem, 1.35rem + 2.6vw, 3rem);
+    --fs-h2:      clamp(1.6rem, 1.25rem + 1.5vw, 2.25rem);
+    --fs-h3:      clamp(1.05rem, 0.98rem + 0.35vw, 1.25rem);
+    --fs-body:    clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --fs-sm:      clamp(0.875rem, 0.85rem + 0.12vw, 0.95rem);
+    --fs-eyebrow: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
 
     /* ── Fluid spacing ──────────────────────────── */
     --sp-section: clamp(3.5rem, 2rem + 6vw, 6rem);
     --sp-gap:     clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
     --sp-stack:   clamp(2rem, 1.3rem + 2.4vw, 3rem);
     --pad-x:      clamp(1.25rem, -0.5rem + 7vw, 8.75rem);
-    --maxw:       1104px;
+    --maxw:       1200px;
 
     /* ── Misc ───────────────────────────────────── */
-    --radius:      12px;   /* per Figma pill radius */
-    --radius-lg:   18px;
+    --radius:      12px;
+    --radius-lg:   16px;
+    --radius-xl:   24px;
     --radius-pill: 999px;
-    --shadow:      0 24px 60px -22px rgba(3,17,90,0.55);
-    --shadow-sm:   0 14px 34px -18px rgba(3,17,90,0.5);
+    --shadow:      4px 4px 44px rgba(89,69,0,0.12);
+    --shadow-sm:   4px 4px 24px rgba(89,69,0,0.07);
 
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    color: var(--c-text);
-    background: var(--c-blue);
+    font-family: 'Mulish', system-ui, -apple-system, sans-serif;
+    color: var(--c-body);
+    background: #ffffff;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -119,103 +123,77 @@
     padding-inline: var(--pad-x);
   }
   .hc-section { padding-block: var(--sp-section); position: relative; overflow: clip; }
-  .hc-section > .hc-container { position: relative; z-index: 1; }
 
-  /* deeper navy band, for section rhythm */
-  .hc-band { background: linear-gradient(180deg, #1d31e2 0%, var(--c-blue-deep) 100%); }
+  /* ── Surfaces ───────────────────────────────── */
+  .hc-white { background: #ffffff; }
+  .hc-tint  { background: var(--c-cream-lt); }
+  .hc-cream { background: var(--c-cream); }
 
-  /* ── Ambient glow layers (the blurred Figma ellipses) ── */
-  .hc-glow { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-  .hc-glow--hero {
-    background:
-      /* cyan bloom, bottom-left corner */
-      radial-gradient(58% 52% at -2% 96%,
-        rgba(0,218,201,0.62) 0%, rgba(0,218,201,0.40) 34%,
-        rgba(0,218,201,0.16) 62%, rgba(0,218,201,0) 100%),
-      /* cyan bloom, right flank */
-      radial-gradient(48% 58% at 103% 66%,
-        rgba(0,218,201,0.55) 0%, rgba(6,187,215,0.34) 36%,
-        rgba(6,187,215,0.13) 64%, rgba(6,187,215,0) 100%),
-      /* faint cyan wash, upper-left edge */
-      radial-gradient(34% 40% at -6% 16%,
-        rgba(0,218,201,0.30) 0%, rgba(0,218,201,0.10) 55%, rgba(0,218,201,0) 100%),
-      /* electric blue core, keeps the centre saturated behind the headline */
-      radial-gradient(70% 62% at 52% 36%,
-        rgba(17,106,248,0.55) 0%, rgba(41,63,245,0.30) 48%, rgba(41,63,245,0) 100%);
+  /* dark band: same token names, re-pointed, so every component
+     inside inherits the inverted treatment without a variant class */
+  .hc-dark {
+    --c-ink:   #ffffff;
+    --c-body:  #bebebe;
+    --c-gold:  var(--c-yellow);
+    --c-hair:  rgba(254,246,220,0.16);
+    --c-card:  var(--c-cream);
+    background: var(--c-dark);
+    color: var(--c-body);
   }
-  .hc-glow--soft {
-    background:
-      radial-gradient(46% 60% at 100% 12%,
-        rgba(0,218,201,0.30) 0%, rgba(6,187,215,0.12) 50%, rgba(6,187,215,0) 100%),
-      radial-gradient(44% 56% at 0% 92%,
-        rgba(0,218,201,0.26) 0%, rgba(0,218,201,0.10) 52%, rgba(0,218,201,0) 100%);
-  }
-
-  /* ── Concentric ring motif (exported Figma vector) ── */
-  .hc-arcs {
-    position: absolute; z-index: 0; pointer-events: none;
-    left: 50%; top: 50%; translate: -50% -50%;
-    width: max(1700px, 190%); aspect-ratio: 1;
-    background: url('images/bg-arcs.svg') no-repeat center / contain;
-    opacity: 0.6;
-  }
-  .hc-arcs--final { opacity: 0.34; top: 100%; }
 
   /* ── Typography ─────────────────────────────── */
-  .hc-pill {
-    display: inline-flex; align-items: center;
-    background: var(--c-blue-deep);
-    border-radius: var(--radius);
-    padding: 0.75em 1.4em;
-    font-size: var(--fs-pill);
-    font-weight: 800;
-    letter-spacing: 0.21em;   /* Figma: 6.3px on 30px */
+  .hc-display {
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    line-height: 1;
-    box-shadow: 0 10px 26px -14px rgba(3,17,90,0.8);
   }
   .hc-h1 {
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: var(--fs-h1);
-    font-weight: 800;
-    line-height: 1.3;                /* Figma */
-    letter-spacing: -0.02em;         /* Figma: -1.48px on 74px */
-    margin: clamp(1rem, 2.4vw, 1.45rem) 0 0;
-    width: 100%;
-    max-width: 15em;                 /* mirrors the Figma 1111px measure */
-    margin-inline: auto;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    color: var(--c-brown);
+    margin: 0;
     text-wrap: balance;
     overflow-wrap: break-word;
   }
-  .hc-hero__lead {
-    font-size: var(--fs-body);
-    color: rgba(255,255,255,0.86);
-    margin: clamp(0.85rem, 2vw, 1.15rem) auto 0;
-    max-width: 58ch;
-  }
+  /* two-tone lockup: brown lead-in over gold payoff, as on the program page */
+  .hc-h1 > span { display: block; }
   .hc-h2 {
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: var(--fs-h2);
-    font-weight: 800;
     line-height: 1.2;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.5px;
+    color: var(--c-ink);
     margin: 0 0 0.75rem;
     text-wrap: balance;
   }
-  .hc-h3 { font-size: var(--fs-h3); font-weight: 700; line-height: 1.3; margin: 0 0 0.4rem; }
-  .hc-lead { font-size: var(--fs-body); color: var(--c-muted); margin: 0; max-width: 60ch; }
-  .hc-strong { color: #fff; font-weight: 700; }
-  .hc-accent { color: var(--c-yellow); }
+  .hc-h3 {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--c-ink);
+    margin: 0 0 0.4rem;
+  }
+  .hc-lead { font-size: var(--fs-body); color: var(--c-body); margin: 0; max-width: 62ch; }
+  .hc-strong { color: var(--c-brown); font-weight: 800; }
+  .hc-accent { color: var(--c-gold); }
 
   .hc-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.6em;
+    display: inline-flex; align-items: center;
     font-size: var(--fs-eyebrow);
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--c-yellow);
-    margin: 0 0 clamp(0.6rem, 1.5vw, 0.9rem);
+    color: var(--c-gold);
+    margin: 0 0 clamp(0.5rem, 1.4vw, 0.75rem);
   }
 
-  .hc-section-head { max-width: 760px; margin-bottom: var(--sp-stack); }
+  .hc-section-head { max-width: 780px; margin-bottom: var(--sp-stack); }
   .hc-section-head.center { margin-inline: auto; text-align: center; }
   .hc-section-head .hc-lead { margin-top: 0.25rem; }
   .hc-section-head.center .hc-lead { margin-inline: auto; }
@@ -226,160 +204,194 @@
     font-family: inherit;
     font-size: var(--fs-body);
     font-weight: 700;
-    padding: 0.9em 2.2em;
+    min-height: 56px;
+    padding: 0.75em 2rem;
     border-radius: var(--radius-pill);
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     cursor: pointer;
     transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     text-align: center;
-    line-height: 1.15;
-  }
-  /* Figma CTA: radial gradient, lightest pink at top-centre, deep red at the rim */
-  .hc-btn--primary {
-    color: #fff;
-    background:
-      radial-gradient(125% 320% at 50% 0%,
-        var(--c-pink-soft) 0%, #ff618a 25%, #ff4675 50%, #ff2a61 75%, var(--c-pink) 100%);
-    box-shadow: 0 14px 34px -12px rgba(255,15,76,0.6);
-  }
-  .hc-btn--primary:hover { transform: translateY(-2px); box-shadow: 0 20px 44px -12px rgba(255,15,76,0.7); }
-  .hc-btn--ghost {
-    background: rgba(255,255,255,0.10);
-    color: #fff;
-    border-color: var(--c-hair-strong);
-    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-  }
-  .hc-btn--ghost:hover { transform: translateY(-2px); background: rgba(255,255,255,0.18); }
-
-  .hc-btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: clamp(1.5rem, 3vw, 2rem); }
-
-  /* ── Nav ────────────────────────────────────── */
-  .hc-nav { position: relative; z-index: 5; border-bottom: 1px solid rgba(255,255,255,0.12); }
-  .hc-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.85rem; }
-  .hc-nav__brand img { height: clamp(38px, 5.5vw, 52px); width: auto; }
-  .hc-nav__cta { font-size: var(--fs-sm); padding: 0.7em 1.5em; }
-
-  /* ── Hero ───────────────────────────────────── */
-  .hc-hero { position: relative; overflow: clip; }
-  .hc-hero__inner {
-    position: relative; z-index: 2;
-    text-align: center;
-    padding-block: clamp(2.5rem, 6vw, 4.75rem);
-    display: flex; flex-direction: column; align-items: center;
-  }
-
-  /* date · time · platform row, per Figma */
-  .hc-meta {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 0.35rem clamp(0.7rem, 1.6vw, 1.1rem);
-    margin-top: clamp(1.25rem, 3vw, 1.9rem);
-    font-size: var(--fs-meta);
-    font-weight: 600;
-    letter-spacing: -0.02em;
     line-height: 1.2;
   }
-  .hc-meta b { font-weight: 800; }
-  .hc-meta sup { font-size: 0.64em; font-weight: 700; vertical-align: super; margin-left: 0.1em; }
-  .hc-meta__bar {
-    width: 2px; height: 0.78em; background: #fff; border-radius: 1px;
-    flex: none; opacity: 0.9;
+  /* .hc-page a sets `color: inherit` at (0,1,1), so the button colour rules
+     have to carry the same weight or the link colour wins */
+  .hc-page .hc-btn--primary {
+    background: var(--c-yellow);
+    color: var(--c-brown);
+    box-shadow: 0 10px 26px -12px rgba(236,185,0,0.85);
+  }
+  .hc-page .hc-btn--primary:hover {
+    background: var(--c-gold-edge);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px -12px rgba(236,185,0,0.9);
+  }
+  .hc-page .hc-btn--ghost {
+    background: transparent;
+    color: var(--c-brown);
+    border-color: var(--c-brown);
+  }
+  .hc-page .hc-btn--ghost:hover { transform: translateY(-2px); background: rgba(89,69,0,0.06); }
+  .hc-page .hc-dark .hc-btn--ghost { color: var(--c-cream); border-color: var(--c-cream); }
+  .hc-page .hc-dark .hc-btn--ghost:hover { background: rgba(254,246,220,0.1); }
+
+  .hc-btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: clamp(1.5rem, 3vw, 2rem); }
+
+  /* ── Nav (sits over the hero gradient) ──────── */
+  .hc-nav { position: relative; z-index: 5; }
+  .hc-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.9rem; }
+  .hc-nav__brand img { height: clamp(40px, 5vw, 48px); width: auto; }
+  .hc-nav__cta { font-size: var(--fs-sm); min-height: 40px; padding: 0.55em 1.35em; }
+
+  /* ── Hero ───────────────────────────────────── */
+  .hc-hero {
+    position: relative;
+    overflow: clip;
+    background: linear-gradient(115deg, var(--c-cream) 53.2%, var(--c-gold-edge) 116.7%);
+  }
+  /* the program page's particle wave, native size, overlay-composited
+     so it picks up the gold end of the gradient and fades into the cream */
+  .hc-hero__wave {
+    position: absolute; z-index: 0; pointer-events: none;
+    right: -80px; bottom: 0;
+    width: 1095px; height: 666px;
+    background: url('images/particles-wave.webp') no-repeat center / 1095px 666px;
+    mix-blend-mode: overlay;
+  }
+  .hc-hero__inner {
+    position: relative; z-index: 1;
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3.5rem, 8vw, 6rem);
+    max-width: 780px;
+  }
+
+  /* date / time / platform chips */
+  .hc-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: clamp(1.25rem, 3vw, 1.75rem); }
+  .hc-chip {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    background: var(--c-pill);
+    color: var(--c-brown);
+    border-radius: var(--radius);
+    padding: 0.55em 1em;
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .hc-chip svg { width: 1.05em; height: 1.05em; flex: none; }
+  .hc-chip sup { font-size: 0.7em; font-weight: 700; vertical-align: super; margin-left: 0.15em; }
+
+  .hc-hero__lead {
+    font-size: var(--fs-body);
+    font-weight: 600;
+    color: var(--c-brown);
+    margin: clamp(1rem, 2.4vw, 1.4rem) 0 0;
+    max-width: 54ch;
   }
 
   /* ── Countdown strip ────────────────────────── */
   .hc-countdown {
-    position: relative; z-index: 2;
-    margin: clamp(2.25rem, 5vw, 3.25rem) auto 0;
+    position: relative; z-index: 1;
+    margin: clamp(2rem, 4.5vw, 2.75rem) 0 0;
     width: 100%;
     max-width: 560px;
-    background: var(--c-card);
-    border: 1px solid var(--c-hair);
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(89,69,0,0.10);
     border-radius: var(--radius-lg);
     padding: clamp(1rem, 2.4vw, 1.35rem);
-    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-    box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
   }
   .hc-countdown__top {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 0.5rem 0.75rem; margin-bottom: 0.9rem;
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 0.5rem 0.65rem; margin-bottom: 0.9rem;
   }
   .hc-badge {
     display: inline-flex; align-items: center; gap: 0.4em;
-    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
     padding: 0.4em 0.75em; border-radius: var(--radius-pill);
   }
-  .hc-badge--live { background: rgba(0,218,201,0.20); color: #b6fff6; border: 1px solid rgba(0,218,201,0.55); }
-  .hc-badge--gratis { background: var(--c-yellow); color: #16204d; }
+  .hc-badge--live { background: var(--c-pill); color: var(--c-brown); }
+  .hc-badge--gratis { background: var(--c-yellow); color: var(--c-brown); }
   .hc-live-dot {
     width: 0.55em; height: 0.55em; border-radius: 50%; flex: none;
-    background: var(--c-cyan); box-shadow: 0 0 0 0 rgba(0,218,201,0.6);
+    background: var(--c-gold-edge); box-shadow: 0 0 0 0 rgba(236,185,0,0.7);
     animation: hc-pulse 1.8s infinite;
   }
   @keyframes hc-pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(0,218,201,0.55); }
-    70%  { box-shadow: 0 0 0 8px rgba(0,218,201,0); }
-    100% { box-shadow: 0 0 0 0 rgba(0,218,201,0); }
+    0%   { box-shadow: 0 0 0 0 rgba(236,185,0,0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(236,185,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(236,185,0,0); }
   }
-  .hc-countdown__label {
-    font-size: var(--fs-sm); font-weight: 600; color: var(--c-muted);
-  }
+  .hc-countdown__label { font-size: var(--fs-sm); font-weight: 600; color: var(--c-brown); }
   .hc-cd-grid { display: flex; gap: 0.45rem; }
   .hc-cd-unit {
     flex: 1; text-align: center;
-    background: rgba(5,38,153,0.42);
-    border: 1px solid var(--c-hair);
-    border-radius: 10px; padding: 0.55rem 0.2rem;
+    background: var(--c-cream);
+    border: 1px solid rgba(89,69,0,0.08);
+    border-radius: 10px; padding: 0.6rem 0.2rem;
   }
   .hc-cd-num {
     display: block;
-    font-size: clamp(1.25rem, 1rem + 1.1vw, 1.7rem);
-    font-weight: 800; line-height: 1; color: #fff;
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-size: clamp(1.4rem, 1.15rem + 1.1vw, 1.85rem);
+    font-weight: 700; line-height: 1; color: var(--c-brown);
     font-variant-numeric: tabular-nums;
   }
   .hc-cd-lbl {
     display: block; margin-top: 0.35rem;
-    font-size: 0.6rem; letter-spacing: 0.11em; text-transform: uppercase;
-    font-weight: 700; color: var(--c-muted-2);
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-weight: 700; color: rgba(89,69,0,0.6);
   }
 
   /* ── Cards ──────────────────────────────────── */
-  .hc-grid { display: grid; gap: var(--sp-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
-  .hc-grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+  .hc-grid { display: grid; gap: var(--sp-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .hc-grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 
   .hc-card {
     background: var(--c-card);
-    border: 1px solid var(--c-hair);
+    border: 1px solid var(--c-hair-soft);
     border-radius: var(--radius-lg);
     padding: clamp(1.35rem, 3vw, 1.85rem);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   }
-  .hc-card:hover { transform: translateY(-4px); border-color: var(--c-hair-strong); background: rgba(255,255,255,0.13); }
-  .hc-card p { color: var(--c-muted); margin: 0; font-size: var(--fs-sm); }
+  .hc-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(204,159,0,0.4);
+    box-shadow: 4px 4px 34px rgba(89,69,0,0.13);
+  }
+  .hc-card p { color: var(--c-body); margin: 0; font-size: var(--fs-sm); }
+
+  /* cards on the dark band are cream, so their own text goes brown */
+  .hc-dark .hc-card { border-color: transparent; box-shadow: none; }
+  .hc-dark .hc-card:hover { border-color: transparent; box-shadow: 0 14px 30px -18px rgba(0,0,0,0.6); }
+  .hc-dark .hc-card .hc-h3 { color: var(--c-brown); }
+  .hc-dark .hc-card p { color: rgba(89,69,0,0.78); }
 
   .hc-tag {
     display: block; margin-bottom: 0.45rem;
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--c-yellow);
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--c-gold);
   }
 
+  /* round icon badge, as on the program page */
   .hc-ico {
     width: 3rem; height: 3rem; display: grid; place-items: center;
-    border-radius: var(--radius); background: rgba(255,255,255,0.14);
-    border: 1px solid var(--c-hair);
-    margin-bottom: 1.1rem; color: #fff;
+    border-radius: 50%; background: var(--c-pill);
+    color: var(--c-gold);
+    margin-bottom: 1.1rem;
   }
-  .hc-ico svg { width: 1.55rem; height: 1.55rem; }
+  .hc-ico svg { width: 1.5rem; height: 1.5rem; }
+  .hc-dark .hc-card .hc-ico { background: #ffffff; color: var(--c-gold); }
 
   /* numbered agenda rows */
-  .hc-rows { display: grid; gap: var(--sp-gap); max-width: 840px; margin-inline: auto; }
+  .hc-rows { display: grid; gap: var(--sp-gap); max-width: 880px; margin-inline: auto; }
   .hc-row { display: flex; align-items: flex-start; gap: clamp(1rem, 3vw, 1.5rem); }
   .hc-num {
     flex: none;
     width: 2.6em; height: 2.6em; display: grid; place-items: center;
-    font-size: 1rem; font-weight: 800; color: #16204d;
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-size: 1.05rem; font-weight: 700; color: var(--c-brown);
     background: var(--c-yellow);
-    border-radius: var(--radius);
+    border-radius: 50%;
   }
   .hc-row h3 { margin-bottom: 0.35rem; }
 
@@ -389,11 +401,8 @@
   /* ── Speaker ────────────────────────────────── */
   .hc-speakers__grid {
     display: grid; grid-template-columns: 1fr;
-    gap: var(--sp-gap); max-width: 720px; margin-inline: auto;
+    gap: var(--sp-gap); max-width: 780px; margin-inline: auto;
   }
-  .hc-speaker { text-align: center; }
-  /* split layout - photo column beside the copy once there is room for it.
-     The photo + company logo stack in the left rail so the card stays balanced. */
   .hc-speaker--split { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-items: start; }
   @media (min-width: 640px) {
     .hc-speaker--split { grid-template-columns: 200px minmax(0, 1fr); }
@@ -401,54 +410,34 @@
   .hc-speaker__media { display: grid; gap: 0.9rem; justify-items: center; }
   .hc-speaker__body { text-align: left; max-width: 48ch; }
 
+  /* photo variant - source is already a tight head-and-shoulders crop on a
+     pale yellow backdrop, which now sits naturally in the gold palette */
   .hc-speaker__avatar {
+    position: relative;
     width: 100%; max-width: 200px; aspect-ratio: 1;
     margin: 0 auto;
     border-radius: var(--radius-lg);
-    background: linear-gradient(160deg, rgba(255,255,255,0.20), rgba(5,38,153,0.45));
-    border: 1px dashed var(--c-hair-strong);
-    display: grid; place-items: center;
-    color: rgba(255,255,255,0.72);
-  }
-  .hc-speaker__avatar svg { width: 42%; height: 42%; }
-  /* photo variant - source is already a tight head-and-shoulders crop on a
-     pale yellow backdrop, so it needs no zoom; the square box just centres it
-     (235x218 in a 1:1 box crops ~4% off each side, full head height retained) */
-  .hc-speaker__avatar--photo {
-    position: relative;
     background: linear-gradient(180deg, #fef9d2 0%, #fdf3b1 100%);
-    border: 1px solid rgba(255,255,255,0.45);
+    border: 1px solid var(--c-hair-soft);
     overflow: hidden;
   }
-  .hc-speaker__avatar--photo img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: 50% 50%;
-  }
-  /* seat the warm backdrop against the blue card without tinting it green */
-  .hc-speaker__avatar--photo::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(125% 95% at 50% 40%, rgba(41,63,245,0) 62%, rgba(41,63,245,0.12) 100%);
-  }
+  .hc-speaker__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
   .hc-speaker h4 {
-    margin: 0 0 0.25rem; font-weight: 800; line-height: 1.25;
-    font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+    font-family: 'Oswald', 'Mulish', sans-serif;
+    font-weight: 700; text-transform: uppercase; letter-spacing: -0.2px;
+    margin: 0 0 0.3rem; line-height: 1.2; color: var(--c-ink);
+    font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
   }
-  .hc-speaker .role { color: var(--c-yellow); font-size: var(--fs-sm); font-weight: 700; margin: 0; }
-  .hc-speaker .org { color: var(--c-muted); font-size: 0.85rem; margin: 0; }
+  .hc-speaker .role { color: var(--c-gold); font-size: var(--fs-sm); font-weight: 700; margin: 0; }
   .hc-speaker__logo {
-    display: inline-flex; justify-content: center;
-    background: #fff; border: 1px solid var(--c-hair);
+    display: inline-flex; justify-content: center; align-items: center;
+    background: #fff; border: 1px solid var(--c-hair-soft);
     border-radius: 10px; padding: 0.55rem 0.9rem;
+    width: 100%; max-width: 200px;
   }
-  /* in the photo rail the plate matches the photo width, so the column reads
-     as one block instead of two mismatched shapes */
-  .hc-speaker__media .hc-speaker__logo { width: 100%; max-width: 200px; }
-  /* two-line lockup (PRUDENTIAL / SYARIAH), so it needs more height than a
-     single-line wordmark to keep the second line legible */
   .hc-speaker__logo img { display: block; height: 38px; width: auto; }
 
   /* ── Speaker credentials ────────────────────── */
-  /* highlight rows: icon in its own column so wrapped lines stay aligned */
   .hc-cred__hls {
     list-style: none; margin: clamp(1rem, 2.4vw, 1.25rem) 0 0; padding: 0;
     display: grid; gap: 0.7rem;
@@ -456,188 +445,98 @@
   .hc-cred__hls li {
     display: grid; grid-template-columns: 1.65rem minmax(0, 1fr); gap: 0.7rem;
     align-items: start;
-    font-size: var(--fs-sm); font-weight: 700; color: #fff; line-height: 1.4;
+    font-size: var(--fs-sm); font-weight: 700; color: var(--c-ink); line-height: 1.45;
   }
   .hc-cred__ico {
-    width: 1.65rem; height: 1.65rem; border-radius: 8px;
+    width: 1.65rem; height: 1.65rem; border-radius: 50%;
     display: grid; place-items: center; flex: none;
-    background: rgba(255,222,61,0.16);
-    border: 1px solid rgba(255,222,61,0.45);
-    color: var(--c-yellow);
+    background: var(--c-pill); color: var(--c-gold);
   }
   .hc-cred__ico svg { width: 0.95rem; height: 0.95rem; }
   .hc-cred__lbl {
     margin: clamp(1.1rem, 2.6vw, 1.4rem) 0 0.65rem;
     padding-top: clamp(1.1rem, 2.6vw, 1.4rem);
-    border-top: 1px solid var(--c-hair);
-    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--c-muted-2);
+    border-top: 1px solid var(--c-hair-soft);
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--c-muted);
   }
   .hc-cred__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
   .hc-cred__list li {
     position: relative; padding-left: 1.15em;
-    font-size: 0.875rem; color: var(--c-muted); line-height: 1.5;
+    font-size: 0.9rem; color: var(--c-body); line-height: 1.5;
   }
   .hc-cred__list li::before {
-    content: ""; position: absolute; left: 0.1em; top: 0.6em;
-    width: 0.38em; height: 0.38em; border-radius: 1px;
-    background: var(--c-yellow); opacity: 0.85;
+    content: ""; position: absolute; left: 0.1em; top: 0.55em;
+    width: 0.4em; height: 0.4em; border-radius: 50%;
+    background: var(--c-yellow);
   }
-  .hc-cred__list b { color: #fff; font-weight: 700; }
+  .hc-cred__list b { color: var(--c-ink); font-weight: 700; }
 
-  /* ── Final CTA ──────────────────────────────── */
-  .hc-final { text-align: center; }
-  .hc-final .hc-btn-row { justify-content: center; }
+  /* ── Closing CTA card ───────────────────────── */
+  .hc-cta-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: linear-gradient(120deg, var(--c-cream) 53.2%, var(--c-gold-edge) 116.7%);
+    box-shadow: var(--shadow);
+  }
+  .hc-cta-card__wave {
+    position: absolute; z-index: 0; pointer-events: none;
+    right: -60px; bottom: -40px;
+    width: 707px; height: 430px;
+    background: url('images/particles-wave.webp') no-repeat center / 707px 430px;
+    mix-blend-mode: overlay;
+  }
+  .hc-cta-card > *:not(.hc-cta-card__wave) { position: relative; z-index: 1; }
+  .hc-cta-card .hc-h2 { color: var(--c-brown); max-width: 16ch; }
+  .hc-cta-card .hc-lead { color: var(--c-brown); font-weight: 600; max-width: 52ch; }
   .hc-urgency-pill {
     display: inline-flex; align-items: center; gap: 0.5em;
-    background: rgba(255,222,61,0.16); color: var(--c-yellow);
-    border: 1px solid rgba(255,222,61,0.6);
+    background: rgba(255,255,255,0.6); color: var(--c-brown);
+    border: 1px solid rgba(89,69,0,0.18);
     border-radius: var(--radius-pill);
-    padding: 0.5em 1.1em; font-weight: 800; font-size: var(--fs-sm);
-    margin-bottom: 1.25rem;
+    padding: 0.45em 1em; font-weight: 800; font-size: var(--fs-sm);
+    margin-bottom: 1rem;
   }
-  .hc-closing-date {
-    display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center;
-    gap: 0.5rem 1.25rem;
-    margin: 1.35rem auto 0; padding: 0.9rem 1.5rem;
-    background: var(--c-card-2); border: 1px solid var(--c-hair);
-    border-radius: var(--radius);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-    color: #fff; font-weight: 700; font-size: var(--fs-body);
-  }
-  .hc-usps { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 1.35rem 0 0; }
+  .hc-usps { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.25rem 0 0; }
   .hc-usp {
     display: inline-flex; align-items: center; gap: 0.5em;
-    padding: 0.55em 1.1em; border-radius: var(--radius-pill);
-    background: rgba(255,255,255,0.08); border: 1px solid var(--c-hair);
-    font-weight: 700; font-size: var(--fs-sm); color: #fff;
+    padding: 0.5em 1em; border-radius: var(--radius);
+    background: rgba(255,255,255,0.62); border: 1px solid rgba(89,69,0,0.12);
+    font-weight: 700; font-size: var(--fs-sm); color: var(--c-brown);
   }
 
   /* ── Footer ─────────────────────────────────── */
-  .hc-footer { border-top: 1px solid var(--c-hair); padding-block: clamp(1.75rem, 4vw, 2.5rem); }
+  .hc-footer { background: var(--c-cream-xlt); border-top: 1px solid var(--c-hair-soft); padding-block: clamp(1.75rem, 4vw, 2.5rem); }
   .hc-footer__inner { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; justify-content: space-between; align-items: center; }
   .hc-footer img { height: 40px; width: auto; }
-  .hc-footer p { color: var(--c-muted-2); font-size: var(--fs-sm); margin: 0; }
+  .hc-footer p { color: var(--c-brown); font-size: var(--fs-sm); font-weight: 600; margin: 0; }
 
   /* ── Motion on scroll ───────────────────────── */
   .hc-reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
   .hc-reveal.is-in { opacity: 1; transform: none; }
 
   /* ── Responsive ─────────────────────────────── */
+  @media (max-width: 1023px) {
+    /* scale the wave down so it still reads on narrow viewports */
+    .hc-hero__wave {
+      right: -140px; width: 760px; height: 462px;
+      background-size: 760px 462px;
+    }
+  }
   @media (max-width: 600px) {
     .hc-btn { width: 100%; }
     .hc-btn-row { flex-direction: column; width: 100%; }
-    .hc-meta__bar { display: none; }
-    .hc-meta { flex-direction: column; gap: 0.3rem; }
     .hc-footer__inner { flex-direction: column; text-align: center; }
     .hc-row { gap: 0.9rem; }
+    .hc-hero__wave { right: -180px; bottom: -20px; width: 620px; height: 377px; background-size: 620px 377px; }
+    .hc-cta-card__wave { right: -140px; width: 520px; height: 316px; background-size: 520px 316px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .hc-page * { animation: none !important; transition: none !important; }
     .hc-reveal { opacity: 1; transform: none; }
-  }
-
-  /* ============================================================
-     LIGHT SECTIONS  (.hc-light / .hc-light--tint)
-     ------------------------------------------------------------
-     The blue ATF is the brand moment; the reading sections below
-     invert to white so long copy (agenda, credentials) is easier
-     on the eye and the remaining blue bands hit harder.
-
-     Implementation: .hc-light re-points the same design tokens the
-     dark sections use, so every component inside inherits the light
-     treatment without needing its own variant class. Only the rules
-     that hard-code white (or rely on yellow-on-blue) are restated
-     below - yellow has no contrast on white, so the accent role
-     falls back to the base blue, with pink kept for emphasis.
-     ============================================================ */
-  .hc-page .hc-light {
-    --c-text:        #0d1330;
-    --c-muted:       rgba(13,19,48,0.70);
-    --c-muted-2:     rgba(13,19,48,0.50);
-    --c-hair:        rgba(13,30,110,0.12);
-    --c-hair-strong: rgba(13,30,110,0.22);
-    --c-card:        #ffffff;
-    --c-card-2:      #f8faff;
-    --shadow:        0 24px 60px -28px rgba(13,30,110,0.22);
-    --shadow-sm:     0 16px 38px -24px rgba(13,30,110,0.18);
-
-    background: #ffffff;
-    color: var(--c-text);
-  }
-  /* second light flavour, so two light sections in a row still read
-     as two sections instead of one long white run */
-  .hc-page .hc-light--tint { background: #f2f5fd; }
-
-  /* faint wash - replaces the saturated cyan blooms on light sections */
-  .hc-glow--light {
-    background:
-      radial-gradient(44% 56% at 100% 0%,
-        rgba(41,63,245,0.07) 0%, rgba(41,63,245,0) 72%),
-      radial-gradient(42% 52% at 0% 100%,
-        rgba(0,218,201,0.11) 0%, rgba(0,218,201,0) 74%);
-  }
-
-  .hc-light .hc-strong { color: var(--c-text); }
-  .hc-light .hc-accent { color: var(--c-pink); }
-  .hc-light .hc-eyebrow { color: var(--c-blue); }
-  .hc-light .hc-tag { color: var(--c-blue); }
-
-  .hc-light .hc-card {
-    background: #fff;
-    border-color: var(--c-hair);
-    box-shadow: var(--shadow-sm);
-    -webkit-backdrop-filter: none; backdrop-filter: none;
-  }
-  .hc-light .hc-card:hover {
-    background: #fff;
-    border-color: rgba(41,63,245,0.34);
-    box-shadow: 0 26px 54px -26px rgba(13,30,110,0.26);
-  }
-
-  .hc-light .hc-ico {
-    background: rgba(41,63,245,0.08);
-    border-color: rgba(41,63,245,0.18);
-    color: var(--c-blue);
-  }
-  .hc-light .hc-num {
-    background: var(--c-blue); color: #fff;
-    box-shadow: 0 10px 22px -12px rgba(41,63,245,0.65);
-  }
-
-  /* ── Speaker card on white ──────────────────── */
-  .hc-light .hc-speaker .role { color: var(--c-blue); }
-  .hc-light .hc-speaker__avatar {
-    background: linear-gradient(160deg, #eef1fb 0%, #dde3f5 100%);
-    border-color: var(--c-hair-strong);
-    color: rgba(13,19,48,0.45);
-  }
-  .hc-light .hc-speaker__avatar--photo {
-    background: linear-gradient(180deg, #fef9d2 0%, #fdf3b1 100%);
-    border-color: var(--c-hair);
-  }
-  /* warm backdrop on a light card needs almost nothing - a whisper up top */
-  .hc-light .hc-speaker__avatar--photo::after {
-    background: linear-gradient(180deg, rgba(13,30,110,0.05) 0%, rgba(13,30,110,0) 22%);
-  }
-  .hc-light .hc-speaker__logo { background: #fff; border-color: var(--c-hair); }
-
-  /* small uppercase label: --c-muted-2 is only 3.47:1 on white, below AA */
-  .hc-light .hc-cred__lbl { color: var(--c-muted); }
-  .hc-light .hc-cred__hls li { color: var(--c-text); }
-  .hc-light .hc-cred__ico {
-    background: rgba(41,63,245,0.08);
-    border-color: rgba(41,63,245,0.20);
-    color: var(--c-blue);
-  }
-  .hc-light .hc-cred__list li::before { background: var(--c-blue); opacity: 1; }
-  .hc-light .hc-cred__list b { color: var(--c-text); }
-
-  .hc-light .hc-btn--ghost {
-    background: #fff; color: var(--c-blue);
-    border-color: rgba(41,63,245,0.28);
-    -webkit-backdrop-filter: none; backdrop-filter: none;
   }
   </style>
 </head>
@@ -645,25 +544,27 @@
 <body>
 <div class="hc-page">
 
-  <!-- ═══ 0. NAV ═══ -->
-  <nav class="hc-nav">
-    <div class="hc-container hc-nav__inner">
-      <span class="hc-nav__brand">
-        <img src="images/revou-logo.svg" alt="RevoU" width="111" height="111" />
-      </span>
-      <a class="hc-btn hc-btn--primary hc-nav__cta" data-cta href="https://open-house-hc.paperform.co/?date=08%2F12%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
-    </div>
-  </nav>
-
-  <!-- ═══ 1. HERO ═══ -->
+  <!-- ═══ 1. HERO (nav sits inside so the gradient runs behind it) ═══ -->
   <header class="hc-hero">
-    <div class="hc-glow hc-glow--hero" aria-hidden="true"></div>
-    <div class="hc-arcs" aria-hidden="true"></div>
+    <div class="hc-hero__wave" aria-hidden="true"></div>
+
+    <nav class="hc-nav">
+      <div class="hc-container hc-nav__inner">
+        <span class="hc-nav__brand">
+          <img src="images/revou-logo.svg" alt="RevoU" width="111" height="111" />
+        </span>
+        <a class="hc-btn hc-btn--primary hc-nav__cta" data-cta href="https://open-house-hc.paperform.co/?date=08%2F12%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+      </div>
+    </nav>
+
     <div class="hc-container">
       <div class="hc-hero__inner hc-reveal">
-        <span class="hc-pill">Open House</span>
+        <span class="hc-eyebrow">Open House</span>
 
-        <h1 class="hc-h1">Dari HR Operasional ke Strategic HR: Bedah Skill Gap yang Dicari Perusahaan &amp; Roadmap Kariernya</h1>
+        <h1 class="hc-h1">
+          <span>Dari HR Operasional ke Strategic HR:</span>
+          <span class="hc-accent">Bedah Skill Gap yang Dicari Perusahaan &amp; Roadmap Kariernya</span>
+        </h1>
 
         <p class="hc-hero__lead">
           Sesi <b class="hc-strong">LIVE 2 jam</b> untuk kamu yang sudah berpengalaman di HR dan ingin naik
@@ -671,16 +572,24 @@
           skill gap-nya, lalu susun roadmap kariernya.
         </p>
 
-        <div class="hc-meta">
-          <span><b>Rabu, 12 Agustus 2026</b></span>
-          <span class="hc-meta__bar" aria-hidden="true"></span>
-          <span>19.00 – 21.00<sup>WIB</sup></span>
-          <span class="hc-meta__bar" aria-hidden="true"></span>
-          <span>Live via Zoom</span>
+        <div class="hc-chips">
+          <span class="hc-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            Rabu, 12 Agustus 2026
+          </span>
+          <span class="hc-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+            19.00 – 21.00<sup>WIB</sup>
+          </span>
+          <span class="hc-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/></svg>
+            Live via Zoom
+          </span>
         </div>
 
         <div class="hc-btn-row">
           <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=08%2F12%2F2026" target="_blank" rel="noopener">Daftar Sekarang</a>
+          <a class="hc-btn hc-btn--ghost" href="#agenda">Lihat Topiknya</a>
         </div>
 
         <!-- countdown, carried over from the open-house template -->
@@ -701,18 +610,17 @@
     </div>
   </header>
 
-  <!-- ═══ 2. SPEAKER - light ═══ -->
-  <section class="hc-section hc-light">
-    <div class="hc-glow hc-glow--light" aria-hidden="true"></div>
+  <!-- ═══ 2. SPEAKER ═══ -->
+  <section class="hc-section hc-white">
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Pembicara</span>
-        <h2 class="hc-h2">Belajar langsung dari praktisinya</h2>
+        <h2 class="hc-h2">Belajar langsung <span class="hc-accent">dari praktisinya</span></h2>
       </div>
       <div class="hc-speakers__grid">
         <article class="hc-card hc-speaker hc-speaker--split hc-reveal">
           <div class="hc-speaker__media">
-            <div class="hc-speaker__avatar hc-speaker__avatar--photo">
+            <div class="hc-speaker__avatar">
               <img src="images/Indah.png" alt="Indah S. Rachmadani" width="235" height="218" loading="lazy" decoding="async" />
             </div>
             <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
@@ -750,12 +658,12 @@
     </div>
   </section>
 
-  <!-- ═══ 3. AGENDA - Topik yang Akan Dibahas - light (tinted) ═══ -->
-  <section class="hc-section hc-light hc-light--tint" id="agenda">
+  <!-- ═══ 3. AGENDA - Topik yang Akan Dibahas ═══ -->
+  <section class="hc-section hc-tint" id="agenda">
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Topik yang Akan Dibahas</span>
-        <h2 class="hc-h2">Dari HR operasional ke mitra strategis bisnis</h2>
+        <h2 class="hc-h2">Dari HR operasional <span class="hc-accent">ke mitra strategis bisnis</span></h2>
         <p class="hc-lead">Lima topik utama yang akan dikupas tuntas selama sesi LIVE bersama praktisinya.</p>
       </div>
       <div class="hc-rows">
@@ -798,13 +706,12 @@
     </div>
   </section>
 
-  <!-- ═══ 4. WHO IT'S FOR - Experienced HR - light ═══ -->
-  <section class="hc-section hc-light">
-    <div class="hc-glow hc-glow--light" aria-hidden="true"></div>
+  <!-- ═══ 4. WHO IT'S FOR - Experienced HR ═══ -->
+  <section class="hc-section hc-white">
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Open House Ini Cocok Untuk Kamu Jika…</span>
-        <h2 class="hc-h2">Kamu sudah berpengalaman di HR dan siap naik ke peran strategis</h2>
+        <h2 class="hc-h2">Kamu sudah berpengalaman di HR dan <span class="hc-accent">siap naik ke peran strategis</span></h2>
       </div>
       <div class="hc-grid">
         <article class="hc-card hc-reveal">
@@ -838,11 +745,11 @@
     </div>
   </section>
 
-  <!-- ═══ 5. WHAT YOU GET ═══ -->
-  <section class="hc-section hc-band">
+  <!-- ═══ 5. WHAT YOU GET - dark band ═══ -->
+  <section class="hc-section hc-dark">
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
-        <h2 class="hc-h2">Yang akan kamu dapatkan</h2>
+        <h2 class="hc-h2">Yang akan <span class="hc-accent">kamu dapatkan</span></h2>
       </div>
       <div class="hc-grid hc-grid--4 hc-reveal">
         <article class="hc-card hc-get">
@@ -878,26 +785,24 @@
   </section>
 
   <!-- ═══ 6. FINAL CTA ═══ -->
-  <section class="hc-section hc-final">
-    <div class="hc-glow hc-glow--hero" aria-hidden="true"></div>
-    <div class="hc-arcs hc-arcs--final" aria-hidden="true"></div>
+  <section class="hc-section hc-tint">
     <div class="hc-container hc-reveal">
-      <span class="hc-urgency-pill">⚡ Slot Terbatas</span>
-      <h2 class="hc-h2" style="max-width:20ch; margin-inline:auto;">Daftar Sekarang, <span class="hc-accent">GRATIS</span></h2>
+      <div class="hc-cta-card">
+        <div class="hc-cta-card__wave" aria-hidden="true"></div>
 
-      <div class="hc-closing-date">
-        <span>📅 Rabu, 12 Agustus 2026</span>
-        <span>🕖 19.00 – 21.00 WIB</span>
-      </div>
+        <span class="hc-urgency-pill">⚡ Slot Terbatas</span>
+        <h2 class="hc-h2">Daftar sekarang, <span class="hc-accent">gratis</span></h2>
+        <p class="hc-lead">Rabu, 12 Agustus 2026, pukul 19.00 – 21.00 WIB, live via Zoom. Dua jam bersama praktisinya untuk membedah skill gap dan menyusun roadmap kariermu.</p>
 
-      <div class="hc-usps">
-        <span class="hc-usp"><span class="hc-live-dot"></span> Live &amp; Interaktif</span>
-        <span class="hc-usp">💻 Live via Zoom</span>
-        <span class="hc-usp hc-accent" style="border-color:rgba(255,222,61,0.6);">✦ 100% Gratis</span>
-      </div>
+        <div class="hc-usps">
+          <span class="hc-usp"><span class="hc-live-dot"></span> Live &amp; Interaktif</span>
+          <span class="hc-usp">💻 Live via Zoom</span>
+          <span class="hc-usp">✦ 100% Gratis</span>
+        </div>
 
-      <div class="hc-btn-row">
-        <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=08%2F12%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <div class="hc-btn-row">
+          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=08%2F12%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        </div>
       </div>
     </div>
   </section>
