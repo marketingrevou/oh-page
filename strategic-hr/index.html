@@ -537,6 +537,108 @@
     .hc-page * { animation: none !important; transition: none !important; }
     .hc-reveal { opacity: 1; transform: none; }
   }
+
+  /* ============================================================
+     LIGHT SECTIONS  (.hc-light / .hc-light--tint)
+     ------------------------------------------------------------
+     The blue ATF is the brand moment; the reading sections below
+     invert to white so long copy (agenda, credentials) is easier
+     on the eye and the remaining blue bands hit harder.
+
+     Implementation: .hc-light re-points the same design tokens the
+     dark sections use, so every component inside inherits the light
+     treatment without needing its own variant class. Only the rules
+     that hard-code white (or rely on yellow-on-blue) are restated
+     below - yellow has no contrast on white, so the accent role
+     falls back to the base blue, with pink kept for emphasis.
+     ============================================================ */
+  .hc-page .hc-light {
+    --c-text:        #0d1330;
+    --c-muted:       rgba(13,19,48,0.70);
+    --c-muted-2:     rgba(13,19,48,0.50);
+    --c-hair:        rgba(13,30,110,0.12);
+    --c-hair-strong: rgba(13,30,110,0.22);
+    --c-card:        #ffffff;
+    --c-card-2:      #f8faff;
+    --shadow:        0 24px 60px -28px rgba(13,30,110,0.22);
+    --shadow-sm:     0 16px 38px -24px rgba(13,30,110,0.18);
+
+    background: #ffffff;
+    color: var(--c-text);
+  }
+  /* second light flavour, so two light sections in a row still read
+     as two sections instead of one long white run */
+  .hc-page .hc-light--tint { background: #f2f5fd; }
+
+  /* faint wash - replaces the saturated cyan blooms on light sections */
+  .hc-glow--light {
+    background:
+      radial-gradient(44% 56% at 100% 0%,
+        rgba(41,63,245,0.07) 0%, rgba(41,63,245,0) 72%),
+      radial-gradient(42% 52% at 0% 100%,
+        rgba(0,218,201,0.11) 0%, rgba(0,218,201,0) 74%);
+  }
+
+  .hc-light .hc-strong { color: var(--c-text); }
+  .hc-light .hc-accent { color: var(--c-pink); }
+  .hc-light .hc-eyebrow { color: var(--c-blue); }
+  .hc-light .hc-tag { color: var(--c-blue); }
+
+  .hc-light .hc-card {
+    background: #fff;
+    border-color: var(--c-hair);
+    box-shadow: var(--shadow-sm);
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+  }
+  .hc-light .hc-card:hover {
+    background: #fff;
+    border-color: rgba(41,63,245,0.34);
+    box-shadow: 0 26px 54px -26px rgba(13,30,110,0.26);
+  }
+
+  .hc-light .hc-ico {
+    background: rgba(41,63,245,0.08);
+    border-color: rgba(41,63,245,0.18);
+    color: var(--c-blue);
+  }
+  .hc-light .hc-num {
+    background: var(--c-blue); color: #fff;
+    box-shadow: 0 10px 22px -12px rgba(41,63,245,0.65);
+  }
+
+  /* ── Speaker card on white ──────────────────── */
+  .hc-light .hc-speaker .role { color: var(--c-blue); }
+  .hc-light .hc-speaker__avatar {
+    background: linear-gradient(160deg, #eef1fb 0%, #dde3f5 100%);
+    border-color: var(--c-hair-strong);
+    color: rgba(13,19,48,0.45);
+  }
+  .hc-light .hc-speaker__avatar--photo {
+    background: linear-gradient(180deg, #fef9d2 0%, #fdf3b1 100%);
+    border-color: var(--c-hair);
+  }
+  /* warm backdrop on a light card needs almost nothing - a whisper up top */
+  .hc-light .hc-speaker__avatar--photo::after {
+    background: linear-gradient(180deg, rgba(13,30,110,0.05) 0%, rgba(13,30,110,0) 22%);
+  }
+  .hc-light .hc-speaker__logo { background: #fff; border-color: var(--c-hair); }
+
+  /* small uppercase label: --c-muted-2 is only 3.47:1 on white, below AA */
+  .hc-light .hc-cred__lbl { color: var(--c-muted); }
+  .hc-light .hc-cred__hls li { color: var(--c-text); }
+  .hc-light .hc-cred__ico {
+    background: rgba(41,63,245,0.08);
+    border-color: rgba(41,63,245,0.20);
+    color: var(--c-blue);
+  }
+  .hc-light .hc-cred__list li::before { background: var(--c-blue); opacity: 1; }
+  .hc-light .hc-cred__list b { color: var(--c-text); }
+
+  .hc-light .hc-btn--ghost {
+    background: #fff; color: var(--c-blue);
+    border-color: rgba(41,63,245,0.28);
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+  }
   </style>
 </head>
 
@@ -599,9 +701,9 @@
     </div>
   </header>
 
-  <!-- ═══ 2. SPEAKER ═══ -->
-  <section class="hc-section">
-    <div class="hc-glow hc-glow--soft" aria-hidden="true"></div>
+  <!-- ═══ 2. SPEAKER - light ═══ -->
+  <section class="hc-section hc-light">
+    <div class="hc-glow hc-glow--light" aria-hidden="true"></div>
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Pembicara</span>
@@ -648,8 +750,8 @@
     </div>
   </section>
 
-  <!-- ═══ 3. AGENDA - Topik yang Akan Dibahas ═══ -->
-  <section class="hc-section hc-band" id="agenda">
+  <!-- ═══ 3. AGENDA - Topik yang Akan Dibahas - light (tinted) ═══ -->
+  <section class="hc-section hc-light hc-light--tint" id="agenda">
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Topik yang Akan Dibahas</span>
@@ -696,9 +798,9 @@
     </div>
   </section>
 
-  <!-- ═══ 4. WHO IT'S FOR - Experienced HR ═══ -->
-  <section class="hc-section">
-    <div class="hc-glow hc-glow--soft" aria-hidden="true"></div>
+  <!-- ═══ 4. WHO IT'S FOR - Experienced HR - light ═══ -->
+  <section class="hc-section hc-light">
+    <div class="hc-glow hc-glow--light" aria-hidden="true"></div>
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Open House Ini Cocok Untuk Kamu Jika…</span>
