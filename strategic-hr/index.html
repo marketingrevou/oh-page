@@ -22,8 +22,8 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <title>Open House GRATIS: Dari HR Operasional ke Strategic HR | RevoU</title>
-  <meta name="description" content="Open House online GRATIS: dari HR operasional ke Strategic HR. Bedah skill gap &amp; roadmap karier yang dicari perusahaan. Sesi LIVE 2 jam bersama Indah S. Rachmadani (VP, Head of HRBP Prudential Syariah), Kamis 10 September 2026, 19.00–21.00 WIB via Zoom. Daftar sekarang." />
+  <title>Open House GRATIS: Building AI Solutions for HR to Work Smarter | RevoU</title>
+  <meta name="description" content="Open House online GRATIS: Building AI Solutions for HR to Work Smarter. Lihat contoh nyata AI solutions untuk pekerjaan HR dan simulasikan cara membangunnya dari masalah HR sehari-hari. Sesi LIVE 2 jam bersama Efraim Alexander (Human Resources Manager &amp; AI Engineer di VOLIX), Kamis 17 September 2026, 19.00–21.00 WIB via Zoom. Daftar sekarang." />
   <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +33,7 @@
 
   <style>
   /* ============================================================
-     Open House - Dari HR Operasional ke Strategic HR
+     Open House - Building AI Solutions for HR to Work Smarter
      Scoped to .hc-page so styles never leak in Webflow.
 
      Visual system mirrored from the Strategic HR program page
@@ -407,6 +407,10 @@
   .hc-speaker--split { display: grid; gap: clamp(1.25rem, 3vw, 2rem); align-items: start; }
   @media (min-width: 640px) {
     .hc-speaker--split { grid-template-columns: 200px minmax(0, 1fr); }
+    /* a short bio (name + role only) sits centred beside the photo column
+       instead of pinned to its top edge; a long bio is taller than the
+       media column, so centring leaves it unchanged */
+    .hc-speaker--split .hc-speaker__body { align-self: center; }
   }
   .hc-speaker__media { display: grid; gap: 0.9rem; justify-items: center; }
   .hc-speaker__body { text-align: left; max-width: 48ch; }
@@ -437,6 +441,8 @@
     width: 100%; max-width: 200px;
   }
   .hc-speaker__logo img { display: block; height: 38px; width: auto; }
+  /* logo shipped on its own pure-black plate: match it so the JPEG edge disappears */
+  .hc-speaker__logo--dark { background: #000; border-color: #000; }
 
   /* ── Speaker credentials ────────────────────── */
   .hc-cred__hls {
@@ -554,7 +560,7 @@
         <span class="hc-nav__brand">
           <img src="images/revou-logo.svg" alt="RevoU" width="111" height="111" />
         </span>
-        <a class="hc-btn hc-btn--primary hc-nav__cta" data-cta href="https://open-house-hc.paperform.co/?date=09%2F10%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+        <a class="hc-btn hc-btn--primary hc-nav__cta" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
       </div>
     </nav>
 
@@ -563,20 +569,20 @@
         <span class="hc-eyebrow">Open House</span>
 
         <h1 class="hc-h1">
-          <span>Dari HR Operasional ke Strategic HR:</span>
-          <span class="hc-accent">Bedah Skill Gap yang Dicari Perusahaan &amp; Roadmap Kariernya</span>
+          <span>Building AI Solutions for HR</span>
+          <span class="hc-accent">to Work Smarter</span>
         </h1>
 
         <p class="hc-hero__lead">
-          Sesi <b class="hc-strong">LIVE 2 jam</b> untuk kamu yang sudah berpengalaman di HR dan ingin naik
-          dari peran operasional menjadi <b class="hc-strong">mitra strategis bisnis</b>. Kita bedah
-          skill gap-nya, lalu susun roadmap kariernya.
+          Sesi <b class="hc-strong">LIVE 2 jam</b> untuk praktisi HR yang ingin bekerja lebih cepat dan
+          lebih strategis dengan <b class="hc-strong">AI</b>. Kita lihat contoh nyata AI solutions di pekerjaan
+          HR, lalu simulasikan cara membangunnya dari masalah HR sehari-hari.
         </p>
 
         <div class="hc-chips">
           <span class="hc-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-            Kamis, 10 September 2026
+            Kamis, 17 September 2026
           </span>
           <span class="hc-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
@@ -589,7 +595,7 @@
         </div>
 
         <div class="hc-btn-row">
-          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F10%2F2026" target="_blank" rel="noopener">Daftar Sekarang</a>
+          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Sekarang</a>
           <a class="hc-btn hc-btn--ghost" href="#agenda">Lihat Topiknya</a>
         </div>
 
@@ -622,37 +628,14 @@
         <article class="hc-card hc-speaker hc-speaker--split hc-reveal">
           <div class="hc-speaker__media">
             <div class="hc-speaker__avatar">
-              <img src="images/Indah.png" alt="Indah S. Rachmadani" width="235" height="218" loading="lazy" decoding="async" />
+              <img src="images/efraim.jpeg" alt="Efraim Alexander" width="200" height="200" loading="lazy" decoding="async" />
             </div>
-            <span class="hc-speaker__logo"><img src="images/prudential-syariah-logo.png" alt="Prudential Syariah" width="4382" height="1921" loading="lazy" decoding="async" /></span>
+            <span class="hc-speaker__logo hc-speaker__logo--dark"><img src="images/volix-logo.jpeg" alt="VOLIX" width="370" height="102" loading="lazy" decoding="async" /></span>
           </div>
 
           <div class="hc-speaker__body">
-            <h4>Indah S. Rachmadani</h4>
-            <p class="role">VP, Head of HRBP di Prudential Syariah</p>
-
-            <ul class="hc-cred__hls">
-              <li>
-                <span class="hc-cred__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
-                </span>
-                <span>15+ tahun pengalaman di Strategic HR &amp; People Transformation</span>
-              </li>
-              <li>
-                <span class="hc-cred__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5.5a2.5 2.5 0 0 0 2.5 4M16 5h2.5a2.5 2.5 0 0 1-2.5 4"/><path d="M12 13v3M9 20h6"/></svg>
-                </span>
-                <span>Winner of Prudential CEO &amp; Leadership Award dan Shell Global Commercial EVP Award</span>
-              </li>
-            </ul>
-
-            <p class="hc-cred__lbl">Pengalaman Sebelumnya</p>
-            <ul class="hc-cred__list">
-              <li>Sr. Manager HRBP di <b>Lazada</b></li>
-              <li>Sr. Manager HC Talent di <b>PT Semen Indonesia</b></li>
-              <li>Project Leader Sales Ops &amp; HR di <b>Shell</b></li>
-              <li>OD &amp; Performance Specialist di <b>Holcim</b> dan <b>AXIS</b></li>
-            </ul>
+            <h4>Efraim Alexander</h4>
+            <p class="role">Human Resources Manager &amp; AI Engineer di VOLIX</p>
           </div>
         </article>
       </div>
@@ -664,49 +647,49 @@
     <div class="hc-container">
       <div class="hc-section-head center hc-reveal">
         <span class="hc-eyebrow">Topik yang Akan Dibahas</span>
-        <h2 class="hc-h2">Dari HR operasional <span class="hc-accent">ke mitra strategis bisnis</span></h2>
+        <h2 class="hc-h2">Dari pekerjaan repetitif <span class="hc-accent">ke solusi AI yang berdampak</span></h2>
         <p class="hc-lead">Lima topik utama yang akan dikupas tuntas selama sesi LIVE bersama praktisinya.</p>
       </div>
       <div class="hc-rows">
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">1</span>
           <div>
-            <h3 class="hc-h3">Evolusi Peran HR: Dari Fungsi Administratif ke Mitra Bisnis</h3>
-            <p>Kenapa direksi sekarang menuntut HR ikut bicara soal target bisnis, dan apa yang berubah dari ekspektasi mereka terhadap tim HR dalam lima tahun terakhir.</p>
+            <h3 class="hc-h3">Understand How AI Is Changing the Way HR Works</h3>
+            <p>Memahami bagaimana AI mengubah pekerjaan HR dari aktivitas yang repetitif menuju pekerjaan yang lebih cepat, data-driven, dan strategis.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">2</span>
           <div>
-            <h3 class="hc-h3">Jenjang Karier HR: Dari Operasional ke Strategic HR</h3>
-            <p>Peta jalur karier HR yang realistis: HRBP, specialist, atau generalist, beserta hal yang biasanya menentukan seseorang naik ke level strategis.</p>
+            <h3 class="hc-h3">Explore AI Solutions That Can Transform Everyday HR Work</h3>
+            <p>Melihat contoh nyata AI solutions untuk performance review, employee inquiries, HR data, dan pekerjaan HR lainnya.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">3</span>
           <div>
-            <h3 class="hc-h3">Skill yang Benar-Benar Dicari Perusahaan dari HR</h3>
-            <p>Business acumen, HR analytics, dan stakeholder management: tiga kompetensi yang paling sering muncul di job description HRBP, beserta cara perusahaan menilainya saat interview.</p>
+            <h3 class="hc-h3">Measure the Business Impact of AI in HR</h3>
+            <p>Memahami bagaimana AI dapat meningkatkan time efficiency, cost efficiency, consistency, decision-making, dan scalability dalam pekerjaan HR.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">4</span>
           <div>
-            <h3 class="hc-h3">Cara Membangun Pengalaman Strategic HR Sebelum Punya Jabatannya</h3>
-            <p>Langkah konkret untuk mulai terlibat dalam keputusan bisnis dari posisi kamu sekarang, tanpa harus menunggu promosi atau pindah perusahaan.</p>
+            <h3 class="hc-h3">Build an AI Solution from a Real HR Challenge</h3>
+            <p>Mempelajari cara mengubah masalah HR sehari-hari menjadi solusi AI melalui simulasi langsung dari problem identification hingga solution design.</p>
           </div>
         </article>
         <article class="hc-card hc-row hc-reveal">
           <span class="hc-num">5</span>
           <div>
-            <h3 class="hc-h3">Roadmap Membangun Karier sebagai Strategic HR</h3>
-            <p>Urutan belajar yang masuk akal: skill mana yang perlu didahulukan, mana yang bisa menyusul, dan kesalahan umum yang bikin transisi ini mandek.</p>
+            <h3 class="hc-h3">Scale AI Solutions from One Use Case to Bigger HR Impact</h3>
+            <p>Memahami cara mengembangkan solusi AI agar dapat digunakan lebih luas dengan mempertimbangkan data, adoption, governance, dan scalability.</p>
           </div>
         </article>
       </div>
 
       <div class="hc-btn-row center hc-reveal">
-        <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F10%2F2026" target="_blank" rel="noopener">Daftar Sekarang</a>
+        <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Sekarang</a>
       </div>
     </div>
   </section>
@@ -769,14 +752,14 @@
             <!-- roadmap / route -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M15.5 5H10a3.5 3.5 0 0 0 0 7h4a3.5 3.5 0 0 1 0 7H8.5"/></svg>
           </div>
-          <h3 class="hc-h3">Roadmap karier ke Strategic HR</h3>
+          <h3 class="hc-h3">Contoh nyata AI solutions untuk HR</h3>
         </article>
         <article class="hc-card hc-get">
           <div class="hc-ico" aria-hidden="true">
             <!-- checklist / competencies -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 2 2 3-3"/><path d="m3 17 2 2 3-3"/><path d="M12 8h9M12 18h9"/></svg>
           </div>
-          <h3 class="hc-h3">Checklist skill yang dicari perusahaan</h3>
+          <h3 class="hc-h3">Simulasi membangun solusi AI</h3>
         </article>
         <article class="hc-card hc-get">
           <div class="hc-ico" aria-hidden="true">
@@ -797,7 +780,7 @@
 
         <span class="hc-urgency-pill">⚡ Slot Terbatas</span>
         <h2 class="hc-h2">Daftar sekarang, <span class="hc-accent">gratis</span></h2>
-        <p class="hc-lead">Kamis, 10 September 2026, pukul 19.00 – 21.00 WIB, live via Zoom. Dua jam bersama praktisinya untuk membedah skill gap dan menyusun roadmap kariermu.</p>
+        <p class="hc-lead">Kamis, 17 September 2026, pukul 19.00 – 21.00 WIB, live via Zoom. Dua jam untuk melihat AI solutions di pekerjaan HR dan belajar membangunnya sendiri.</p>
 
         <div class="hc-usps">
           <span class="hc-usp"><span class="hc-live-dot"></span> Live &amp; Interaktif</span>
@@ -806,7 +789,7 @@
         </div>
 
         <div class="hc-btn-row">
-          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F10%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
         </div>
       </div>
     </div>
@@ -826,7 +809,7 @@
 (function () {
   /* ── Countdown ──────────────────────────────────
      Event start, WIB (UTC+7). Format: 'YYYY-MM-DDTHH:mm:ss+07:00' */
-  var EVENT_DATE = '2026-09-10T19:00:00+07:00';
+  var EVENT_DATE = '2026-09-17T19:00:00+07:00';
 
   var target = new Date(EVENT_DATE).getTime();
 
