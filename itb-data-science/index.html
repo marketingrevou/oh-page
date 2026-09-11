@@ -191,7 +191,7 @@
     line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--c-ink);
-    margin: 0 0 1rem;
+    margin: 0 0 clamp(1.25rem, 2.5vw, 1.75rem);
     overflow-wrap: break-word;
   }
   .dsi-h1 .dsi-h1__hero {
@@ -300,25 +300,6 @@
     .dsi-hero__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
   }
   .dsi-badge-oh img { width: clamp(126px, 15vw, 178px); height: auto; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
-
-  /* orange "New Program for Data Analyst" pill + cursor, straight from Figma */
-  .dsi-pill-wrap { position: relative; display: inline-block; margin: 0.4rem 0 1.4rem; }
-  .dsi-pill {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: radial-gradient(120% 420% at 50% 100%, #f08700 0%, #f36f0b 50%, #f65616 100%);
-    border: 3px solid rgba(255,255,255,0.39);
-    border-radius: var(--r-pill);
-    color: #fff; font-weight: 700; letter-spacing: -0.02em;
-    font-size: clamp(0.95rem, 0.85rem + 0.6vw, 1.32rem);
-    padding: 0.5em 1.15em;
-    filter: drop-shadow(0 12px 14px rgba(0,0,0,0.22));
-  }
-  .dsi-pill__cursor {
-    position: absolute; left: -14px; top: -26px;
-    width: clamp(24px, 2.6vw, 34px); height: auto;
-    transform: rotate(-35.7deg);
-    pointer-events: none;
-  }
 
   /* ── Hero stage: ITB building + glass event card + 3D decor ── */
   .dsi-stage { position: relative; }
@@ -722,11 +703,6 @@
             <span class="dsi-h1__hero">Data Science</span>
             <span class="dsi-h1__line">in the Age of AI<img class="dsi-sparkle" src="images/sparkle.svg" alt="" width="73" height="66" /></span>
           </h1>
-
-          <span class="dsi-pill-wrap">
-            <img class="dsi-pill__cursor" src="images/cursor.svg" alt="" width="36" height="38" aria-hidden="true" />
-            <span class="dsi-pill">New Program for Data Analyst</span>
-          </span>
 
           <p class="dsi-lead">
             Sesi <b class="dsi-strong">LIVE 2 jam</b> memahami apa saja yang diperlukan untuk menjadi
