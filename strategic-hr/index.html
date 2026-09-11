@@ -92,8 +92,8 @@
     --sp-section: clamp(3.5rem, 2rem + 6vw, 6rem);
     --sp-gap:     clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
     --sp-stack:   clamp(2rem, 1.3rem + 2.4vw, 3rem);
-    --pad-x:      clamp(1.25rem, -0.5rem + 7vw, 8.75rem);
-    --maxw:       1200px;
+    --pad-x:      clamp(1.25rem, -0.5rem + 7vw, 3rem);
+    --maxw:       1280px;
 
     /* ── Misc ───────────────────────────────────── */
     --radius:      12px;
@@ -285,6 +285,27 @@
     color: var(--c-brown);
     margin: clamp(1rem, 2.4vw, 1.4rem) 0 0;
     max-width: 54ch;
+  }
+
+  /* ── AI tool orbs (hero art, right side) ────── */
+  .hc-hero__body { position: relative; }
+  /* anchored to the bounded container, with the asset's transparent edge allowed
+     into the gutter so the visible artwork balances the copy's left margin */
+  .hc-hero__art {
+    position: absolute; z-index: 2;
+    right: 0;
+    top: 50%; transform: translateY(-50%);
+    width: clamp(440px, 40vw, 600px);
+    pointer-events: none;
+  }
+  .hc-hero__art img {
+    display: block; width: 100%; height: auto;
+    animation: hc-float 7s ease-in-out infinite;
+  }
+
+  @keyframes hc-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
   }
 
   /* ── Countdown strip ────────────────────────── */
@@ -484,7 +505,7 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-xl);
-    padding: clamp(1.5rem, 4vw, 2.5rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
     background: linear-gradient(120deg, var(--c-cream) 53.2%, var(--c-gold-edge) 116.7%);
     box-shadow: var(--shadow);
   }
@@ -496,22 +517,24 @@
     mix-blend-mode: overlay;
   }
   .hc-cta-card > *:not(.hc-cta-card__wave) { position: relative; z-index: 1; }
-  .hc-cta-card .hc-h2 { color: var(--c-brown); max-width: 16ch; }
-  .hc-cta-card .hc-lead { color: var(--c-brown); font-weight: 600; max-width: 52ch; }
-  .hc-urgency-pill {
-    display: inline-flex; align-items: center; gap: 0.5em;
-    background: rgba(255,255,255,0.6); color: var(--c-brown);
-    border: 1px solid rgba(89,69,0,0.18);
-    border-radius: var(--radius-pill);
-    padding: 0.45em 1em; font-weight: 800; font-size: var(--fs-sm);
-    margin-bottom: 1rem;
+  .hc-cta-card__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem 3rem;
+    align-items: center;
   }
-  .hc-usps { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.25rem 0 0; }
-  .hc-usp {
-    display: inline-flex; align-items: center; gap: 0.5em;
-    padding: 0.5em 1em; border-radius: var(--radius);
-    background: rgba(255,255,255,0.62); border: 1px solid rgba(89,69,0,0.12);
-    font-weight: 700; font-size: var(--fs-sm); color: var(--c-brown);
+  .hc-cta-card .hc-h2 { color: var(--c-brown); max-width: 23ch; margin-bottom: 0.6rem; }
+  .hc-cta-card .hc-lead { color: var(--c-brown); font-weight: 700; max-width: none; }
+  .hc-cta-card .hc-btn-row { margin-top: 0; }
+  .hc-page .hc-cta-card .hc-btn--primary {
+    background: #ffffff;
+    color: var(--c-brown);
+    border-color: rgba(89,69,0,0.12);
+    box-shadow: 0 14px 32px -10px rgba(89,69,0,0.38);
+  }
+  .hc-page .hc-cta-card .hc-btn--primary:hover {
+    background: var(--c-cream);
+    box-shadow: 0 18px 38px -10px rgba(89,69,0,0.46);
   }
 
   /* ── Footer ─────────────────────────────────── */
@@ -530,6 +553,17 @@
     .hc-hero__wave {
       right: -140px; width: 760px; height: 462px;
       background-size: 760px 462px;
+    }
+    .hc-cta-card__content { grid-template-columns: 1fr; }
+  }
+  /* the enlarged art only sits beside the 780px copy column on wide screens;
+     below that it drops into flow so neither side gets squeezed or overlaps */
+  @media (max-width: 1349px) {
+    .hc-hero__art {
+      position: static; transform: none;
+      width: min(100%, 520px);
+      margin: calc(clamp(3.5rem, 8vw, 6rem) * -0.4) auto 0;
+      padding-bottom: clamp(2rem, 6vw, 3rem);
     }
   }
   @media (max-width: 600px) {
@@ -564,7 +598,7 @@
       </div>
     </nav>
 
-    <div class="hc-container">
+    <div class="hc-container hc-hero__body">
       <div class="hc-hero__inner hc-reveal">
         <span class="hc-eyebrow">Open House</span>
 
@@ -613,6 +647,10 @@
             <div class="hc-cd-unit"><span class="hc-cd-num" data-cd="secs">00</span><span class="hc-cd-lbl">Detik</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="hc-hero__art">
+        <img src="images/ai-orbit-2.png" alt="Tools AI seperti ChatGPT, Claude, Gemini, dan Copilot" width="1536" height="1024" fetchpriority="high" decoding="async" />
       </div>
     </div>
   </header>
@@ -778,18 +816,14 @@
       <div class="hc-cta-card">
         <div class="hc-cta-card__wave" aria-hidden="true"></div>
 
-        <span class="hc-urgency-pill">⚡ Slot Terbatas</span>
-        <h2 class="hc-h2">Daftar sekarang, <span class="hc-accent">gratis</span></h2>
-        <p class="hc-lead">Kamis, 17 September 2026, pukul 19.00 – 21.00 WIB, live via Zoom. Dua jam untuk melihat AI solutions di pekerjaan HR dan belajar membangunnya sendiri.</p>
-
-        <div class="hc-usps">
-          <span class="hc-usp"><span class="hc-live-dot"></span> Live &amp; Interaktif</span>
-          <span class="hc-usp">💻 Live via Zoom</span>
-          <span class="hc-usp">✦ 100% Gratis</span>
-        </div>
-
-        <div class="hc-btn-row">
-          <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <div class="hc-cta-card__content">
+          <div>
+            <h2 class="hc-h2">Siap kerja lebih cerdas <span class="hc-accent">dengan AI?</span></h2>
+            <p class="hc-lead">17 September 2026 · 19.00–21.00 WIB · Live via Zoom</p>
+          </div>
+          <div class="hc-btn-row">
+            <a class="hc-btn hc-btn--primary" data-cta href="https://open-house-hc.paperform.co/?date=09%2F17%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+          </div>
         </div>
       </div>
     </div>
