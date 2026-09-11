@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1951421131676868');
+    fbq('track', 'PageView');
+    fbq('track', 'CompleteRegistration');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1951421131676868&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>Terima Kasih — Open House Data Science | RevoU × ITB</title>
+  <meta name="description" content="Terima kasih sudah mendaftar Open House Data Science RevoU × ITB. Join WhatsApp Group untuk reminder, link acara, dan informasi lebih lanjut." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ============================================================
+     Thank-you page — Open House Data Science (RevoU × ITB)
+     Reuses the light ITB / blue visual system from the main LP.
+     ============================================================ */
+
+  .dsi-page *,
+  .dsi-page *::before,
+  .dsi-page *::after { box-sizing: border-box; min-width: 0; }
+
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; min-height: 100%; }
+
+  .dsi-page {
+    --c-bg:          #ffffff;
+    --c-ink:         #0a0f1c;
+    --c-body:        #46536e;
+    --c-muted:       #6d7994;
+    --c-blue:        #0466d8;
+    --c-blue-deep:   #004799;
+    --c-yellow:      #ffde3d;
+    --c-wa:          #25d366;   /* WhatsApp green */
+    --c-live:        #16a34a;
+    --c-hair:        rgba(4,102,216,0.16);
+    --c-hair-soft:   rgba(4,102,216,0.09);
+
+    --fs-h1:      clamp(1.9rem, 1.2rem + 2.6vw, 3rem);
+    --fs-body:    clamp(1rem, 0.95rem + 0.25vw, 1.14rem);
+    --fs-sm:      clamp(0.875rem, 0.84rem + 0.18vw, 0.97rem);
+    --fs-eyebrow: clamp(0.72rem, 0.62rem + 0.35vw, 0.9rem);
+
+    --r-card: clamp(20px, 1rem + 1.6vw, 34px);
+    --r-pill: 999px;
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--c-body);
+    background: var(--c-bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dsi-page img { max-width: 100%; display: block; }
+  .dsi-page a { color: inherit; text-decoration: none; }
+
+  /* Ambient blue orbs, echoing the hero of the main LP */
+  .dsi-ty {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 6vw, 3rem);
+    overflow: clip;
+  }
+  .dsi-ty::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 50% at 50% 6%, rgba(4,102,216,0.15), transparent 70%),
+      radial-gradient(45% 45% at 85% 92%, rgba(103,182,251,0.22), transparent 70%),
+      radial-gradient(40% 40% at 8% 80%, rgba(255,222,61,0.16), transparent 70%);
+  }
+
+  .dsi-ty__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+  }
+
+  .dsi-ty__logo { margin: 0 auto clamp(1.75rem, 4vw, 2.5rem); width: fit-content; }
+  .dsi-ty__logo img { width: clamp(210px, 30vw, 300px); height: auto; }
+
+  .dsi-ty__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    font-size: var(--fs-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0f7a37;
+    background: rgba(22,163,74,0.10);
+    border: 1px solid rgba(22,163,74,0.26);
+    padding: 0.5em 1em;
+    border-radius: var(--r-pill);
+    margin-bottom: clamp(1.1rem, 3vw, 1.6rem);
+  }
+  .dsi-ty__badge .dot {
+    width: 8px; height: 8px; border-radius: 50%; flex: none;
+    background: var(--c-live);
+    box-shadow: 0 0 0 4px rgba(22,163,74,0.16);
+  }
+
+  .dsi-ty__title {
+    font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--c-ink);
+    margin: 0 0 clamp(0.85rem, 2vw, 1.15rem);
+    padding-bottom: 0.04em;
+  }
+  .dsi-ty__lead {
+    font-size: var(--fs-body);
+    color: var(--c-body);
+    margin: 0 auto clamp(1.75rem, 4vw, 2.25rem);
+    max-width: 48ch;
+  }
+
+  .dsi-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+    font-family: inherit;
+    font-size: var(--fs-body);
+    font-weight: 700;
+    padding: 0.95em 1.9em;
+    border-radius: var(--r-pill);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-align: center;
+    line-height: 1.15;
+  }
+  /* (0,2,0) so it outranks `.dsi-page a { color: inherit }` at (0,1,1) */
+  .dsi-page .dsi-btn--wa {
+    background: var(--c-wa); color: #05300f;
+    box-shadow: 0 10px 30px -10px rgba(37,211,102,0.55);
+  }
+  .dsi-page .dsi-btn--wa:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -10px rgba(37,211,102,0.65); }
+  .dsi-btn svg { width: 1.3em; height: 1.3em; flex: none; }
+
+  .dsi-ty__note {
+    margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+    font-size: var(--fs-sm);
+    color: var(--c-muted);
+  }
+  .dsi-ty__back {
+    display: inline-block; margin-top: 1rem;
+    font-size: var(--fs-sm); font-weight: 600; color: var(--c-blue);
+    border-bottom: 1px solid var(--c-hair);
+  }
+  .dsi-ty__back:hover { border-bottom-color: var(--c-blue); }
+
+  .dsi-ty__foot {
+    text-align: center;
+    padding: 1.5rem 1.25rem 2rem;
+    color: var(--c-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--c-hair-soft);
+  }
+
+  @media (max-width: 560px) { .dsi-btn { width: 100%; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dsi-page *, .dsi-page *::before, .dsi-page *::after {
+      animation-duration: .001ms !important; transition-duration: .001ms !important;
+    }
+  }
+  </style>
+</head>
+<body>
+  <main class="dsi-page">
+    <section class="dsi-ty">
+      <div class="dsi-ty__inner">
+        <div class="dsi-ty__logo">
+          <img src="../images/revou-itb-logo.webp" alt="RevoU × Institut Teknologi Bandung" width="1088" height="212" />
+        </div>
+
+        <span class="dsi-ty__badge"><span class="dot"></span> Pendaftaran Berhasil</span>
+
+        <h1 class="dsi-ty__title">Terima Kasih Sudah Mendaftar! 🎉</h1>
+
+        <p class="dsi-ty__lead">
+          Pendaftaran kamu untuk Open House <b>From Data Analyst to Data Scientist</b> sudah kami terima.
+          Satu langkah lagi — join WhatsApp Group untuk mendapatkan reminder,
+          link acara, dan informasi lebih lanjut.
+        </p>
+
+        <a class="dsi-btn dsi-btn--wa" href="https://rebrand.ly/wag-ohitbds" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Join WhatsApp Group
+        </a>
+
+        <p class="dsi-ty__note">Gratis · Informasi acara &amp; reminder dikirim di grup</p>
+        <a class="dsi-ty__back" href="../">← Kembali ke halaman Open House</a>
+      </div>
+    </section>
+
+    <footer class="dsi-ty__foot">
+      © 2026 RevoU × Institut Teknologi Bandung · Open House Data Science
+    </footer>
+  </main>
+</body>
+</html>

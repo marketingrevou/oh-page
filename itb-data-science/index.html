@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1951421131676868');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1951421131676868&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <title>From Data Analyst to Data Scientist: Building Your Career in the Age of AI | RevoU × ITB</title>
+  <meta name="description" content="Open House online GRATIS: dari Data Analyst ke Data Scientist di era AI. Sesi LIVE 2 jam bersama Titah Yudhistira, Ph.D (Fakultas Teknologi Industri ITB) &amp; Rahmat Hidayatullah (Head of Data Science, XLSmart). Rabu, 16 September 2026, 19.00–21.00 WIB via Zoom. Daftar sekarang." />
+  <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="From Data Analyst to Data Scientist: Building Your Career in the Age of AI" />
+  <meta property="og:description" content="Open House GRATIS bareng akademisi ITB &amp; Head of Data Science XLSmart. Rabu, 16 September 2026, 19.00–21.00 WIB, live via Zoom." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@1,400;1,700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,700,0,1&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/gedung-itb-2.webp" />
+
+  <style>
+  /* ============================================================
+     Open House — From Data Analyst to Data Scientist (RevoU × ITB)
+     Scoped to .dsi-page so styles never leak in Webflow.
+     Visual system extracted from Figma (light ITB / blue theme):
+     white ground, #0466d8 blue gradient display type, #ffde3d CTA,
+     orange gradient pill, deeply-rounded glass cards.
+     ============================================================ */
+
+  .dsi-page *,
+  .dsi-page *::before,
+  .dsi-page *::after { box-sizing: border-box; min-width: 0; }
+
+  html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: clip; }
+
+  .dsi-page {
+    /* ── Colors (from Figma) ────────────────────── */
+    --c-bg:          #ffffff;
+    --c-bg-soft:     #f2f7ff;   /* tinted section band */
+    --c-bg-band:     #eaf2ff;   /* stronger blue band */
+    --c-ink:         #0a0f1c;   /* headings (Figma: pure black) */
+    --c-body:        #46536e;   /* body copy */
+    --c-muted:       #6d7994;
+    --c-blue:        #0466d8;
+    --c-blue-deep:   #004799;
+    --c-blue-ink:    #0f62ac;   /* ITB caption blue */
+    --c-navy:        #1d3472;   /* photo tint / dark band */
+    --c-yellow:      #ffde3d;   /* primary CTA */
+    --c-yellow-dark: #f5cf12;
+    --c-orange:      #f08700;
+    --c-orange-2:    #f65616;
+    --c-live:        #16a34a;
+    --c-hair:        rgba(4,102,216,0.16);
+    --c-hair-soft:   rgba(4,102,216,0.09);
+
+    /* ── Fluid type scale ───────────────────────── */
+    --fs-eyebrow: clamp(0.72rem, 0.62rem + 0.35vw, 0.9rem);
+    --fs-h1:      clamp(1.85rem, 1rem + 2.9vw, 3.1rem);
+    --fs-h1-lg:   clamp(2.15rem, 0.9rem + 3.5vw, 3.85rem);  /* the gradient line */
+    --fs-h2:      clamp(1.7rem, 1.2rem + 2.1vw, 2.75rem);
+    --fs-h3:      clamp(1.1rem, 0.98rem + 0.55vw, 1.35rem);
+    --fs-body:    clamp(1rem, 0.95rem + 0.25vw, 1.14rem);
+    --fs-sm:      clamp(0.875rem, 0.84rem + 0.18vw, 0.97rem);
+
+    /* ── Fluid spacing ──────────────────────────── */
+    --sp-section: clamp(3.5rem, 2rem + 6vw, 6.5rem);
+    --sp-gap:     clamp(1rem, 0.7rem + 1.2vw, 1.5rem);
+    --sp-stack:   clamp(2rem, 1.3rem + 2.4vw, 3rem);
+    --pad-x:      clamp(1.25rem, 0.4rem + 2.6vw, 3.5rem);
+    --maxw:       1320px;
+
+    /* ── Shape (Figma is very round) ────────────── */
+    --r-card: clamp(20px, 1rem + 1.6vw, 34px);
+    --r-pill: 999px;
+    --r-sm:   14px;
+    --shadow:    0 30px 70px -28px rgba(6,42,102,0.30);
+    --shadow-sm: 0 14px 34px -16px rgba(6,42,102,0.26);
+    --shadow-blue: 0 8px 16px rgba(103,182,251,0.55); /* Figma decor shadow */
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--c-body);
+    background: var(--c-bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  .dsi-page img { max-width: 100%; display: block; }
+  .dsi-page a { color: inherit; text-decoration: none; }
+
+  /* ── Layout helpers ─────────────────────────── */
+  .dsi-container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: var(--pad-x);
+  }
+  .dsi-section { padding-block: var(--sp-section); position: relative; }
+  .dsi-soft { background: var(--c-bg-soft); }
+  .dsi-band { background: linear-gradient(180deg, #eaf2ff 0%, #f6faff 100%); }
+
+  /* soft blue orbs lifted from the Figma background ellipses */
+  .dsi-orb {
+    position: absolute; z-index: 0; pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(4,102,216,0.20) 0%, rgba(103,182,251,0.13) 45%, rgba(255,255,255,0) 70%);
+    filter: blur(8px);
+  }
+  .dsi-section > .dsi-container { position: relative; z-index: 1; }
+
+  /* ── Typography ─────────────────────────────── */
+  .dsi-eyebrow {
+    font-size: var(--fs-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--c-blue);
+    margin: 0 0 clamp(0.6rem, 1.5vw, 0.9rem);
+    display: inline-flex; align-items: center; gap: 0.6em;
+  }
+  .dsi-h1 {
+    font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+    font-size: var(--fs-h1);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--c-ink);
+    margin: 0 0 1rem;
+    overflow-wrap: break-word;
+  }
+  .dsi-h1 .dsi-h1__hero {
+    display: block;
+    font-size: var(--fs-h1-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    padding-bottom: 0.04em; /* headroom: background-clip:text can shave descenders */
+    background: linear-gradient(270deg, #0466d8 0%, #004799 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dsi-h1 .dsi-h1__line { display: block; }
+  .dsi-h1 .dsi-sparkle {
+    display: inline-block; vertical-align: -0.12em;
+    width: clamp(26px, 3.2vw, 46px); height: auto; margin-left: 0.18em;
+  }
+  .dsi-h2 {
+    font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--c-ink);
+    margin: 0 0 0.75rem;
+  }
+  .dsi-h3 {
+    font-size: var(--fs-h3); font-weight: 700; line-height: 1.3;
+    color: var(--c-ink); margin: 0 0 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .dsi-lead { font-size: var(--fs-body); color: var(--c-body); margin: 0; max-width: 58ch; }
+  .dsi-accent { color: var(--c-blue); }
+  .dsi-strong { color: var(--c-ink); font-weight: 700; }
+
+  .dsi-section-head { max-width: 780px; margin-bottom: var(--sp-stack); }
+  .dsi-section-head.center { margin-inline: auto; text-align: center; }
+  .dsi-section-head.center .dsi-eyebrow { justify-content: center; }
+  .dsi-section-head.center .dsi-lead { margin-inline: auto; }
+
+  /* ── Buttons ────────────────────────────────── */
+  .dsi-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    font-family: inherit;
+    font-size: clamp(0.98rem, 0.92rem + 0.28vw, 1.12rem);
+    font-weight: 700;
+    padding: 0.95em 1.9em;
+    border-radius: var(--r-pill);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-align: center;
+    line-height: 1.15;
+  }
+  .dsi-page .dsi-btn--primary {
+    background: var(--c-yellow); color: #0a0f1c;
+    box-shadow: 0 10px 26px -10px rgba(245,207,18,0.75);
+  }
+  .dsi-page .dsi-btn--primary:hover { transform: translateY(-2px); background: var(--c-yellow-dark); box-shadow: 0 16px 34px -10px rgba(245,207,18,0.85); }
+  .dsi-page .dsi-btn--blue {
+    background: var(--c-blue); color: #fff;
+    box-shadow: 0 10px 26px -10px rgba(4,102,216,0.6);
+  }
+  .dsi-page .dsi-btn--blue:hover { transform: translateY(-2px); background: var(--c-blue-deep); }
+  .dsi-btn-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+  /* ── Nav ────────────────────────────────────── */
+  .dsi-nav {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(14.6px); -webkit-backdrop-filter: blur(14.6px);
+    border-bottom: 1px solid var(--c-hair-soft);
+  }
+  .dsi-nav__inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding-block: 0.7rem;
+  }
+  .dsi-nav__logo img { width: clamp(190px, 26vw, 300px); height: auto; }
+  .dsi-nav__cta { padding: 0.7em 1.35em; font-size: var(--fs-sm); }
+  @media (max-width: 420px) { .dsi-nav__cta { display: none; } }
+
+  /* ── Hero ───────────────────────────────────── */
+  .dsi-hero { position: relative; overflow: clip; padding-block: clamp(2.5rem, 1.5rem + 4vw, 4.5rem) clamp(3rem, 2rem + 5vw, 5.5rem); }
+  .dsi-hero__orb-a { width: min(760px, 90vw); aspect-ratio: 1; right: -22%; top: -34%; }
+  .dsi-hero__orb-b { width: min(620px, 80vw); aspect-ratio: 1; left: -24%; bottom: -30%; }
+  .dsi-hero__grid {
+    position: relative; z-index: 1;
+    display: grid; gap: clamp(2rem, 1rem + 4vw, 3.5rem);
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 1000px) {
+    .dsi-hero__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  }
+  .dsi-badge-oh img { width: clamp(126px, 15vw, 178px); height: auto; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+
+  /* orange "New Program for Data Analyst" pill + cursor, straight from Figma */
+  .dsi-pill-wrap { position: relative; display: inline-block; margin: 0.4rem 0 1.4rem; }
+  .dsi-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: radial-gradient(120% 420% at 50% 100%, #f08700 0%, #f36f0b 50%, #f65616 100%);
+    border: 3px solid rgba(255,255,255,0.39);
+    border-radius: var(--r-pill);
+    color: #fff; font-weight: 700; letter-spacing: -0.02em;
+    font-size: clamp(0.95rem, 0.85rem + 0.6vw, 1.32rem);
+    padding: 0.5em 1.15em;
+    filter: drop-shadow(0 12px 14px rgba(0,0,0,0.22));
+  }
+  .dsi-pill__cursor {
+    position: absolute; left: -14px; top: -26px;
+    width: clamp(24px, 2.6vw, 34px); height: auto;
+    transform: rotate(-35.7deg);
+    pointer-events: none;
+  }
+
+  .dsi-live-dot {
+    width: 0.55em; height: 0.55em; border-radius: 50%;
+    background: var(--c-live); display: inline-block; flex: none;
+    box-shadow: 0 0 0 0 rgba(22,163,74,0.55);
+    animation: dsi-pulse 2.2s infinite;
+  }
+  @keyframes dsi-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(22,163,74,0.55); }
+    70%  { box-shadow: 0 0 0 0.7em rgba(22,163,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(22,163,74,0); }
+  }
+
+  /* ── Hero stage: ITB building + glass event card + 3D decor ── */
+  .dsi-stage { position: relative; }
+  .dsi-stage__photo {
+    position: relative; overflow: hidden;
+    border-radius: var(--r-card);
+    background: linear-gradient(180deg, #24408a 0%, #1d3472 55%, #162654 100%);
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow);
+    z-index: 1;
+  }
+  /* cut-out asset: seat it on the panel floor, never crop the roofline */
+  .dsi-stage__photo img {
+    width: 100%; height: 100%;
+    object-fit: contain; object-position: bottom;
+  }
+  /* soft light bloom behind the building, so the cut-out doesn't read as pasted */
+  .dsi-stage__photo::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(78% 60% at 50% 86%, rgba(103,182,251,0.42) 0%, transparent 72%);
+  }
+  .dsi-stage__photo img { position: relative; z-index: 1; }
+
+  /* glass info card — Figma: rgba(255,255,255,.8) + 14.6px backdrop blur, r=45 */
+  .dsi-eventcard {
+    position: relative; z-index: 3;
+    margin-top: clamp(-5rem, -8vw, -3rem);
+    margin-inline: clamp(0.75rem, 3vw, 1.5rem);
+    background: rgba(255,255,255,0.86);
+    backdrop-filter: blur(14.6px); -webkit-backdrop-filter: blur(14.6px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: var(--r-card);
+    box-shadow: var(--shadow);
+    padding: clamp(1.25rem, 0.8rem + 1.8vw, 2rem);
+    display: flex; flex-direction: column; gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  @media (min-width: 1000px) {
+    .dsi-stage__photo { aspect-ratio: 5 / 4; }
+  }
+  @media (min-width: 1140px) {
+    .dsi-eventcard {
+      position: absolute;
+      left: clamp(1rem, 2.4vw, 2.25rem); right: clamp(1rem, 2.4vw, 2.25rem);
+      bottom: clamp(-4rem, -5vw, -2.5rem);
+      margin: 0;
+    }
+    .dsi-stage { padding-bottom: clamp(4rem, 5.5vw, 4.5rem); }
+  }
+  .dsi-eventcard__date {
+    font-size: clamp(1.1rem, 0.95rem + 0.75vw, 1.5rem);
+    font-weight: 700; color: var(--c-ink); margin: 0 0 0.15rem; line-height: 1.25;
+  }
+  .dsi-eventcard__time {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem;
+    font-size: clamp(0.95rem, 0.88rem + 0.4vw, 1.15rem);
+    font-weight: 500; color: var(--c-ink); margin: 0;
+  }
+  .dsi-eventcard__time .dsi-wib { font-size: 0.68em; font-weight: 500; }
+  .dsi-eventcard__time .dsi-vr { width: 2px; height: 1.15em; background: var(--c-ink); opacity: 0.45; border-radius: 2px; }
+  .dsi-eventcard__time img { height: 1.05em; width: auto; }
+
+  /* countdown */
+  .dsi-countdown { display: flex; gap: clamp(0.4rem, 1.4vw, 0.75rem); }
+  .dsi-cd-unit {
+    flex: 1 1 0; min-width: 0;
+    background: #fff; border: 1px solid var(--c-hair);
+    border-radius: var(--r-sm); padding: 0.55rem 0.25rem;
+    text-align: center;
+  }
+  .dsi-cd-num {
+    display: block; font-variant-numeric: tabular-nums;
+    font-size: clamp(1.2rem, 0.95rem + 1.1vw, 1.7rem); font-weight: 800;
+    color: var(--c-blue); line-height: 1.1; letter-spacing: -0.02em;
+  }
+  .dsi-cd-lbl { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-muted); }
+
+  /* floating 3D decor from the Figma creative */
+  .dsi-deco {
+    position: absolute; z-index: 4; pointer-events: none;
+    height: auto; /* the width/height attrs would otherwise stretch these vertically */
+    filter: drop-shadow(var(--shadow-blue));
+  }
+  .dsi-deco--asterisk { width: clamp(70px, 9vw, 130px); right: -8%;  top: -8%;  animation: dsi-float 7s ease-in-out infinite; }
+  .dsi-deco--python   { width: clamp(64px, 8.2vw, 118px); right: -10%; top: 24%;  animation: dsi-float 9s ease-in-out infinite reverse; }
+  .dsi-deco--database { width: clamp(44px, 5.4vw, 76px);  right: auto; left: -10%; top: 46%; z-index: 4; animation: dsi-float 8s ease-in-out infinite 1.2s; }
+  @keyframes dsi-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+  @media (max-width: 640px) {
+    /* (0,2,0) so it beats `.dsi-page img { display: block }` at (0,1,1) */
+    .dsi-page .dsi-deco--python,
+    .dsi-page .dsi-deco--database { display: none; }
+    .dsi-deco--asterisk { right: 2%; top: -5%; }
+  }
+
+  /* ── Cards ──────────────────────────────────── */
+  .dsi-card {
+    background: #fff;
+    border: 1px solid var(--c-hair-soft);
+    border-radius: var(--r-card);
+    padding: clamp(1.25rem, 0.9rem + 1.4vw, 1.9rem);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .dsi-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--c-hair); }
+
+  .dsi-grid { display: grid; gap: var(--sp-gap); grid-template-columns: 1fr; }
+  @media (min-width: 700px)  { .dsi-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (min-width: 1000px) { .dsi-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  @media (min-width: 1000px) { .dsi-grid--4 { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+  /* icon chip */
+  .dsi-ico {
+    width: 2.9rem; height: 2.9rem; flex: none;
+    display: grid; place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(4,102,216,0.12) 0%, rgba(103,182,251,0.18) 100%);
+    color: var(--c-blue);
+    margin-bottom: 0.9rem;
+  }
+  .dsi-ico svg { width: 1.5rem; height: 1.5rem; }
+  .dsi-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--c-blue-deep); background: rgba(4,102,216,0.10);
+    padding: 0.3em 0.8em; border-radius: var(--r-pill); margin-bottom: 0.6rem;
+  }
+  .dsi-card p { margin: 0; font-size: var(--fs-sm); color: var(--c-body); }
+
+  /* ── Speakers ───────────────────────────────── */
+  .dsi-speakers__grid {
+    display: grid; gap: var(--sp-gap);
+    grid-template-columns: 1fr;
+    max-width: 900px; margin-inline: auto;
+  }
+  @media (min-width: 760px) { .dsi-speakers__grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  .dsi-speaker { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+  .dsi-speaker__avatar {
+    width: clamp(118px, 16vw, 156px); aspect-ratio: 1;
+    border-radius: 50%; overflow: hidden; flex: none;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px var(--c-hair), var(--shadow-sm);
+    background: var(--c-bg-band);
+  }
+  .dsi-speaker__avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .dsi-speaker h4 {
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+    font-weight: 700; color: var(--c-ink); margin: 0 0 0.3rem; letter-spacing: -0.01em;
+  }
+  .dsi-speaker .role { font-size: var(--fs-sm); font-weight: 700; color: var(--c-blue); margin: 0 0 0.35rem; }
+  .dsi-speaker .org  { font-size: var(--fs-sm); color: var(--c-muted); margin: 0; }
+
+  /* ── Agenda rows ────────────────────────────── */
+  .dsi-rows { display: flex; flex-direction: column; gap: clamp(0.75rem, 1.4vw, 1rem); }
+  .dsi-row { display: flex; gap: clamp(0.9rem, 2vw, 1.4rem); align-items: flex-start; }
+  .dsi-row p { max-width: 80ch; }
+  .dsi-num {
+    flex: none; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em;
+    color: #fff;
+    background: linear-gradient(270deg, #0466d8 0%, #004799 100%);
+    box-shadow: 0 8px 18px -8px rgba(4,102,216,0.7);
+  }
+
+  /* ── Final CTA band ─────────────────────────── */
+  .dsi-final {
+    position: relative; overflow: clip; text-align: center;
+    padding-block: clamp(4rem, 2.5rem + 6vw, 7rem);
+    background: linear-gradient(165deg, #0466d8 0%, #004799 55%, #032f66 100%);
+    color: #fff;
+  }
+  .dsi-final .dsi-h2 { color: #fff; max-width: 22ch; margin-inline: auto; }
+  .dsi-final .dsi-eyebrow { color: var(--c-yellow); }
+  /* ITB campus rising from the base of the closing band. Sized off its own
+     height so the 683px-wide asset is never upscaled, and masked to fade in
+     from the top so the headline keeps full contrast. */
+  .dsi-final__photo {
+    /* The layer is sized to the image itself (not the full band) so the radial
+       mask lands exactly on the cut-out's own edges — masking a full-width box
+       fades empty blue and leaves the picture's hard seams untouched. */
+    position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 0;
+    height: min(100%, 497px);   /* 497 = the asset's own height, never upscaled */
+    aspect-ratio: 683 / 497;
+    max-width: 130vw;
+    background: url('images/gedung-itb-2.webp') no-repeat center bottom;
+    background-size: contain;
+    opacity: 0.32;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(78% 88% at 50% 100%, #000 0%, rgba(0,0,0,0.7) 45%, transparent 72%);
+            mask-image: radial-gradient(78% 88% at 50% 100%, #000 0%, rgba(0,0,0,0.7) 45%, transparent 72%);
+  }
+  .dsi-final__glow {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(60% 60% at 80% 10%, rgba(103,182,251,0.35) 0%, transparent 70%),
+      radial-gradient(50% 50% at 10% 90%, rgba(255,222,61,0.16) 0%, transparent 70%);
+  }
+  .dsi-urgency-pill {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-weight: 700; font-size: var(--fs-sm);
+    padding: 0.45em 1.1em; border-radius: var(--r-pill); margin-bottom: 1.25rem;
+  }
+  .dsi-closing-date {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 0.6rem 1rem; margin-top: 1.25rem;
+    font-size: var(--fs-body); font-weight: 600; color: #eaf2ff;
+  }
+  .dsi-usps { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 1.5rem; }
+  .dsi-usp {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    border: 1px solid rgba(255,255,255,0.32); border-radius: var(--r-pill);
+    padding: 0.45em 1em; font-size: var(--fs-sm); font-weight: 600; color: #fff;
+  }
+  .dsi-final .dsi-btn-row { justify-content: center; }
+  .dsi-final .dsi-live-dot { background: #7bf1a8; box-shadow: none; animation: none; }
+
+  /* ── ITB collaboration strip (Figma USP block), sits under the hero ── */
+  .dsi-itb {
+    text-align: center;
+    padding-block: clamp(1.75rem, 1.1rem + 2.2vw, 2.75rem);
+    background: linear-gradient(180deg, #f6faff 0%, #eef5ff 100%);
+    border-block: 1px solid var(--c-hair-soft);
+  }
+  .dsi-itb__line {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-style: italic; font-weight: 400;
+    font-size: clamp(0.95rem, 0.82rem + 0.55vw, 1.5rem);
+    line-height: 1.15; color: var(--c-blue-ink); margin: 0 0 0.35rem;
+  }
+  .dsi-itb__line b { font-weight: 700; }
+  .dsi-itb__line .dsi-hash {
+    font-weight: 700;
+    font-size: clamp(1.45rem, 1.1rem + 1.5vw, 2.5rem);
+    line-height: 1;
+  }
+  .dsi-itb__name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: 'SOFT' 0, 'WONK' 1;
+    font-weight: 700;
+    font-size: clamp(1.35rem, 0.9rem + 2.2vw, 2.5rem);
+    line-height: 1.15; color: var(--c-blue-ink); margin: 0;
+    letter-spacing: 0.005em;
+  }
+  /* ── Footer ── */
+  .dsi-foot { border-top: 1px solid var(--c-hair-soft); background: #fff; }
+  .dsi-foot__inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 0.75rem 1.5rem;
+    padding-block: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+    text-align: center;
+  }
+  .dsi-foot__inner img { width: clamp(170px, 22vw, 220px); height: auto; }
+  .dsi-foot__inner p { margin: 0; font-size: var(--fs-sm); color: var(--c-muted); }
+
+  /* ── Reveal on scroll ───────────────────────── */
+  .dsi-reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+  .dsi-reveal.is-in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dsi-page *, .dsi-page *::before, .dsi-page *::after {
+      animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important; scroll-behavior: auto !important;
+    }
+    .dsi-reveal { opacity: 1; transform: none; }
+  }
+  </style>
+</head>
+<body>
+<div class="dsi-page">
+
+  <!-- ═══ 0. NAV ═══ -->
+  <nav class="dsi-nav">
+    <div class="dsi-container dsi-nav__inner">
+      <span class="dsi-nav__logo">
+        <img src="images/revou-itb-logo.webp" alt="RevoU × Institut Teknologi Bandung — Direktorat Pendidikan Profesional Berkelanjutan" width="1088" height="212" />
+      </span>
+      <a class="dsi-btn dsi-btn--primary dsi-nav__cta" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+    </div>
+  </nav>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <header class="dsi-hero">
+    <span class="dsi-orb dsi-hero__orb-a" aria-hidden="true"></span>
+    <span class="dsi-orb dsi-hero__orb-b" aria-hidden="true"></span>
+
+    <div class="dsi-container">
+      <div class="dsi-hero__grid">
+
+        <!-- left: copy -->
+        <div class="dsi-reveal">
+          <span class="dsi-badge-oh">
+            <img src="images/open-house-badge.webp" alt="Open House" width="900" height="365" />
+          </span>
+
+          <h1 class="dsi-h1">
+            <span class="dsi-h1__line">From Data Analyst to</span>
+            <span class="dsi-h1__hero">Data Scientist</span>
+            <span class="dsi-h1__line">in the Age of AI<img class="dsi-sparkle" src="images/sparkle.svg" alt="" width="73" height="66" /></span>
+          </h1>
+
+          <span class="dsi-pill-wrap">
+            <img class="dsi-pill__cursor" src="images/cursor.svg" alt="" width="36" height="38" aria-hidden="true" />
+            <span class="dsi-pill">New Program for Data Analyst</span>
+          </span>
+
+          <p class="dsi-lead">
+            Sesi <b class="dsi-strong">LIVE 2 jam</b> memahami apa saja yang diperlukan untuk menjadi
+            Data Scientist. Belajar dari Data Scientist berpengalaman dan Akademisi
+            <b class="dsi-strong">Institut Teknologi Bandung</b>.
+          </p>
+
+          <div class="dsi-btn-row">
+            <a class="dsi-btn dsi-btn--primary" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House GRATIS</a>
+          </div>
+        </div>
+
+        <!-- right: ITB stage + event card -->
+        <div class="dsi-reveal dsi-stage">
+          <img class="dsi-deco dsi-deco--asterisk" src="images/deco-asterisk.webp" alt="" width="560" height="540" aria-hidden="true" />
+          <img class="dsi-deco dsi-deco--python"   src="images/deco-python.webp"   alt="" width="555" height="560" aria-hidden="true" />
+          <img class="dsi-deco dsi-deco--database" src="images/deco-database.webp" alt="" width="368" height="460" aria-hidden="true" />
+
+          <div class="dsi-stage__photo">
+            <img src="images/gedung-itb-2.webp" alt="Aula Barat, kampus Institut Teknologi Bandung" width="683" height="497" fetchpriority="high" decoding="async" />
+          </div>
+
+          <div class="dsi-eventcard">
+            <div>
+              <p class="dsi-eventcard__date">Rabu, 16 September 2026</p>
+              <p class="dsi-eventcard__time">
+                <span>19.00–21.00 <span class="dsi-wib">WIB</span></span>
+                <span class="dsi-vr" aria-hidden="true"></span>
+                <span>LIVE via</span>
+                <img src="images/zoom-logo.webp" alt="Zoom" width="300" height="69" />
+              </p>
+            </div>
+
+            <div class="dsi-countdown" id="dsi-countdown" aria-label="Hitung mundur menuju acara">
+              <div class="dsi-cd-unit"><span class="dsi-cd-num" data-cd="days">00</span><span class="dsi-cd-lbl">Hari</span></div>
+              <div class="dsi-cd-unit"><span class="dsi-cd-num" data-cd="hours">00</span><span class="dsi-cd-lbl">Jam</span></div>
+              <div class="dsi-cd-unit"><span class="dsi-cd-num" data-cd="mins">00</span><span class="dsi-cd-lbl">Menit</span></div>
+              <div class="dsi-cd-unit"><span class="dsi-cd-num" data-cd="secs">00</span><span class="dsi-cd-lbl">Detik</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 1b. ITB COLLABORATION STRIP (directly below the fold) ═══ -->
+  <section class="dsi-itb">
+    <div class="dsi-container dsi-reveal">
+      <p class="dsi-itb__line">In collaboration with <b>Indonesia’s</b> <span class="dsi-hash">#1</span> <b>technical university</b></p>
+      <p class="dsi-itb__name">INSTITUT TEKNOLOGI BANDUNG</p>
+    </div>
+  </section>
+
+  <!-- ═══ 2. SPEAKERS ═══ -->
+  <section class="dsi-section">
+    <span class="dsi-orb" style="width:min(520px,70vw); aspect-ratio:1; left:-18%; top:10%;" aria-hidden="true"></span>
+    <div class="dsi-container">
+      <div class="dsi-section-head center dsi-reveal">
+        <span class="dsi-eyebrow">01 — Pembicara</span>
+        <h2 class="dsi-h2">Belajar langsung dari akademisi &amp; praktisi</h2>
+      </div>
+      <div class="dsi-speakers__grid">
+        <article class="dsi-card dsi-speaker dsi-reveal">
+          <div class="dsi-speaker__avatar">
+            <img src="images/titah-yudhistira.webp" alt="Titah Yudhistira" width="380" height="380" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h4>Titah Yudhistira, S.T., M.T., Ph.D</h4>
+            <p class="role">Asisten Ahli — Fakultas Teknologi Industri</p>
+            <p class="org">Institut Teknologi Bandung</p>
+          </div>
+        </article>
+        <article class="dsi-card dsi-speaker dsi-reveal">
+          <div class="dsi-speaker__avatar">
+            <img src="images/rahmat-hidayatullah.webp" alt="Rahmat Hidayatullah" width="380" height="380" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <h4>Rahmat Hidayatullah</h4>
+            <p class="role">Head of Data Science</p>
+            <p class="org">XLSmart</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. AGENDA ═══ -->
+  <section class="dsi-section dsi-band" id="agenda">
+    <div class="dsi-container">
+      <div class="dsi-section-head center dsi-reveal">
+        <span class="dsi-eyebrow">02 — Topik yang Akan Dibahas</span>
+        <h2 class="dsi-h2">Menjadi Data Scientist di Era AI</h2>
+      </div>
+      <div class="dsi-rows">
+        <article class="dsi-card dsi-row dsi-reveal">
+          <span class="dsi-num">1</span>
+          <div>
+            <h3 class="dsi-h3">Data Analyst vs. Data Scientist: What Really Changes?</h3>
+            <p>Explore how the scope and responsibility evolve—from reporting and explaining historical data to predicting future outcomes and owning data-driven decisions.</p>
+          </div>
+        </article>
+        <article class="dsi-card dsi-row dsi-reveal">
+          <span class="dsi-num">2</span>
+          <div>
+            <h3 class="dsi-h3">The 4 Key Gaps to Cross from Analyst to Data Scientist</h3>
+            <p>Understand the capabilities that go beyond traditional analytics: statistical reasoning, predictive modelling, model validation, and turning analytical outputs into usable solutions.</p>
+          </div>
+        </article>
+        <article class="dsi-card dsi-row dsi-reveal">
+          <span class="dsi-num">3</span>
+          <div>
+            <h3 class="dsi-h3">How AI Is Changing the Data Science Career Path</h3>
+            <p>Discover how AI can accelerate coding, analysis, and model development—and why human judgment, critical thinking, and the ability to validate AI-generated outputs are becoming even more important.</p>
+          </div>
+        </article>
+        <article class="dsi-card dsi-row dsi-reveal">
+          <span class="dsi-num">4</span>
+          <div>
+            <h3 class="dsi-h3">From Knowing Machine Learning to Applying It in Real Business Problems</h3>
+            <p>Learn why knowing different algorithms is not enough, and what it takes to frame the right problem, choose and validate the right model, and understand when a model can actually be trusted.</p>
+          </div>
+        </article>
+        <article class="dsi-card dsi-row dsi-reveal">
+          <span class="dsi-num">5</span>
+          <div>
+            <h3 class="dsi-h3">Advancing Your Career in Data</h3>
+            <p>Identify potential career paths beyond Data Analyst and understand what skills and responsibilities you need to develop to move toward Data Scientist and other advanced data roles.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. WHO IT'S FOR ═══ -->
+  <section class="dsi-section">
+    <span class="dsi-orb" style="width:min(560px,75vw); aspect-ratio:1; right:-20%; top:0;" aria-hidden="true"></span>
+    <div class="dsi-container">
+      <div class="dsi-section-head center dsi-reveal">
+        <span class="dsi-eyebrow">03 — Cocok Untuk Kamu Jika…</span>
+        <h2 class="dsi-h2">Kamu mau naik level di bidang data</h2>
+      </div>
+      <div class="dsi-grid">
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <!-- bar chart -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="5" y="11" width="3.5" height="7" rx="1"/><rect x="10.25" y="7" width="3.5" height="11" rx="1"/><rect x="15.5" y="13" width="3.5" height="5" rx="1"/></svg>
+          </div>
+          <span class="dsi-tag">1–4 Tahun Pengalaman</span>
+          <h3 class="dsi-h3">Data Analyst aktif</h3>
+          <p>Kamu sudah nyaman dengan SQL, spreadsheet, dan dashboard — tapi mentok di laporan historis dan ingin mulai memprediksi, bukan cuma menjelaskan.</p>
+        </article>
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <!-- branching path -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><circle cx="18" cy="16" r="2.5"/><path d="M6 16.5V9a2 2 0 0 1 2-2h7.5"/><path d="M8.5 19h7"/></svg>
+          </div>
+          <span class="dsi-tag">Career Switcher</span>
+          <h3 class="dsi-h3">Profesional dari bidang teknis lain</h3>
+          <p>Engineer, aktuaris, peneliti, atau lulusan STEM yang punya dasar kuantitatif kuat dan ingin pindah jalur ke Data Science secara terstruktur.</p>
+        </article>
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <!-- sparkle / AI -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9Z"/><path d="M18.5 3v3M20 4.5h-3"/></svg>
+          </div>
+          <span class="dsi-tag">AI-Curious</span>
+          <h3 class="dsi-h3">Sudah pakai AI, tapi belum yakin</h3>
+          <p>Kamu pakai AI untuk bantu coding dan analisis, tapi belum tahu cara memvalidasi outputnya dan kapan sebuah model layak dipercaya.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. WHAT YOU GET ═══ -->
+  <section class="dsi-section dsi-soft">
+    <div class="dsi-container">
+      <div class="dsi-section-head center dsi-reveal">
+        <h2 class="dsi-h2">Yang Akan Kamu Dapatkan</h2>
+      </div>
+      <div class="dsi-grid dsi-grid--4">
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/><path d="M22 10v6"/></svg>
+          </div>
+          <h3 class="dsi-h3">Perspektif Akademisi tentang ilmu Data saat ini</h3>
+        </article>
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17.5 9 11l4 4 7.5-8"/><path d="M15.5 3H21v5.5"/></svg>
+          </div>
+          <h3 class="dsi-h3">Skill gap yang perlu kamu pelajari</h3>
+        </article>
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.5 12 21l-8-8V5a1 1 0 0 1 1-1h8Z"/><path d="M7.5 7.5h.01"/></svg>
+          </div>
+          <h3 class="dsi-h3">Info Program dan Promo Spesial</h3>
+        </article>
+        <article class="dsi-card dsi-reveal">
+          <div class="dsi-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"/><path d="M9.5 9a2 2 0 1 1 3 1.7c-.5.3-1 .8-1 1.3M11.5 15h.01"/></svg>
+          </div>
+          <h3 class="dsi-h3">Sesi Tanya Jawab dengan para ahli</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. FINAL CTA ═══ -->
+  <section class="dsi-section dsi-final">
+    <div class="dsi-final__photo" aria-hidden="true"></div>
+    <div class="dsi-final__glow" aria-hidden="true"></div>
+    <div class="dsi-container dsi-reveal" style="position:relative; z-index:1; text-align:center;">
+      <span class="dsi-urgency-pill">⚡ Slot Terbatas</span>
+      <h2 class="dsi-h2">Daftar Sekarang — <span style="color:var(--c-yellow)">GRATIS</span></h2>
+
+      <div class="dsi-closing-date">
+        <span>📅 Rabu, 16 September 2026</span>
+        <span>🕖 19.00–21.00 WIB</span>
+      </div>
+
+      <div class="dsi-usps">
+        <span class="dsi-usp"><span class="dsi-live-dot"></span> Live &amp; Interaktif</span>
+        <span class="dsi-usp">💻 Live via Zoom</span>
+        <span class="dsi-usp" style="border-color:var(--c-yellow); color:var(--c-yellow);">✦ 100% Gratis</span>
+      </div>
+
+      <div class="dsi-btn-row">
+        <a class="dsi-btn dsi-btn--primary" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. FOOTER ═══ -->
+  <footer class="dsi-foot">
+    <div class="dsi-container dsi-foot__inner">
+      <img src="images/revou-itb-logo.webp" alt="RevoU × Institut Teknologi Bandung" width="1088" height="212" loading="lazy" decoding="async" />
+      <p>© 2026 RevoU × Institut Teknologi Bandung · Open House Data Science</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  /* ── Countdown ──────────────────────────────────
+     Event start, WIB (UTC+7). Format: 'YYYY-MM-DDTHH:mm:ss+07:00' */
+  var EVENT_DATE = '2026-09-16T19:00:00+07:00';
+
+  var target = new Date(EVENT_DATE).getTime();
+  var els = {
+    days:  document.querySelector('[data-cd="days"]'),
+    hours: document.querySelector('[data-cd="hours"]'),
+    mins:  document.querySelector('[data-cd="mins"]'),
+    secs:  document.querySelector('[data-cd="secs"]')
+  };
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    var diff = Math.max(0, target - Date.now());
+    var s = Math.floor(diff / 1000);
+    if (els.days)  els.days.textContent  = pad(Math.floor(s / 86400));
+    if (els.hours) els.hours.textContent = pad(Math.floor((s % 86400) / 3600));
+    if (els.mins)  els.mins.textContent  = pad(Math.floor((s % 3600) / 60));
+    if (els.secs)  els.secs.textContent  = pad(s % 60);
+  }
+  tick();
+  if (els.days) setInterval(tick, 1000);
+
+  /* ── UTM / attribution pass-through ─────────────
+     Carry tracking params from THIS page's URL onto every CTA
+     so Paperform receives the original ad attribution.
+     Existing params on the CTA (date) are preserved. */
+  (function () {
+    var PASS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+    var incoming = new URLSearchParams(window.location.search);
+    document.querySelectorAll('a[data-cta]').forEach(function (a) {
+      var url;
+      try { url = new URL(a.href); } catch (e) { return; }
+      PASS.forEach(function (key) {
+        var val = incoming.get(key);
+        if (val !== null && val !== '') url.searchParams.set(key, val);
+      });
+      a.href = url.toString();
+    });
+  })();
+
+  /* ── Reveal on scroll ─────────────────────────── */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.dsi-reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, idx) {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (Math.min(idx, 4) * 0.06) + 's';
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
