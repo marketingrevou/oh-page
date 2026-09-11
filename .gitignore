@@ -4,3 +4,7 @@
 binus-fixed-hero.*
 
 .DS_Store
+
+# macOS AppleDouble sidecars (._foo) — created when macOS writes to a
+# filesystem without native xattr support (exFAT, SMB/NFS shares).
+._*
