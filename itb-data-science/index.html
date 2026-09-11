@@ -452,27 +452,19 @@
   .dsi-final__body { position: relative; z-index: 1; }
   .dsi-final .dsi-h2 { color: #fff; max-width: 22ch; margin-inline: auto; }
   .dsi-final .dsi-eyebrow { color: var(--c-yellow); }
-  /* ITB campus filling the base of the card. The layer carries the asset's own
-     683:497 ratio and `contain`, so the image exactly fills it — which is what
-     lets the radial mask land on the picture's real edges instead of on empty
-     blue. Bounding the card is what keeps the building from reading as a small
-     centred blob on a wide screen. */
+  /* ITB campus photo filling the card. Full-frame and opaque, so it simply
+     covers — the scrim below does the contrast work, not opacity. */
   .dsi-final__photo {
-    position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 0;
-    height: 100%;
-    aspect-ratio: 683 / 497;
-    background: url('images/gedung-itb-2.webp') no-repeat center bottom;
-    background-size: contain;
-    opacity: 0.55;
+    position: absolute; inset: 0; z-index: 0;
+    background: url('images/endcard.webp') no-repeat center center;
+    background-size: cover;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
-            mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
   }
   .dsi-final__glow {
     position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(3,47,102,0.80) 0%, rgba(3,47,102,0.52) 46%, rgba(3,47,102,0.10) 100%),
-      radial-gradient(60% 60% at 82% 6%, rgba(103,182,251,0.26) 0%, transparent 70%);
+      linear-gradient(180deg, rgba(2,32,74,0.86) 0%, rgba(3,47,102,0.64) 48%, rgba(2,26,62,0.84) 100%),
+      radial-gradient(65% 60% at 80% 4%, rgba(103,182,251,0.20) 0%, transparent 70%);
   }
   .dsi-urgency-pill {
     display: inline-flex; align-items: center; gap: 0.5em;
@@ -553,7 +545,7 @@
       <span class="dsi-nav__logo">
         <img src="images/revou-itb-logo.webp" alt="RevoU × Institut Teknologi Bandung — Direktorat Pendidikan Profesional Berkelanjutan" width="1088" height="212" />
       </span>
-      <a class="dsi-btn dsi-btn--primary dsi-nav__cta" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+      <a class="dsi-btn dsi-btn--primary dsi-nav__cta" data-cta href="https://datascience-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
     </div>
   </nav>
 
@@ -589,7 +581,7 @@
           </p>
 
           <div class="dsi-btn-row">
-            <a class="dsi-btn dsi-btn--primary" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House GRATIS</a>
+            <a class="dsi-btn dsi-btn--primary" data-cta href="https://datascience-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House GRATIS</a>
           </div>
         </div>
 
@@ -812,7 +804,7 @@
       </div>
 
       <div class="dsi-btn-row">
-        <a class="dsi-btn dsi-btn--primary" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <a class="dsi-btn dsi-btn--primary" data-cta href="https://datascience-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
       </div>
     </div>
     </div>
@@ -859,7 +851,8 @@
      so Paperform receives the original ad attribution.
      Existing params on the CTA (date) are preserved. */
   (function () {
-    var PASS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+    var PASS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id',
+                'gclid', 'fbclid', 'ttclid', 'msclkid'];
     var incoming = new URLSearchParams(window.location.search);
     document.querySelectorAll('a[data-cta]').forEach(function (a) {
       var url;
