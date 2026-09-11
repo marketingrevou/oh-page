@@ -32,7 +32,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@1,400;1,700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,700,0,1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/gedung-itb-2.webp" />
 
   <style>
@@ -173,6 +173,7 @@
     margin: 0 0 0.75rem;
   }
   .dsi-h3 {
+    font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
     font-size: var(--fs-h3); font-weight: 700; line-height: 1.3;
     color: var(--c-ink); margin: 0 0 0.4rem;
     letter-spacing: -0.01em;
@@ -437,38 +438,41 @@
     box-shadow: 0 8px 18px -8px rgba(4,102,216,0.7);
   }
 
-  /* ── Final CTA band ─────────────────────────── */
+  /* ── Final CTA card ─────────────────────────── */
+  .dsi-final-wrap { background: var(--c-bg-soft); }
   .dsi-final {
-    position: relative; overflow: clip; text-align: center;
-    padding-block: clamp(4rem, 2.5rem + 6vw, 7rem);
+    position: relative; overflow: hidden; text-align: center;
+    max-width: 900px; margin-inline: auto;
+    border-radius: var(--r-card);
+    padding: clamp(2.5rem, 1.8rem + 2.6vw, 4rem) clamp(1.25rem, 1rem + 2vw, 3rem) clamp(3rem, 2.2rem + 3.4vw, 5rem);
     background: linear-gradient(165deg, #0466d8 0%, #004799 55%, #032f66 100%);
+    box-shadow: var(--shadow);
     color: #fff;
   }
+  .dsi-final__body { position: relative; z-index: 1; }
   .dsi-final .dsi-h2 { color: #fff; max-width: 22ch; margin-inline: auto; }
   .dsi-final .dsi-eyebrow { color: var(--c-yellow); }
-  /* ITB campus rising from the base of the closing band. Sized off its own
-     height so the 683px-wide asset is never upscaled, and masked to fade in
-     from the top so the headline keeps full contrast. */
+  /* ITB campus filling the base of the card. The layer carries the asset's own
+     683:497 ratio and `contain`, so the image exactly fills it — which is what
+     lets the radial mask land on the picture's real edges instead of on empty
+     blue. Bounding the card is what keeps the building from reading as a small
+     centred blob on a wide screen. */
   .dsi-final__photo {
-    /* The layer is sized to the image itself (not the full band) so the radial
-       mask lands exactly on the cut-out's own edges — masking a full-width box
-       fades empty blue and leaves the picture's hard seams untouched. */
     position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 0;
-    height: min(100%, 497px);   /* 497 = the asset's own height, never upscaled */
+    height: 100%;
     aspect-ratio: 683 / 497;
-    max-width: 130vw;
     background: url('images/gedung-itb-2.webp') no-repeat center bottom;
     background-size: contain;
-    opacity: 0.32;
+    opacity: 0.55;
     pointer-events: none;
-    -webkit-mask-image: radial-gradient(78% 88% at 50% 100%, #000 0%, rgba(0,0,0,0.7) 45%, transparent 72%);
-            mask-image: radial-gradient(78% 88% at 50% 100%, #000 0%, rgba(0,0,0,0.7) 45%, transparent 72%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
   }
   .dsi-final__glow {
     position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background:
-      radial-gradient(60% 60% at 80% 10%, rgba(103,182,251,0.35) 0%, transparent 70%),
-      radial-gradient(50% 50% at 10% 90%, rgba(255,222,61,0.16) 0%, transparent 70%);
+      linear-gradient(180deg, rgba(3,47,102,0.80) 0%, rgba(3,47,102,0.52) 46%, rgba(3,47,102,0.10) 100%),
+      radial-gradient(60% 60% at 82% 6%, rgba(103,182,251,0.26) 0%, transparent 70%);
   }
   .dsi-urgency-pill {
     display: inline-flex; align-items: center; gap: 0.5em;
@@ -498,7 +502,7 @@
     border-block: 1px solid var(--c-hair-soft);
   }
   .dsi-itb__line {
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-style: italic; font-weight: 400;
     font-size: clamp(0.95rem, 0.82rem + 0.55vw, 1.5rem);
     line-height: 1.15; color: var(--c-blue-ink); margin: 0 0 0.35rem;
@@ -510,12 +514,11 @@
     line-height: 1;
   }
   .dsi-itb__name {
-    font-family: 'Fraunces', Georgia, serif;
-    font-variation-settings: 'SOFT' 0, 'WONK' 1;
+    font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
     font-weight: 700;
     font-size: clamp(1.35rem, 0.9rem + 2.2vw, 2.5rem);
     line-height: 1.15; color: var(--c-blue-ink); margin: 0;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.01em;
   }
   /* ── Footer ── */
   .dsi-foot { border-top: 1px solid var(--c-hair-soft); background: #fff; }
@@ -788,10 +791,12 @@
   </section>
 
   <!-- ═══ 6. FINAL CTA ═══ -->
-  <section class="dsi-section dsi-final">
+  <section class="dsi-section dsi-final-wrap">
+   <div class="dsi-container">
+    <div class="dsi-final dsi-reveal">
     <div class="dsi-final__photo" aria-hidden="true"></div>
     <div class="dsi-final__glow" aria-hidden="true"></div>
-    <div class="dsi-container dsi-reveal" style="position:relative; z-index:1; text-align:center;">
+    <div class="dsi-final__body">
       <span class="dsi-urgency-pill">⚡ Slot Terbatas</span>
       <h2 class="dsi-h2">Daftar Sekarang — <span style="color:var(--c-yellow)">GRATIS</span></h2>
 
@@ -810,6 +815,8 @@
         <a class="dsi-btn dsi-btn--primary" data-cta href="https://itb-data-science-oh.paperform.co/?date=09%2F16%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
       </div>
     </div>
+    </div>
+   </div>
   </section>
 
   <!-- ═══ 7. FOOTER ═══ -->
