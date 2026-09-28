@@ -204,6 +204,13 @@
     color: var(--c-blue);
   }
   .dsi-h1 .dsi-h1__line { display: block; }
+  /* phones: size each line to the column. "Beyond Analytics: Building" is
+     ~12.2em wide, so it fills one row; the blue hero stacks PREDICTIVE /
+     THINKING at ~2× that size ("PREDICTIVE" is ~5.75em). */
+  @media (max-width: 599px) {
+    .dsi-h1 { font-size: min(calc((100vw - 48px) / 12.6), 2.1rem); }
+    .dsi-h1 .dsi-h1__hero { font-size: min(calc((100vw - 48px) / 6), 4.2rem); line-height: 0.98; margin-block: 0.08em 0.1em; }
+  }
   .dsi-h1 .dsi-sparkle {
     display: inline-block; vertical-align: -0.12em;
     width: clamp(26px, 3.2vw, 46px); height: auto; margin-left: 0.18em;
