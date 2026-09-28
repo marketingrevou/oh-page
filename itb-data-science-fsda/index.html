@@ -678,7 +678,6 @@
     font-family: var(--font-body); font-size: var(--fs-label); font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase;
   }
-  @media (min-width: 700px) { .dsi-speakers__grid--solo { grid-template-columns: minmax(0, 560px); } }
 
   .dsi-compare { display: grid; gap: clamp(1.75rem, 4vw, 3.5rem); grid-template-columns: 1fr; }
   @media (min-width: 860px) { .dsi-compare { grid-template-columns: repeat(2, minmax(0,1fr)); } }
@@ -712,6 +711,73 @@
     color: var(--c-on-band); font-size: var(--fs-sm);
   }
   .dsi-price__facts b { color: #fff; }
+
+  /* featured single speaker: large portrait + credentials, replaces the 2-up grid */
+  .dsi-feature {
+    display: grid; gap: clamp(1.5rem, 4vw, 3.5rem);
+    grid-template-columns: 1fr; align-items: center;
+    position: relative; z-index: 1;
+  }
+  @media (min-width: 760px) { .dsi-feature { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); } }
+  .dsi-feature__photo {
+    position: relative; max-width: 360px; width: 100%;
+    margin-inline: auto;
+  }
+  /* offset yellow block behind the portrait, echoes the primary CTA */
+  .dsi-feature__photo::before {
+    content: ""; position: absolute; inset: 0;
+    transform: translate(14px, 14px);
+    border-radius: var(--r-card); background: var(--c-yellow);
+  }
+  .dsi-feature__photo img {
+    position: relative; display: block; width: 100%; height: auto; aspect-ratio: 1;
+    object-fit: cover; border-radius: var(--r-card);
+    border: 2px solid var(--c-navy);
+  }
+  .dsi-feature__role {
+    margin: 0 0 0.5rem; color: var(--c-blue);
+    font-family: var(--font-body); font-size: var(--fs-label); font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .dsi-feature__name {
+    margin: 0; color: var(--c-ink);
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(1.9rem, 1.3rem + 2.6vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;
+  }
+  .dsi-feature__logo {
+    display: block; width: clamp(140px, 18vw, 190px); height: auto;
+    margin: clamp(1rem, 2vw, 1.4rem) 0;
+    padding-top: clamp(1rem, 2vw, 1.4rem);
+    border-top: 1px solid var(--c-hair);
+    box-sizing: content-box;
+  }
+  .dsi-feature__bio { margin: 0; color: var(--c-body); font-size: var(--fs-sm); font-weight: 500; }
+  .dsi-feature__stats {
+    list-style: none; margin: 0 0 clamp(1rem, 2vw, 1.4rem); padding: 0;
+    display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0.9rem 1.25rem;
+  }
+  @media (min-width: 1000px) { .dsi-feature__stats { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+  .dsi-feature__stats li { border-left: 2px solid var(--c-orange); padding-left: 0.75rem; }
+  .dsi-feature__stats b {
+    display: block; color: var(--c-ink); font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); line-height: 1.1; font-variant-numeric: tabular-nums;
+  }
+  .dsi-feature__stats span { display: block; font-size: var(--fs-label); color: var(--c-muted); line-height: 1.35; margin-top: 0.2rem; }
+
+  /* ATF alumni-price line under the hero CTA */
+  #harga-alumni { scroll-margin-top: 90px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  .dsi-page a.dsi-hero-price {
+    display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.5rem;
+    margin-top: 0.9rem; font-size: var(--fs-sm); color: var(--c-body); text-decoration: none;
+  }
+  .dsi-hero-price b { color: var(--c-ink); font-size: 1.08em; }
+  .dsi-hero-price s { color: var(--c-muted); }
+  .dsi-hero-price .dsi-hero-price__tag {
+    color: var(--c-blue); font-weight: 600;
+    text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+  }
+  .dsi-page a.dsi-hero-price:hover .dsi-hero-price__tag { color: var(--c-blue-deep); }
   </style>
 </head>
 <body>
@@ -753,12 +819,17 @@
             Kamu sudah punya fondasi analytics dari RevoU. Sekarang saatnya melangkah
             ke tahap berikutnya: sesi <b class="dsi-strong">LIVE 2 jam</b> khusus alumni
             <b class="dsi-strong">Full Stack Data Analytics</b> untuk memahami lompatan
-            dari analisis ke prediksi, bersama Head of Data Science XLSmart.
+            dari analisis ke prediksi.
           </p>
 
           <div class="dsi-btn-row">
             <a class="dsi-btn dsi-btn--primary" data-cta href="https://datascience-oh.paperform.co/?date=10%2F01%2F2026&amp;o=fsda-alumni" target="_blank" rel="noopener">Daftar Open House GRATIS</a>
           </div>
+          <a class="dsi-hero-price" href="#harga-alumni">
+            <span>Harga alumni <b>IDR 11.999.000</b></span>
+            <s>IDR 16.999.000</s>
+            <span class="dsi-hero-price__tag">khusus alumni FSDA RevoU</span>
+          </a>
         </div>
 
         <!-- right: ITB stage + event card -->
@@ -803,7 +874,7 @@
     </div>
   </section>
 
-  <!-- ═══ 2. SPEAKERS ═══ -->
+  <!-- ═══ 2. SPEAKER (single, featured) ═══ -->
   <section class="dsi-section">
     <div class="dsi-container">
       <div class="dsi-section-head dsi-reveal">
@@ -812,18 +883,23 @@
       </div>
       <div class="dsi-panel dsi-panel--white dsi-reveal">
         <img class="dsi-panel__deco dsi-panel__deco--tr" src="images/deco-asterisk.webp" alt="" width="560" height="540" loading="lazy" aria-hidden="true" />
-      <div class="dsi-speakers__grid dsi-speakers__grid--solo">
-        <article class="dsi-speaker">
-          <div class="dsi-speaker__avatar">
+        <article class="dsi-feature">
+          <div class="dsi-feature__photo">
             <img src="images/rahmat-hidayatullah.webp" alt="Rahmat Hidayatullah" width="380" height="380" loading="lazy" decoding="async" />
           </div>
-          <div>
-            <h4>Rahmat Hidayatullah</h4>
-            <p class="role">Head of Data Science</p>
-            <p class="org">XLSmart</p>
+          <div class="dsi-feature__body">
+            <p class="dsi-feature__role">Head of Data Science &amp; AI Solution</p>
+            <h3 class="dsi-feature__name">Rahmat Hidayatullah</h3>
+            <img class="dsi-feature__logo" src="images/xlsmart-logo.svg" alt="XLSmart" width="800" height="167" loading="lazy" />
+            <ul class="dsi-feature__stats">
+              <li><b>13+</b><span>Tahun pengalaman kerja</span></li>
+              <li><b>6+</b><span>Tahun mengajar</span></li>
+              <li><b>100+</b><span>Kelas</span></li>
+              <li><b>1.100+</b><span>Student</span></li>
+            </ul>
+            <p class="dsi-feature__bio">Gen-AI/ML Leader · Lecturer &amp; Mentor · Finance, Telecom &amp; Market Research</p>
           </div>
         </article>
-      </div>
       </div>
     </div>
   </section>
@@ -931,7 +1007,7 @@
   </section>
 
   <!-- ═══ 4c. ALUMNI PRICE ═══ -->
-  <section class="dsi-section">
+  <section class="dsi-section" id="harga-alumni">
     <div class="dsi-container">
       <div class="dsi-panel dsi-panel--navy dsi-reveal">
         <img class="dsi-panel__deco dsi-panel__deco--tr" src="images/deco-asterisk.webp" alt="" width="560" height="540" loading="lazy" aria-hidden="true" />
