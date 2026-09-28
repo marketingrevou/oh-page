@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="31.4805" height="33.3535" viewBox="0 0 31.4805 33.3535" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Cursor" d="M0.197841 30.4764L13.9249 1.16043C14.6494 -0.386811 16.8498 -0.38681 17.5743 1.16043L31.2825 30.4362C32.0904 32.1615 30.2742 33.9406 28.566 33.0974L16.7462 27.2626C16.1871 26.9866 15.5317 26.985 14.9712 27.2583L2.90565 33.1418C1.19776 33.9746 -0.607919 32.1972 0.197841 30.4764Z" fill="url(#paint0_linear_0_20)"/>
+<defs>
+<linearGradient id="paint0_linear_0_20" x1="15.7496" y1="-2.73649" x2="15.7496" y2="35.6416" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F08700"/>
+<stop offset="1" stop-color="#F65616"/>
+</linearGradient>
+</defs>
+</svg>
