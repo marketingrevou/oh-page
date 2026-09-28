@@ -770,17 +770,14 @@
   .dsi-feature__stats span { display: block; font-size: var(--fs-label); color: var(--c-muted); line-height: 1.35; margin-top: 0.2rem; }
 
   /* ATF alumni-price line under the hero CTA */
-  #harga-alumni { scroll-margin-top: 90px; }
   @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-  .dsi-page a.dsi-hero-price {
+  .dsi-page .dsi-hero-price {
     display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.5rem;
     margin-top: 0.9rem; font-size: var(--fs-sm); color: var(--c-body); text-decoration: none;
   }
   .dsi-hero-price .dsi-hero-price__tag {
-    color: var(--c-blue); font-weight: 600;
-    text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+    color: var(--c-blue); font-weight: 700;
   }
-  .dsi-page a.dsi-hero-price:hover .dsi-hero-price__tag { color: var(--c-blue-deep); }
   </style>
 </head>
 <body>
@@ -827,9 +824,9 @@
           <div class="dsi-btn-row">
             <a class="dsi-btn dsi-btn--primary" data-cta href="https://datascience-oh.paperform.co/?date=10%2F01%2F2026&amp;o=fsda-alumni" target="_blank" rel="noopener">Daftar Open House GRATIS</a>
           </div>
-          <a class="dsi-hero-price" href="#harga-alumni">
+          <p class="dsi-hero-price">
             <span class="dsi-hero-price__tag">Ada harga spesial untuk alumni FSDA</span>
-          </a>
+          </p>
         </div>
 
         <!-- right: ITB stage + event card -->
@@ -1007,7 +1004,7 @@
   </section>
 
   <!-- ═══ 4c. ALUMNI PRICE ═══ -->
-  <section class="dsi-section" id="harga-alumni">
+  <section class="dsi-section" id="harga-alumni" hidden>
     <div class="dsi-container">
       <div class="dsi-panel dsi-panel--navy dsi-reveal">
         <img class="dsi-panel__deco dsi-panel__deco--tr" src="images/deco-asterisk.webp" alt="" width="560" height="540" loading="lazy" aria-hidden="true" />
