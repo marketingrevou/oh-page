@@ -263,6 +263,14 @@ html, body { margin: 0; max-width: 100%; }
 .ddm-tools__list { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: 0; padding: 0; list-style: none; }
 .ddm-tools__list li { display: inline-flex; align-items: center; gap: .5rem; font: 600 1rem/1 var(--font-display); letter-spacing: -.02em; white-space: nowrap; }
 .ddm-tools__list img { width: 26px; height: 26px; }
+/* Desktop: larger tools card so the logos read at hero scale. */
+@media (min-width: 1051px) {
+  .ddm-tools { left: clamp(1.5rem, 3vw, 3rem); bottom: clamp(1.5rem, 3vw, 3rem); padding: 1.35rem 1.75rem 1.5rem; }
+  .ddm-tools__label { margin-bottom: 1rem; font-size: .8rem; }
+  .ddm-tools__list { gap: .75rem 2.25rem; }
+  .ddm-tools__list li { gap: .7rem; font-size: clamp(1.25rem, 1.5vw, 1.55rem); }
+  .ddm-tools__list img { width: clamp(36px, 2.6vw, 44px); height: clamp(36px, 2.6vw, 44px); }
+}
 
 /* One speaker: heading left, speaker card right (same split as the agenda). */
 .ddm-people__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
