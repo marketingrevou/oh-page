@@ -23,11 +23,12 @@
   <!-- End Meta Pixel Code -->
 
   <title>Open House GRATIS — From IT Career to Cybersecurity | RevoU × BINUS</title>
-  <meta name="description" content="Open House online GRATIS: bangun karier cybersecurity di era AI bersama Head of Cyber Security Program BINUS University. Sesi LIVE 2 jam, Jumat 25 September 2026 via YouTube. Daftar sekarang." />
+  <meta name="description" content="Open House online GRATIS: bangun karier cybersecurity di era AI bersama Head of Cyber Security Program BINUS University. Sesi online 2 jam, Jumat 2 Oktober 2026. Daftar sekarang." />
   <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/621804855324383d02afa44e/69b281a9b9701603b50b6879_Revou%20Logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="images/binus-campus-cover.webp" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -376,7 +377,9 @@
   .coh-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.65rem; }
   .coh-nav .coh-logoplate { padding: 0; background: transparent; }
   .coh-nav .coh-logoplate img { height: clamp(26px, 4vw, 34px); width: auto; }
-  .coh-nav__cta { font-size: var(--fs-sm); padding: 0.6em 1.1em; }
+  .coh-nav__cta { font-size: var(--fs-sm); padding: 0.6em 1.1em; width: auto; flex: none; }
+  .coh-nav .coh-logoplate { flex: 0 1 auto; }
+  .coh-nav .coh-logoplate img { max-width: 100%; object-fit: contain; }
 
   /* ── Logo strip ─────────────────────────────── */
   .coh-logos { text-align: center; padding-block: clamp(1.75rem, 3.5vw, 2.5rem); }
@@ -431,15 +434,6 @@
 
   /* speakers */
   .coh-speakers { position: relative; overflow: clip; }
-  .coh-speakers__bg {
-    position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
-    width: min(1300px, 120%); aspect-ratio: 1389 / 926;
-    background: url('images/BINUS Campus.png') no-repeat bottom center;
-    background-size: contain;
-    opacity: 0.14; z-index: 0; pointer-events: none;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
-            mask-image: linear-gradient(180deg, transparent 0%, #000 45%, #000 100%);
-  }
   .coh-speakers .coh-container { position: relative; z-index: 1; }
   .coh-speaker { text-align: left; }
   .coh-speaker__avatar {
@@ -549,6 +543,70 @@
     padding: 1rem;
   }
 
+  /* ── Hero campus photo (BINUS) ──────────────── */
+  /* Desktop: right half of the hero, bleeding to the viewport edge; the event
+     card floats over its lower part. Transparent sky sits on a night gradient. */
+  .coh-hero { min-height: clamp(620px, 52vw, 760px); display: flex; }
+  .coh-hero > .coh-container { flex: 1; display: flex; }
+  .coh-hero__grid { flex: 1; }
+  .coh-hero__visual {
+    position: absolute; z-index: 1; top: 0; right: 0; bottom: 0;
+    width: 50%;
+    background: linear-gradient(180deg, var(--c-bg) 0%, #141d54 55%, #1c2765 100%);
+    overflow: hidden;
+  }
+  .coh-hero__bldg {
+    position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 94%;
+    object-fit: cover; object-position: 34% bottom;
+    filter: brightness(.82) saturate(.85) contrast(1.05);
+  }
+  /* fade into the page on the left (copy side) and at the bottom */
+  .coh-hero__visual::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(90deg, var(--c-bg) 0%, rgba(9,13,30,.45) 12%, rgba(9,13,30,0) 30%),
+      linear-gradient(0deg, rgba(9,13,30,.85) 0%, rgba(9,13,30,0) 30%),
+      linear-gradient(180deg, rgba(28,39,101,0) 40%, rgba(28,39,101,.25) 100%);
+  }
+  .coh-hero__grid { align-items: end; }
+  .coh-hero__grid > .coh-reveal:first-child { align-self: center; }
+  .coh-hero .coh-eventcard-wrap { align-self: end; }
+
+  /* ── BINUS collaboration strip (#1 private university) ── */
+  .coh-uni {
+    position: relative; overflow: clip; isolation: isolate;
+    padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+    background: linear-gradient(110deg, var(--c-bg-band) 0%, var(--c-bg-band-2) 60%, #24337f 100%);
+    border-top: 1px solid var(--c-hair); border-bottom: 3px solid var(--c-accent);
+  }
+  /* pixel squares echo the BINUS logo mark */
+  .coh-uni::after {
+    content: ""; position: absolute; z-index: -1; top: 50%; right: clamp(1rem, 4vw, 4rem);
+    width: 16px; height: 16px; transform: translateY(-50%);
+    background: rgba(140,170,255,.16);
+    box-shadow:
+      -20px -20px 0 rgba(140,170,255,.09), -40px 0 0 rgba(140,170,255,.13), -20px 20px 0 rgba(140,170,255,.1),
+      -60px -20px 0 rgba(140,170,255,.07), -80px 20px 0 rgba(140,170,255,.07), -60px 40px 0 rgba(140,170,255,.05),
+      0 -40px 0 rgba(240,135,0,.3), 20px -20px 0 rgba(240,135,0,.4), 20px 20px 0 rgba(240,135,0,.25), 0 40px 0 rgba(240,135,0,.2),
+      -100px -40px 0 rgba(140,170,255,.05), -120px 0 0 rgba(140,170,255,.04);
+  }
+  .coh-uni__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .coh-uni__line {
+    margin: 0 0 0.4rem; color: var(--c-muted);
+    font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .coh-uni__name { margin: 0; font-size: clamp(1.75rem, 1rem + 3vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .coh-uni__rank { display: flex; align-items: center; gap: 1rem; flex: none; margin-right: clamp(0px, 8vw, 110px); }
+  .coh-uni__num {
+    display: inline-flex; align-items: baseline; justify-content: center; min-width: 4.2rem;
+    padding: 0.5rem 0.8rem 0.45rem; border-radius: var(--radius);
+    background: var(--c-accent); color: #000;
+    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.5rem); font-weight: 800; line-height: 1; letter-spacing: -0.05em;
+    box-shadow: 6px 6px 0 rgba(240,135,0,0.3);
+  }
+  .coh-uni__hash { margin-right: 0.05em; font-size: 0.6em; opacity: 0.75; }
+  .coh-uni__caption { color: #fff; font-size: var(--fs-sm); font-weight: 700; line-height: 1.3; }
+
   /* ── Motion on scroll ───────────────────────── */
   .coh-reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
   .coh-reveal.is-in { opacity: 1; transform: none; }
@@ -559,10 +617,34 @@
     .coh-eventcard { max-width: 480px; }
   }
   @media (max-width: 600px) {
-    .coh-btn { width: 100%; }
+    .coh-btn:not(.coh-nav__cta) { width: 100%; }
     .coh-btn-row { flex-direction: column; }
     .coh-hero__meta { gap: 0.4rem 1rem; }
     .coh-footer__inner { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 860px) {
+    .coh-uni__inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    .coh-uni__rank { margin-right: 0; }
+    .coh-uni::after { top: 2.2rem; transform: none; }
+
+    /* Scroll reveal: the campus is pinned behind the hero copy. The copy's dark
+       veil scrolls away with it and uncovers the building; the pin ends with the
+       event card just above the roof, then the BINUS strip follows.
+       --bldg-h and the .76 in the margin must stay in sync. */
+    .coh-hero { --stage: 100svh; display: grid; grid-template-columns: 1fr; min-height: 0; }
+    .coh-hero__visual, .coh-hero > .coh-container { grid-area: 1 / 1; }
+    .coh-hero__visual {
+      position: sticky; top: 0; align-self: start; width: auto;
+      height: var(--stage);
+    }
+    .coh-hero__bldg { height: 76%; object-position: 58% bottom; filter: brightness(.88) saturate(.9) contrast(1.05); }
+    .coh-hero__visual::after { background: linear-gradient(0deg, rgba(9,13,30,.55) 0%, rgba(9,13,30,0) 22%); }
+    .coh-hero > .coh-container {
+      margin-bottom: calc(var(--stage) * .76 - 8.5rem); /* pin ends with the date just above the roof */
+      background: linear-gradient(180deg, var(--c-bg) 0%, rgba(9,13,30,.9) 45%, rgba(9,13,30,.78) 88%, rgba(9,13,30,0) 100%);
+    }
+    .coh-hero__grid { padding-block: 2.5rem 4.5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -582,7 +664,7 @@
       <span class="coh-logoplate">
         <img src="images/trilogo-revou-binus-greatnusa.png" alt="RevoU · BINUS University · GreatNusa" />
       </span>
-      <a class="coh-btn coh-btn--primary coh-nav__cta" data-cta href="https://cybersecurity-oh.paperform.co/?date=09%2F25%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
+      <a class="coh-btn coh-btn--primary coh-nav__cta" data-cta href="https://cybersecurity-oh.paperform.co/?date=10%2F02%2F2026" target="_blank" rel="noopener">Daftar Gratis</a>
     </div>
   </nav>
 
@@ -600,39 +682,44 @@
       <span class="coh-node" style="left:46%;top:44%;animation-delay:2.6s"></span>
     </div>
     <div class="coh-scanline" aria-hidden="true"></div>
+    <div class="coh-hero__visual">
+      <img class="coh-hero__bldg" src="images/binus-campus-cover.webp"
+           alt="Gedung BINUS University" width="1389" height="926"
+           fetchpriority="high" decoding="async" />
+    </div>
     <div class="coh-container">
       <div class="coh-hero__grid">
         <!-- left: copy -->
         <div class="coh-reveal">
           <span class="coh-eyebrow">
             <span class="coh-live-dot"></span>
-            Open House Online · Gratis · Live
+            Open House Online · Gratis
           </span>
           <h1 class="coh-h1">From IT Career to <span class="coh-accent" data-scramble data-scramble-now>Cybersecurity</span>: How to Defend the System You Built<span class="coh-caret" aria-hidden="true"></span></h1>
           <p class="coh-lead">
-            Sesi <b class="coh-strong">LIVE 2 jam</b> untuk memahami bagaimana AI mengubah dunia keamanan siber —
+            Sesi <b class="coh-strong">online 2 jam</b> untuk memahami bagaimana AI mengubah dunia keamanan siber —
             langsung dari perspektif akademisi <b class="coh-strong">BINUS University</b>.
             Kenali program <b class="coh-strong">Applied Cybersecurity with AI</b> sebelum kamu mendaftar.
           </p>
           <div class="coh-btn-row">
-            <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=09%2F25%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+            <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=10%2F02%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
           </div>
           <div class="coh-hero__meta">
-            <span class="coh-live-inline"><span class="coh-live-dot"></span> <b>Online Live Session</b></span>
+            <span class="coh-live-inline"><span class="coh-live-dot"></span> <b>Online Session</b></span>
           </div>
         </div>
 
-        <!-- right: Live Event card -->
+        <!-- right: Event card -->
         <div class="coh-reveal coh-eventcard-wrap">
           <div class="coh-radar" aria-hidden="true"></div>
           <div class="coh-eventcard">
             <span class="coh-trace" aria-hidden="true"></span>
             <div class="coh-eventcard__top">
-              <span class="coh-badge coh-badge--live"><span class="coh-live-dot"></span> LIVE</span>
+              <span class="coh-badge coh-badge--live"><span class="coh-live-dot"></span> ONLINE</span>
               <span class="coh-badge coh-badge--gratis">Gratis</span>
             </div>
-            <p class="coh-eventcard__date">Jumat, 25 September 2026</p>
-            <p class="coh-eventcard__time">19.00–21.00 WIB · Live via YouTube</p>
+            <p class="coh-eventcard__date">Jumat, 2 Oktober 2026</p>
+            <p class="coh-eventcard__time">19.00–21.00 WIB · Online</p>
 
             <div class="coh-countdown" id="coh-countdown" aria-label="Hitung mundur menuju acara">
               <div class="coh-cd-unit"><span class="coh-cd-num" data-cd="days">00</span><span class="coh-cd-lbl">Hari</span></div>
@@ -651,9 +738,22 @@
     </div>
   </header>
 
+  <!-- ═══ 1b. BINUS COLLABORATION STRIP ═══ -->
+  <section class="coh-uni">
+    <div class="coh-container coh-uni__inner">
+      <div>
+        <p class="coh-uni__line"><span class="coh-mono">//</span> In collaboration with</p>
+        <p class="coh-uni__name">BINUS UNIVERSITY</p>
+      </div>
+      <div class="coh-uni__rank">
+        <span class="coh-uni__num"><span class="coh-uni__hash">#</span>1</span>
+        <span class="coh-uni__caption">Private university<br>in Indonesia</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ 2. SPEAKERS ═══ -->
   <section class="coh-section coh-speakers">
-    <div class="coh-speakers__bg" aria-hidden="true"></div>
     <div class="coh-container">
       <div class="coh-section-head center coh-reveal">
         <span class="coh-eyebrow"><span class="coh-mono">01 //</span> Pembicara</span>
@@ -691,7 +791,7 @@
       <div class="coh-section-head center coh-reveal">
         <span class="coh-eyebrow"><span class="coh-mono">02 //</span> Topik yang Akan Dibahas</span>
         <h2 class="coh-h2" data-scramble>Dari konsep sampai penerapan di dunia kerja</h2>
-        <p class="coh-lead" style="margin-inline:auto;">Empat topik utama yang akan dikupas tuntas selama sesi LIVE bersama ahlinya.</p>
+        <p class="coh-lead" style="margin-inline:auto;">Empat topik utama yang akan dikupas tuntas selama sesi online bersama ahlinya.</p>
       </div>
       <div class="coh-rows">
         <article class="coh-card coh-row coh-reveal">
@@ -806,19 +906,18 @@
       <h2 class="coh-h2" data-scramble style="max-width:20ch; margin-inline:auto;">Daftar Sekarang — <span class="coh-accent">GRATIS</span></h2>
 
       <div class="coh-closing-date">
-        <span>📅 Jumat, 25 September 2026</span>
+        <span>📅 Jumat, 2 Oktober 2026</span>
         <span class="coh-dot"></span>
         <span>🕖 19.00–21.00 WIB</span>
       </div>
 
       <div class="coh-usps">
-        <span class="coh-usp"><span class="coh-live-dot"></span> Live &amp; Interaktif</span>
-        <span class="coh-usp">▶️ Live via YouTube</span>
+        <span class="coh-usp"><span class="coh-live-dot"></span> Online &amp; Interaktif</span>
         <span class="coh-usp coh-accent" style="border-color:var(--c-accent);">✦ 100% Gratis</span>
       </div>
 
       <div class="coh-btn-row">
-        <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=09%2F25%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
+        <a class="coh-btn coh-btn--primary" data-cta href="https://cybersecurity-oh.paperform.co/?date=10%2F02%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis</a>
       </div>
     </div>
   </section>
@@ -830,7 +929,7 @@
 (function () {
   /* ── Countdown ──────────────────────────────────
      Event start, WIB (UTC+7). Format: 'YYYY-MM-DDTHH:mm:ss+07:00' */
-  var EVENT_DATE = '2026-09-25T19:00:00+07:00';
+  var EVENT_DATE = '2026-10-02T19:00:00+07:00';
 
   var target = new Date(EVENT_DATE).getTime();
 
