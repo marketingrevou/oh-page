@@ -1,0 +1,312 @@
+/* RevoU x BINUS Open House — campus-led editorial direction (shared with itb-data-driven). */
+:root { color-scheme: light; }
+
+html { scroll-behavior: smooth; }
+html, body { margin: 0; max-width: 100%; }
+
+.ddm-page {
+  /* BINUS palette, taken from gabung.binus.ac.id */
+  --ink: #333333;
+  --blue-deep: #1078b9;  /* BINUS dark blue: solid blue surfaces */
+  --blue-darker: #0e6096;
+  --binus: #3cb8ea;      /* BINUS light blue: borders, markers */
+  --blue: #1078b9;       /* accent text on light backgrounds */
+  --sky: #afd7f4;        /* accent text on blue surfaces */
+  --blue-soft: #e2f3fc;
+  --paper: #ffffff;
+  --white: #fff;
+  --line: #dde3e8;
+  --muted: #5e5e5e;
+  --orange: #f3931b;     /* BINUS CTA orange */
+  --font-display: 'IBM Plex Sans', Arial, sans-serif;
+  --font-body: 'Inter', Arial, sans-serif;
+  --side: clamp(1.25rem, 4vw, 4rem);
+  overflow-x: clip;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ddm-page *, .ddm-page *::before, .ddm-page *::after { box-sizing: border-box; }
+.ddm-page img { display: block; max-width: 100%; }
+.ddm-page a { color: inherit; text-decoration: none; }
+.ddm-container { width: min(100%, 1440px); margin-inline: auto; padding-inline: var(--side); }
+.ddm-section { padding-block: clamp(4.75rem, 8vw, 8.5rem); }
+.ddm-soft { background: var(--blue-soft); }
+
+.ddm-eyebrow, .ddm-kicker, .ddm-tag {
+  display: block;
+  color: var(--blue);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.ddm-eyebrow { margin-bottom: 1rem; }
+.ddm-kicker { margin-bottom: 1.25rem; }
+.ddm-h1, .ddm-h2, .ddm-h3, .ddm-page h4 {
+  font-family: var(--font-display);
+  letter-spacing: -.045em;
+}
+.ddm-h1 {
+  max-width: 15ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.8rem, 4.2vw, 4.6rem);
+  font-weight: 600;
+  line-height: .95;
+}
+.ddm-h1__line { display: block; }
+.ddm-h1__accent { color: var(--blue); }
+.ddm-h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.25rem, 4vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1;
+  text-wrap: balance;
+}
+.ddm-h2--wide { max-width: 24ch; }
+.ddm-h3 { margin: 0; font-size: clamp(1.25rem, 1.5vw, 1.55rem); line-height: 1.22; }
+.ddm-lead { max-width: 48ch; margin: 0 0 1.75rem; color: var(--muted); font-size: clamp(1rem, 1.2vw, 1.15rem); line-height: 1.7; }
+.ddm-lead b { color: var(--ink); }
+.ddm-section-head { max-width: 760px; margin-bottom: clamp(2.6rem, 5vw, 4.8rem); }
+
+.ddm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: .85rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: var(--orange);
+  color: var(--ink) !important;
+  font: 800 .94rem/1.2 var(--font-body);
+  text-align: center;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.ddm-btn:hover { background: #e48118; transform: translateY(-2px); }
+.ddm-btn:focus-visible, .ddm-page a:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.ddm-btn-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Quiet navigation so the first impression belongs to the campus. */
+.ddm-nav { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+.ddm-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 76px; }
+.ddm-nav__logo img { width: clamp(170px, 19vw, 232px); height: auto; }
+.ddm-nav__cta { min-height: 42px; padding: .65rem 1.15rem; background: var(--blue-deep); color: #fff !important; font-size: .84rem; }
+.ddm-nav__cta:hover { background: var(--blue-darker); }
+
+/* Hero: monumental type beside one unbroken architectural image. */
+.ddm-cover { background: var(--paper); }
+/* Copy aligns with the 1440px content column; the photo bleeds to the right viewport edge. */
+.ddm-cover__inner {
+  display: grid; grid-template-columns: minmax(0, .9fr) minmax(440px, 1.1fr);
+  width: 100%; min-height: clamp(560px, calc(100svh - 77px), 720px);
+  padding-left: max(var(--side), calc((100% - 1440px) / 2 + var(--side))); padding-right: 0;
+}
+.ddm-cover__copy { position: relative; z-index: 2; align-self: center; padding: clamp(2.5rem, 4vw, 4rem) clamp(2rem, 3.5vw, 4rem) clamp(2.5rem, 3.5vw, 3.5rem) 0; }
+.ddm-cover__visual { position: relative; min-height: 100%; overflow: hidden; background: var(--sky); }
+.ddm-badge-oh img { width: clamp(126px, 12vw, 170px); height: auto; margin-bottom: clamp(1rem, 2vw, 1.4rem); }
+.ddm-cover__visual::before {
+  content: ''; position: absolute; z-index: 2; inset: 0;
+  background: linear-gradient(90deg, rgba(16,120,185,.14), transparent 34%), linear-gradient(0deg, rgba(16,120,185,.16), transparent 42%);
+  pointer-events: none;
+}
+.ddm-cover__bldg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(.86) contrast(1.04); }
+.ddm-eventcard { margin-top: clamp(1.75rem, 2.6vw, 2.75rem); padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.ddm-eventcard__date { margin: 0 0 .35rem; font-size: .91rem; font-weight: 800; }
+.ddm-eventcard__time { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin: 0; color: var(--muted); font-size: .8rem; font-weight: 600; }
+.ddm-eventcard__time img { width: 58px; height: auto; }
+.ddm-vr { width: 1px; height: .8rem; margin-inline: .18rem; background: var(--line); }
+
+/* Institution marker — typographic, compact, and adjacent to the hero. */
+.ddm-itb { padding-block: clamp(1.5rem, 2.6vw, 2.4rem); color: #fff; background: var(--blue-deep); }
+.ddm-itb .ddm-container { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
+.ddm-itb__line { margin: 0; color: var(--blue-soft); font-size: clamp(.84rem, 1.1vw, 1rem); }
+.ddm-itb__line b { color: #fff; }
+.ddm-hash { color: var(--orange); font-size: 1.15em; font-weight: 800; }
+.ddm-itb__name { margin: 0; font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 2rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; text-align: right; }
+
+/* Outcomes form a staggered field rather than another numbered sequence. */
+.ddm-panel--white { background: transparent; }
+.ddm-specs { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.ddm-spec { grid-column: span 5; min-height: 150px; padding: 1.6rem 1.5rem 2rem 0; border-bottom: 1px solid var(--line); }
+.ddm-spec:nth-child(even) { grid-column: 7 / span 6; padding-left: clamp(1.5rem, 3vw, 3rem); border-left: 1px solid var(--line); }
+.ddm-spec h3 { max-width: 25ch; margin: 0; font: 600 clamp(1.4rem, 2vw, 2rem)/1.2 var(--font-display); letter-spacing: -.035em; }
+.ddm-spec__sub { display: block; margin-top: .6rem; color: var(--muted); font: 400 .88rem/1.6 var(--font-body); letter-spacing: 0; }
+.ddm-spec--access, .ddm-spec--access:nth-child(odd) {
+  grid-column: 1 / -1; min-height: 0; margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.4rem, 2.5vw, 2rem) clamp(1.4rem, 3vw, 2.5rem);
+  border: 0; border-left: 4px solid var(--orange); color: #fff; background: var(--blue-deep);
+}
+.ddm-spec--access h3 { max-width: none; }
+.ddm-spec__label { display: block; margin-bottom: .5rem; color: var(--orange); font-size: .75rem; font-weight: 700; line-height: 1.4; }
+
+/* Agenda is the one explicit sequence on the page. */
+#agenda { color: #fff; background: var(--blue-deep); }
+#agenda .ddm-panel { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: clamp(3rem, 8vw, 9rem); }
+#agenda .ddm-section-head { position: sticky; top: 122px; align-self: start; margin: 0; }
+#agenda .ddm-eyebrow { color: var(--orange); }
+#agenda .ddm-h2, #agenda .ddm-h3 { color: #fff; }
+.ddm-list { border-top: 1px solid rgba(255,255,255,.42); }
+.ddm-item { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .45rem 1rem; padding: 1.7rem 0; border-bottom: 1px solid rgba(255,255,255,.25); }
+.ddm-idx { color: var(--orange); font-size: .78rem; font-weight: 800; letter-spacing: .08em; line-height: 1.5; }
+.ddm-item .ddm-idx { grid-row: 1 / span 2; }
+.ddm-item .ddm-h3 { font-size: clamp(1.15rem, 1.55vw, 1.5rem); letter-spacing: -.025em; }
+.ddm-item p { max-width: 55ch; margin: 0; color: var(--blue-soft); font-size: .91rem; line-height: 1.6; }
+
+/* Portraits break the page grid and carry this chapter visually. */
+.ddm-people { overflow: hidden; }
+.ddm-people { padding-block: clamp(3.5rem, 6vw, 5.5rem); }
+.ddm-people .ddm-section-head { margin-bottom: clamp(2rem, 3.5vw, 3rem); }
+.ddm-speakers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); }
+.ddm-speaker { display: grid; grid-template-columns: clamp(120px, 11vw, 160px) minmax(0, 1fr); align-items: center; gap: clamp(1rem, 2vw, 1.75rem); }
+.ddm-speaker__avatar { overflow: hidden; aspect-ratio: 1 / 1; background: var(--blue-soft); }
+.ddm-speaker__avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(.82) contrast(1.03); }
+.ddm-speaker h4 { margin: 0 0 .5rem; font-size: clamp(1.25rem, 1.6vw, 1.6rem); line-height: 1.1; }
+.ddm-tag { display: inline-block; margin-bottom: 1rem; padding-bottom: .25rem; border-bottom: 2px solid var(--blue); }
+.ddm-speaker .role { margin: 0 0 .75rem; color: var(--muted); font-size: .86rem; line-height: 1.55; }
+.ddm-speaker .org { margin: 0; color: var(--blue); font-size: .83rem; font-weight: 800; }
+
+/* Audience chapter stays intentionally spare. */
+.ddm-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.ddm-col { padding: 1.8rem clamp(1.25rem, 2.4vw, 2.6rem) 0 0; }
+.ddm-col + .ddm-col { padding-left: clamp(1.25rem, 2.4vw, 2.6rem); border-left: 1px solid var(--line); }
+.ddm-col .ddm-h3 { max-width: 22ch; margin-bottom: 1rem; }
+.ddm-col p { max-width: 33ch; margin: 0; color: var(--muted); font-size: .91rem; }
+
+/* Closing invitation pairs a large date with the campus, rather than repeating the hero. */
+.ddm-final {
+  position: relative; isolation: isolate; overflow: hidden; display: grid;
+  grid-template-columns: minmax(0, 1fr); align-items: end;
+  min-height: 420px; padding: clamp(2.5rem, 5vw, 5rem); color: #fff; background: var(--blue-deep);
+}
+.ddm-final::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('images/binus-campus-cover.webp') 70% 30% / cover no-repeat, var(--sky); }
+.ddm-final::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(16,120,185,.96), rgba(16,120,185,.84) 62%, rgba(28,142,206,.35)); }
+.ddm-final__content { padding-bottom: .25rem; }
+.ddm-final .ddm-h2 { max-width: 11ch; color: #fff; }
+.ddm-final__highlight { color: var(--orange); }
+.ddm-final__meta { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; max-width: 40rem; margin: 1.4rem 0 1.9rem; color: #e0ecf0; font-size: .78rem; font-weight: 700; }
+.ddm-final__meta span { display: inline-flex; align-items: center; gap: .35rem; }
+.ddm-final__meta img { width: 58px; height: auto; filter: brightness(0) invert(1); }
+
+.ddm-foot { padding-block: 2.5rem; background: #fff; border-top: 1px solid var(--line); }
+.ddm-foot__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.ddm-foot img { width: clamp(160px, 20vw, 220px); height: auto; }
+.ddm-foot p { max-width: 54ch; margin: 0; color: var(--muted); font-size: .72rem; text-align: right; }
+
+/* Only the hero enters; the reading experience below stays still. */
+.ddm-cover .ddm-reveal { animation: ddm-enter .65s ease-out both; }
+@keyframes ddm-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 1050px) {
+  .ddm-cover__inner { grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr); }
+}
+
+@media (max-width: 800px) {
+  .ddm-cover__inner { grid-template-columns: 1fr; min-height: 0; padding-inline: var(--side); }
+  .ddm-cover__copy { padding: 3rem 0 2.75rem; }
+  .ddm-cover__visual { min-height: 0; aspect-ratio: 836 / 764; margin-inline: calc(-1 * var(--side)); }
+  .ddm-cover__bldg { object-position: 50% bottom; }
+  .ddm-h1 { max-width: 14ch; font-size: clamp(3.3rem, 9vw, 5.2rem); }
+  .ddm-itb .ddm-container { display: block; }
+  .ddm-itb__line { margin-bottom: .4rem; }
+  .ddm-itb__name { text-align: left; }
+  #agenda .ddm-panel { grid-template-columns: 1fr; gap: 2.8rem; }
+  #agenda .ddm-section-head { position: static; }
+  .ddm-speakers { grid-template-columns: 1fr; }
+  .ddm-speaker { grid-template-columns: 120px minmax(0, 1fr); }
+  .ddm-cols { grid-template-columns: 1fr; }
+  .ddm-col, .ddm-col + .ddm-col { padding: 1.6rem 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .ddm-final { align-content: end; min-height: 440px; }
+}
+
+@media (max-width: 560px) {
+  .ddm-nav__inner { min-height: 66px; }
+  .ddm-nav__logo img { width: 168px; }
+  .ddm-nav__cta { padding-inline: .8rem; font-size: .76rem; }
+  .ddm-cover__copy { padding-block: 2.8rem 2.4rem; }
+  .ddm-h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .ddm-eventcard { margin-top: 2.5rem; }
+  .ddm-specs { grid-template-columns: 1fr; }
+  .ddm-spec, .ddm-spec:nth-child(even) { grid-column: 1; min-height: 0; padding: 1.5rem 0; border-left: 0; }
+  .ddm-spec--access, .ddm-spec--access:nth-child(odd) { padding: 1.4rem 1.25rem; border-left: 4px solid var(--orange); }
+  .ddm-speaker { grid-template-columns: 96px minmax(0, 1fr); gap: 1rem; }
+  .ddm-speaker h4 { font-size: 1.2rem; }
+  .ddm-final { min-height: 400px; padding: 2.3rem 1.4rem; }
+  .ddm-final::after { background: rgba(16,120,185,.86); }
+  .ddm-final__meta { gap: .35rem .6rem; }
+  .ddm-sep { display: none !important; }
+  .ddm-foot__inner { display: block; }
+  .ddm-foot p { margin-top: 1.25rem; text-align: left; }
+}
+
+@media (max-width: 375px) {
+  .ddm-nav__cta { display: none; }
+  .ddm-speaker { grid-template-columns: 80px minmax(0, 1fr); }
+}
+
+/* ── BINUS additions ───────────────────────────── */
+.ddm-h1 { max-width: 13ch; }
+.ddm-h1__sub { display: block; max-width: 20ch; margin-top: .9rem; color: var(--blue); font-size: .44em; font-weight: 600; line-height: 1.12; letter-spacing: -.03em; }
+.ddm-nav__logo img, .ddm-foot img { width: clamp(180px, 20vw, 250px); }
+
+/* Tools card sits on the campus photo, bottom-left. */
+.ddm-cover__bldg { object-position: 60% 30%; }
+.ddm-tools {
+  position: absolute; z-index: 3; left: clamp(1rem, 2.4vw, 2rem); bottom: clamp(1rem, 2.4vw, 2rem);
+  padding: 1rem 1.15rem 1.1rem; background: rgba(255,255,255,.97); border-left: 4px solid var(--orange);
+  box-shadow: 0 18px 40px -18px rgba(16,120,185,.4);
+}
+.ddm-tools__label { display: block; margin-bottom: .7rem; color: var(--muted); font-size: .7rem; font-weight: 700; line-height: 1.3; }
+.ddm-tools__list { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+.ddm-tools__list li { display: inline-flex; align-items: center; gap: .5rem; font: 600 1rem/1 var(--font-display); letter-spacing: -.02em; white-space: nowrap; }
+.ddm-tools__list img { width: 26px; height: 26px; }
+
+/* One speaker: heading left, speaker card right (same split as the agenda). */
+.ddm-people__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+.ddm-people__grid .ddm-section-head { margin: 0; }
+.ddm-people__lead { max-width: 40ch; margin: 1.25rem 0 0; color: var(--muted); font-size: .95rem; line-height: 1.65; }
+.ddm-speakers--solo { grid-template-columns: 1fr; }
+.ddm-speakers--solo .ddm-speaker {
+  grid-template-columns: clamp(170px, 17vw, 240px) minmax(0, 1fr); align-items: start;
+  padding: clamp(1.25rem, 2.5vw, 2rem); background: #fff; border-top: 4px solid var(--binus);
+  box-shadow: 0 20px 44px -28px rgba(16,120,185,.45);
+}
+.ddm-speakers--solo .ddm-speaker h4 { font-size: clamp(1.4rem, 2vw, 1.9rem); }
+.ddm-speakers--solo .ddm-speaker__exp { columns: 1; }
+.ddm-speaker__exp { margin: 1rem 0 0; padding: .9rem 0 0; border-top: 1px solid var(--line); list-style: none; columns: 2; column-gap: 1.75rem; }
+.ddm-speaker__exp li { position: relative; break-inside: avoid; padding-left: 1rem; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+.ddm-speaker__exp li + li { margin-top: .35rem; }
+.ddm-speaker__exp li::before { content: ''; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; background: var(--binus); }
+
+@media (max-width: 800px) {
+  .ddm-cover__visual { aspect-ratio: 1389 / 926; }
+  .ddm-people__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .ddm-nav__logo img { width: 160px; }
+  .ddm-tools { right: 1rem; }
+  .ddm-tools__list { gap: .5rem 1rem; }
+  .ddm-tools__list li { font-size: .9rem; }
+  .ddm-tools__list img { width: 22px; height: 22px; }
+  .ddm-speakers--solo .ddm-speaker { grid-template-columns: 96px minmax(0, 1fr); }
+}
+
+/* BINUS accents: light blue markers, sky-blue text on blue surfaces, orange CTAs. */
+.ddm-btn { color: var(--ink) !important; }
+.ddm-nav__cta { background: var(--blue-deep); color: #fff !important; }
+.ddm-hash, .ddm-final__highlight, .ddm-spec__label { color: var(--sky); }
+#agenda .ddm-eyebrow { color: var(--blue-soft); }
+.ddm-idx { color: #fff; }
+.ddm-spec--access, .ddm-spec--access:nth-child(odd) { border-left-color: var(--binus); }
+.ddm-tag { border-bottom-color: var(--binus); }
+.ddm-tools { border-left-color: var(--binus); }
+.ddm-itb { border-bottom: 4px solid var(--binus); }
+.ddm-page a:focus-visible, .ddm-btn:focus-visible { outline-color: var(--binus); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ddm-page *, .ddm-page *::before, .ddm-page *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
+}
