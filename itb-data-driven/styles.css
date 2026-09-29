@@ -215,9 +215,7 @@ html, body { margin: 0; max-width: 100%; }
 
 @media (max-width: 800px) {
   .ddm-cover__inner { grid-template-columns: 1fr; min-height: 0; padding-inline: var(--side); }
-  .ddm-cover__copy { padding: 3rem 0 2.75rem; }
-  .ddm-cover__visual { min-height: 0; aspect-ratio: 836 / 764; margin-inline: calc(-1 * var(--side)); }
-  .ddm-cover__bldg { object-position: 50% bottom; }
+  .ddm-cover__visual { margin-inline: calc(-1 * var(--side)); }
   .ddm-h1 { max-width: 14ch; font-size: clamp(3.3rem, 9vw, 5.2rem); }
   .ddm-itb .ddm-itb__inner { flex-direction: column; align-items: flex-start; gap: 1.4rem; padding-right: var(--side); }
   .ddm-itb__name { max-width: 13ch; }
@@ -235,7 +233,6 @@ html, body { margin: 0; max-width: 100%; }
   .ddm-nav__inner { min-height: 66px; }
   .ddm-nav__logo img { width: 168px; }
   .ddm-nav__cta { padding-inline: .8rem; font-size: .76rem; }
-  .ddm-cover__copy { padding-block: 2.8rem 2.4rem; }
   .ddm-h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
   .ddm-eventcard { margin-top: 2.5rem; }
   .ddm-specs { grid-template-columns: 1fr; }
@@ -255,6 +252,31 @@ html, body { margin: 0; max-width: 100%; }
   .ddm-nav__cta { display: none; }
   .ddm-speaker { grid-template-columns: 80px minmax(0, 1fr); }
   .ddm-itb__bars { width: 60px; opacity: .6; }
+}
+
+@media (max-width: 800px) {
+  /* Scroll reveal: campus pinned behind the hero copy; the copy's white veil scrolls away
+     and uncovers the building. --tools-h = height of any grid row below the photo (none here). */
+  .ddm-cover { --nav-h: 77px; --stage: calc(100svh - var(--nav-h)); --tools-h: 0px; --bldg-h: 76%; }
+  .ddm-cover__inner { display: grid; grid-template-columns: 1fr; }
+  .ddm-cover__visual, .ddm-cover__copy { grid-area: 1 / 1; }
+  .ddm-cover__visual {
+    position: sticky; top: var(--nav-h); z-index: 0; align-self: start;
+    height: var(--stage); aspect-ratio: auto; min-height: 0; overflow: hidden;
+    background: linear-gradient(180deg, #eef4f5 0%, #bcd4dc 100%);
+  }
+  .ddm-cover__visual::before { display: none; }
+  .ddm-cover__bldg { top: auto; bottom: 0; height: var(--bldg-h); object-position: 70% bottom; }
+  .ddm-cover__copy {
+    z-index: 1; padding: 2.75rem 0 4.5rem;
+    margin-bottom: calc(var(--stage) * .76 - 5.5rem - var(--tools-h)); /* pin ends with the date just above the roof (photo has ~12% clear sky above the peaks) */
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.93) 45%, rgba(255,255,255,.84) 88%, rgba(255,255,255,0) 100%);
+    margin-inline: calc(-1 * var(--side)); padding-inline: var(--side); /* full-bleed veil */
+  }
+}
+@media (max-width: 560px) {
+  .ddm-cover { --nav-h: 67px; }
+  .ddm-cover__copy { padding-block: 2.5rem 4.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
