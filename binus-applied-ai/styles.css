@@ -351,7 +351,8 @@ html, body { margin: 0; max-width: 100%; }
   /* Scroll reveal: the campus is pinned behind the hero copy. The copy's
      white veil scrolls away with it and uncovers the building, then the
      whole cover scrolls off and the BINUS strip follows. */
-  .ddm-cover { --nav-h: 76px; --stage: calc(100svh - var(--nav-h)); }
+  /* --tools-h: height of the tools strip below; the pin runs to the end of the grid, so subtract it. */
+  .ddm-cover { --nav-h: 76px; --stage: calc(100svh - var(--nav-h)); --tools-h: 5.4rem; }
   .ddm-cover__inner { display: grid; grid-template-columns: 1fr; }
   .ddm-cover__visual, .ddm-cover__copy { grid-area: 1 / 1; }
   .ddm-cover__visual {
@@ -360,9 +361,9 @@ html, body { margin: 0; max-width: 100%; }
     background: linear-gradient(180deg, #e2f3fc 0%, var(--sky) 100%);
   }
   .ddm-cover__visual::before { display: none; }
-  .ddm-cover__bldg { top: auto; bottom: 0; height: 62%; object-position: 60% bottom; }
+  .ddm-cover__bldg { top: auto; bottom: 0; height: 76%; object-position: 58% bottom; }
   .ddm-cover__copy {
-    z-index: 1; margin-bottom: calc(var(--stage) * .62);
+    z-index: 1; margin-bottom: calc(var(--stage) * .76 - 3rem - var(--tools-h)); /* pin ends with the date just above the building */
     padding: 2.75rem 0 4.5rem;
     background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.93) 45%, rgba(255,255,255,.84) 88%, rgba(255,255,255,0) 100%);
   }
