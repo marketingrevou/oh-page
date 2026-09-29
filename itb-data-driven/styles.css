@@ -117,12 +117,25 @@ html, body { margin: 0; max-width: 100%; }
 .ddm-vr { width: 1px; height: .8rem; margin-inline: .18rem; background: var(--line); }
 
 /* Institution marker — typographic, compact, and adjacent to the hero. */
-.ddm-itb { padding-block: clamp(1.5rem, 2.6vw, 2.4rem); color: #fff; background: var(--navy); }
-.ddm-itb .ddm-container { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; }
-.ddm-itb__line { margin: 0; color: #c7d8e1; font-size: clamp(.84rem, 1.1vw, 1rem); }
-.ddm-itb__line b { color: #fff; }
-.ddm-hash { color: var(--yellow); font-size: 1.15em; font-weight: 800; }
-.ddm-itb__name { margin: 0; font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 2rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; text-align: right; }
+.ddm-itb {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding-block: clamp(2rem, 3.5vw, 3rem); color: #fff;
+  background: linear-gradient(110deg, #081d2e 0%, var(--navy) 45%, var(--blue) 100%);
+  border-bottom: 4px solid var(--yellow);
+}
+/* Rising bars nod to the "data driven" theme; they grow out of the yellow rule. */
+.ddm-itb__bars { position: absolute; z-index: -1; right: var(--side); bottom: 0; width: clamp(110px, 11vw, 150px); height: auto; }
+.ddm-itb .ddm-itb__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-right: calc(var(--side) + clamp(130px, 13vw, 180px)); }
+.ddm-itb__line { margin: 0 0 .35rem; color: #8fc6ea; font-size: clamp(.8rem, 1vw, .92rem); font-weight: 600; }
+.ddm-itb__name { margin: 0; font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 3.2rem); font-weight: 700; letter-spacing: -.035em; line-height: 1; text-transform: uppercase; }
+.ddm-itb__rank { display: flex; flex: none; align-items: center; gap: 1rem; }
+.ddm-itb__num {
+  display: inline-flex; align-items: baseline; justify-content: center; min-width: 4.4rem; padding: .55rem .8rem .5rem;
+  background: #fff; color: var(--navy); font: 700 clamp(2rem, 3vw, 2.6rem)/1 var(--font-display); letter-spacing: -.05em;
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+.ddm-itb__hash { margin-right: .05em; color: var(--blue); font-size: .6em; }
+.ddm-itb__caption { color: #fff; font-size: clamp(.9rem, 1.1vw, 1.05rem); font-weight: 700; line-height: 1.3; }
 
 /* Outcomes form a staggered field rather than another numbered sequence. */
 .ddm-panel--white { background: transparent; }
@@ -206,9 +219,9 @@ html, body { margin: 0; max-width: 100%; }
   .ddm-cover__visual { min-height: 0; aspect-ratio: 836 / 764; margin-inline: calc(-1 * var(--side)); }
   .ddm-cover__bldg { object-position: 50% bottom; }
   .ddm-h1 { max-width: 14ch; font-size: clamp(3.3rem, 9vw, 5.2rem); }
-  .ddm-itb .ddm-container { display: block; }
-  .ddm-itb__line { margin-bottom: .4rem; }
-  .ddm-itb__name { text-align: left; }
+  .ddm-itb .ddm-itb__inner { flex-direction: column; align-items: flex-start; gap: 1.4rem; padding-right: var(--side); }
+  .ddm-itb__name { max-width: 13ch; }
+  .ddm-itb__bars { width: 92px; opacity: .85; }
   #agenda .ddm-panel { grid-template-columns: 1fr; gap: 2.8rem; }
   #agenda .ddm-section-head { position: static; }
   .ddm-speakers { grid-template-columns: 1fr; }
@@ -241,6 +254,7 @@ html, body { margin: 0; max-width: 100%; }
 @media (max-width: 375px) {
   .ddm-nav__cta { display: none; }
   .ddm-speaker { grid-template-columns: 80px minmax(0, 1fr); }
+  .ddm-itb__bars { width: 60px; opacity: .6; }
 }
 
 @media (prefers-reduced-motion: reduce) {
