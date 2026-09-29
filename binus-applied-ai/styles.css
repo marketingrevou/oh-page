@@ -254,8 +254,11 @@ html, body { margin: 0; max-width: 100%; }
 
 /* Tools card sits on the campus photo, bottom-left. */
 .ddm-cover__bldg { object-position: 60% 30%; }
+.ddm-cover__copy { grid-area: 1 / 1; }
+.ddm-cover__visual { grid-area: 1 / 2; }
 .ddm-tools {
-  position: absolute; z-index: 3; left: clamp(1rem, 2.4vw, 2rem); bottom: clamp(1rem, 2.4vw, 2rem);
+  position: relative; z-index: 3; grid-area: 1 / 2; align-self: end; justify-self: start;
+  margin: 0 0 clamp(1rem, 2.4vw, 2rem) clamp(1rem, 2.4vw, 2rem);
   padding: 1rem 1.15rem 1.1rem; background: rgba(255,255,255,.97); border-left: 4px solid var(--orange);
   box-shadow: 0 18px 40px -18px rgba(16,120,185,.4);
 }
@@ -265,7 +268,7 @@ html, body { margin: 0; max-width: 100%; }
 .ddm-tools__list img { width: 26px; height: 26px; }
 /* Desktop: larger tools card so the logos read at hero scale. */
 @media (min-width: 1051px) {
-  .ddm-tools { left: clamp(1.5rem, 3vw, 3rem); bottom: clamp(1.5rem, 3vw, 3rem); padding: 1.35rem 1.75rem 1.5rem; }
+  .ddm-tools { margin: 0 0 clamp(1.5rem, 3vw, 3rem) clamp(1.5rem, 3vw, 3rem); padding: 1.35rem 1.75rem 1.5rem; }
   .ddm-tools__label { margin-bottom: 1rem; font-size: .8rem; }
   .ddm-tools__list { gap: .75rem 2.25rem; }
   .ddm-tools__list li { gap: .7rem; font-size: clamp(1.25rem, 1.5vw, 1.55rem); }
@@ -295,7 +298,6 @@ html, body { margin: 0; max-width: 100%; }
 }
 @media (max-width: 560px) {
   .ddm-nav__logo img { width: 160px; }
-  .ddm-tools { right: 1rem; }
   .ddm-tools__list { gap: .5rem 1rem; }
   .ddm-tools__list li { font-size: .9rem; }
   .ddm-tools__list img { width: 22px; height: 22px; }
@@ -346,14 +348,36 @@ html, body { margin: 0; max-width: 100%; }
   .ddm-itb .ddm-itb__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 1.4rem; padding-right: var(--side); }
   .ddm-itb::after { top: 2.2rem; right: 1.5rem; transform: none; }
 
-  /* Tools card moves below the photo so the building stays clear. */
-  .ddm-cover__visual { aspect-ratio: auto; min-height: 0; overflow: visible; background: #fff; }
+  /* Scroll reveal: the campus is pinned behind the hero copy. The copy's
+     white veil scrolls away with it and uncovers the building, then the
+     whole cover scrolls off and the BINUS strip follows. */
+  .ddm-cover { --nav-h: 76px; --stage: calc(100svh - var(--nav-h)); }
+  .ddm-cover__inner { display: grid; grid-template-columns: 1fr; }
+  .ddm-cover__visual, .ddm-cover__copy { grid-area: 1 / 1; }
+  .ddm-cover__visual {
+    position: sticky; top: var(--nav-h); z-index: 0; align-self: start;
+    height: var(--stage); aspect-ratio: auto; min-height: 0; overflow: hidden;
+    background: linear-gradient(180deg, #e2f3fc 0%, var(--sky) 100%);
+  }
   .ddm-cover__visual::before { display: none; }
-  .ddm-cover__bldg { position: static; height: auto; aspect-ratio: 1389 / 926; }
-  .ddm-tools { position: static; margin: 0; padding: 1rem var(--side) 1.15rem; border-left: 0; border-top: 4px solid var(--binus); box-shadow: none; }
+  .ddm-cover__bldg { top: auto; bottom: 0; height: 62%; object-position: 60% bottom; }
+  .ddm-cover__copy {
+    z-index: 1; margin-bottom: calc(var(--stage) * .62);
+    padding: 2.75rem 0 4.5rem;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.93) 45%, rgba(255,255,255,.84) 88%, rgba(255,255,255,0) 100%);
+  }
+  /* Full-bleed veil: extend the copy's background past the side gutters. */
+  .ddm-cover__copy { box-shadow: none; margin-inline: calc(-1 * var(--side)); padding-inline: var(--side); }
+  /* Tools strip follows the reveal, directly above the #1 university strip. */
+  .ddm-tools {
+    grid-area: 2 / 1; justify-self: stretch; margin: 0 calc(-1 * var(--side));
+    padding: 1rem var(--side) 1.15rem; background: #fff;
+    border-left: 0; border-top: 4px solid var(--binus); box-shadow: none;
+  }
 }
 @media (max-width: 560px) {
-  .ddm-tools { right: auto; }
+  .ddm-cover { --nav-h: 66px; }
+  .ddm-cover__copy { padding-block: 2.5rem 4.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
