@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/binus-campus-cover.webp" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=hero2b" />
 </head>
 <body>
 <div class="ddm-page">
@@ -54,15 +54,18 @@
   <header class="ddm-cover">
     <div class="ddm-container ddm-cover__inner">
       <div class="ddm-cover__copy ddm-reveal">
-        <span class="ddm-badge-oh">
-          <img src="images/open-house-badge.webp" alt="Open House" width="900" height="365" />
-        </span>
+        <div class="ddm-cover__tags">
+          <span class="ddm-badge-oh">
+            <img src="images/open-house-badge.webp" alt="Open House" width="900" height="365" />
+          </span>
+          <span class="ddm-pill"><span class="ddm-pill__dot" aria-hidden="true"></span>Gratis · Live 2 jam</span>
+        </div>
         <span class="ddm-kicker">Untuk Working Professionals &amp; Fresh Graduates</span>
 
         <h1 class="ddm-h1">
           <span class="ddm-h1__line">Applied AI,</span>
           <span class="ddm-h1__line">Analytics &amp;</span>
-          <span class="ddm-h1__line">Automation</span>
+          <span class="ddm-h1__line ddm-h1__grad">Automation</span>
           <span class="ddm-h1__sub">Skills Every Modern Professional Needs</span>
         </h1>
 
@@ -72,10 +75,17 @@
         </p>
 
         <div class="ddm-btn-row">
-          <a class="ddm-btn ddm-btn--primary" data-cta href="https://revou-binus-oh.paperform.co/?prog=Binus&date=11%2F03%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis!</a>
+          <a class="ddm-btn ddm-btn--primary ddm-btn--arrow" data-cta href="https://revou-binus-oh.paperform.co/?prog=Binus&date=11%2F03%2F2026" target="_blank" rel="noopener">Daftar Open House Gratis!
+            <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="ddm-link-more" href="#agenda">Lihat topik
+            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M10 4v11M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <div class="ddm-eventcard">
-          <div>
+
+        <div class="ddm-ticket">
+          <div class="ddm-ticket__day" aria-hidden="true"><span>Nov</span><strong>03</strong></div>
+          <div class="ddm-ticket__info">
             <p class="ddm-eventcard__date">Selasa, 3 November 2026</p>
             <p class="ddm-eventcard__time">
               <span>19.00–21.00 <span class="ddm-wib">WIB</span></span>
@@ -92,6 +102,9 @@
              fetchpriority="high" decoding="async" />
       </div>
       <div class="ddm-tools">
+        <svg class="ddm-tools__flow" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M18 15 C 17 27, 25 27, 30 36 M30 36 C 52 41, 64 22, 85 24" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 6" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+        </svg>
         <span class="ddm-tools__label">Tools yang dibahas</span>
         <ul class="ddm-tools__list">
           <li><img src="images/logo-claude.svg" alt="" width="24" height="24" />Claude Code</li>

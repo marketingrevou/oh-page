@@ -381,6 +381,98 @@ html, body { margin: 0; max-width: 100%; }
   .ddm-cover__copy { padding-block: 2.5rem 4.5rem; }
 }
 
+/* ── Hero v2 ─────────────────────────────────────
+   Copy: tag row, bigger headline with gradient "Automation", arrow CTA +
+   secondary link, date ticket. Desktop photo side: building rising from a
+   BINUS-blue gridded sky, tools as floating chips joined by a "workflow" line. */
+.ddm-cover__tags { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin-bottom: clamp(1rem, 2vw, 1.5rem); }
+.ddm-cover__tags .ddm-badge-oh img { margin: 0; }
+.ddm-pill {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .42rem .8rem;
+  border: 1px solid rgba(16,120,185,.22); border-radius: 999px; background: var(--blue-soft);
+  color: var(--blue); font-size: .76rem; font-weight: 700; line-height: 1;
+}
+.ddm-pill__dot { position: relative; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+.ddm-pill__dot::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--orange); opacity: 0; animation: ddm-ping 2s ease-out infinite; }
+@keyframes ddm-ping { 0% { transform: scale(.5); opacity: .7; } 100% { transform: scale(1.4); opacity: 0; } }
+
+.ddm-cover .ddm-h1 { font-size: clamp(2.9rem, 4.9vw, 5.4rem); line-height: .92; letter-spacing: -.055em; }
+.ddm-h1__grad {
+  width: fit-content; padding-bottom: .04em;
+  background: linear-gradient(90deg, var(--blue-deep) 0%, #1c8ece 45%, var(--binus) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ddm-cover .ddm-h1__sub { display: flex; align-items: center; gap: .55em; max-width: none; margin-top: 1rem; color: var(--ink); font-size: .36em; font-weight: 600; letter-spacing: -.02em; }
+.ddm-cover .ddm-h1__sub::before { content: ''; flex: none; width: 1.6em; height: 3px; background: var(--orange); }
+
+.ddm-cover .ddm-btn-row { align-items: center; gap: .75rem 1.5rem; }
+.ddm-btn--arrow { gap: .65rem; box-shadow: 0 12px 26px -14px rgba(228,129,24,.9); }
+.ddm-btn--arrow svg { transition: transform .2s ease; }
+.ddm-btn--arrow:hover svg { transform: translateX(3px); }
+.ddm-link-more { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; color: var(--blue) !important; font-size: .92rem; font-weight: 700; }
+.ddm-link-more:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.ddm-ticket {
+  display: flex; width: fit-content; max-width: 100%; margin-top: clamp(1.75rem, 2.6vw, 2.5rem);
+  background: #fff; border: 1px solid var(--line); box-shadow: 0 16px 36px -28px rgba(16,120,185,.6);
+}
+.ddm-ticket__day { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 4.5rem; padding: .55rem .8rem; color: #fff; background: var(--blue-deep); }
+.ddm-ticket__day span { font-size: .68rem; font-weight: 800; letter-spacing: .14em; line-height: 1; text-transform: uppercase; }
+.ddm-ticket__day strong { margin-top: .2rem; font: 700 2rem/1 var(--font-display); letter-spacing: -.04em; }
+.ddm-ticket__info { display: flex; flex-direction: column; justify-content: center; padding: .75rem 1.25rem .8rem 1.1rem; border-left: 1px dashed var(--line); }
+
+@media (min-width: 801px) {
+  .ddm-cover__visual { background: linear-gradient(165deg, var(--binus) 0%, #1c8ece 55%, var(--blue-deep) 100%); }
+  /* Faint grid that fades out toward the building. */
+  .ddm-cover__visual::before {
+    z-index: 0;
+    background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 72%); mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+  }
+  /* BINUS pixel motif, top right. */
+  .ddm-cover__visual::after {
+    content: ''; position: absolute; z-index: 0; top: 2.25rem; right: 2.25rem; width: 16px; height: 16px; background: rgba(255,255,255,.5);
+    box-shadow: -20px 0 0 rgba(255,255,255,.25), 0 20px 0 rgba(255,255,255,.3), -40px 20px 0 rgba(255,255,255,.14), -20px 40px 0 rgba(255,255,255,.18), 0 60px 0 rgba(255,255,255,.1);
+  }
+  .ddm-cover__bldg { z-index: 1; inset: auto 0 0 0; height: 74%; object-position: 60% bottom; filter: none; }
+
+  .ddm-tools {
+    grid-area: 1 / 2; align-self: stretch; justify-self: stretch; z-index: 3;
+    margin: 0; padding: 0; background: none; border: 0; box-shadow: none; pointer-events: none;
+  }
+  .ddm-tools__flow { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .75; }
+  .ddm-tools__label {
+    position: absolute; top: 6%; left: 8%; margin: 0; color: #fff;
+    font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .9;
+  }
+  .ddm-tools__list { position: absolute; inset: 0; display: block; }
+  .ddm-tools__list li {
+    position: absolute; gap: .65rem; padding: .7rem 1.15rem .7rem .75rem;
+    border: 1px solid rgba(255,255,255,.75); border-radius: 12px;
+    background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    box-shadow: 0 22px 40px -22px rgba(6,45,80,.7);
+    color: var(--ink); font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+    animation: ddm-chip-in .7s cubic-bezier(.2,.7,.2,1) both, ddm-float 6s ease-in-out 1s infinite;
+  }
+  .ddm-tools__list img { width: clamp(28px, 2.4vw, 38px); height: clamp(28px, 2.4vw, 38px); }
+  .ddm-tools__list li:nth-child(1) { top: 11%; left: 8%; animation-delay: .25s, 1s; }
+  .ddm-tools__list li:nth-child(2) { top: 21%; right: 7%; animation-delay: .4s, 2.2s; }
+  .ddm-tools__list li:nth-child(3) { top: 33%; left: 20%; animation-delay: .55s, 3.4s; }
+}
+@keyframes ddm-chip-in { from { opacity: 0; transform: translateY(14px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes ddm-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+
+@media (max-width: 800px) {
+  .ddm-tools__flow { display: none; }
+  .ddm-ticket { width: 100%; }
+}
+@media (max-width: 480px) {
+  /* Time on one line, "Online via Zoom" on the next. */
+  .ddm-ticket .ddm-vr { display: none; }
+  .ddm-ticket .ddm-eventcard__time > span:first-child { flex-basis: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ddm-page *, .ddm-page *::before, .ddm-page *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; }
