@@ -156,10 +156,11 @@
   .ct-lead { font-size: var(--fs-body); color: var(--c-muted); margin: 0; max-width: 58ch; font-weight: 500; }
   .ct-strong { color: var(--c-ink); font-weight: 800; }
 
-  .ct-mark { position: relative; white-space: nowrap; }
-  .ct-mark::after {
-    content: ""; position: absolute; left: -0.06em; right: -0.06em; bottom: 0.06em; height: 0.42em;
-    background: var(--c-yellow); z-index: -1; border-radius: 3px;
+  /* highlighter drawn as a background so it follows the text when the phrase wraps */
+  .ct-mark {
+    background: linear-gradient(var(--c-yellow), var(--c-yellow)) no-repeat 0 88% / 100% 0.42em;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    padding-inline: 0.06em; margin-inline: -0.06em; border-radius: 3px;
   }
 
   .ct-section-head { max-width: 720px; margin-bottom: var(--sp-stack); }
@@ -207,6 +208,9 @@
     gap: clamp(1.75rem, 4vw, 3rem); align-items: center;
     padding-block: clamp(2.5rem, 5vw, 4.5rem);
   }
+  .ct-hero__grid > * { min-width: 0; }   /* never let the headline push under the event card */
+  /* the copy column is ~470px at desktop widths; 3.25rem keeps "Design your career" on one line */
+  .ct-hero .ct-h1 { font-size: clamp(2.1rem, 1.2rem + 3.2vw, 3.25rem); }
   /* floating decorative icons in hero (rich Figma icons) */
   .ct-hero__shape { position: absolute; z-index: 0; pointer-events: none; aspect-ratio: 1; height: auto; will-change: transform; }
   /* star — top-right corner, gently spinning */
@@ -383,6 +387,8 @@
   }
   @media (max-width: 600px) {
     .ct-btn { width: 100%; }
+    .ct-nav .ct-nav__cta { width: auto; }   /* keep the nav pill compact so the logos keep their size */
+    .ct-final__date span:nth-child(even) { display: none; }   /* drop the "·" separators once the row wraps */
     .ct-btn-row { flex-direction: column; }
     .ct-footer__inner { flex-direction: column; text-align: center; }
 
@@ -435,7 +441,7 @@
       <div class="ct-hero__grid">
         <!-- left: copy -->
         <div class="ct-reveal">
-          <h1 class="ct-h1"><span class="ct-mark">Design your career</span><br><span class="light">Build the skills and strategy for long-term growth</span></h1>
+          <h1 class="ct-h1"><span class="ct-mark">Design your career</span><br><span class="light">Build the skills and strategy for <span style="white-space:nowrap">long-term</span> growth</span></h1>
           <div class="ct-btn-row">
             <a class="ct-btn ct-btn--primary" data-cta href="https://revou-oh.paperform.co/?date=11%2F06%2F2026" target="_blank" rel="noopener">Daftar CareerTalk Gratis</a>
           </div>
